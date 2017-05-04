@@ -1,0 +1,12 @@
+
+p.prefix {
+	margin-top: 0;
+	text-align: left;
+}
+
+
+#speaker-controls .speaker-controls-notes .value, aside.notes {
+	white-space: pre-wrap; 
+	color: red
+}
+
