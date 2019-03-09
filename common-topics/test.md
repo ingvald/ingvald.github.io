@@ -1,3 +1,5 @@
+
+
 # test
 
 included markdown test
@@ -17,3 +19,19 @@ several slides
 # test3
 
 horisontally again...
+
+
+--
+
+
+# t4 vert?
+
+2.time
+
+
+---
+
+
+# t5 new horiz?
+
+2.time
