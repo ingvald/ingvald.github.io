@@ -2,6 +2,7 @@
 
 included markdown test
 
+![img test](cross-functional-team.jpg)
 
 --
 
