@@ -3,18 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>reveal.js</title>
-
+		<title>template</title>
 		<link rel="stylesheet" href="../../reveal-template/css/reveal.css">
 		<link rel="stylesheet" href="../../reveal-template/css/theme/black.css">
-
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="../../reveal-template/lib/css/zenburn.css">
-
 		<!-- include css here to avoid glimpse on first slide upon loading if not inluded there -->
 		<link rel="stylesheet" href="../../reveal-template/plugin/title-footer/title-footer.css">
-
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -27,14 +22,13 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1 <h2>test</h2></section>
 
 				<section data-markdown>
-
 					# md
 
 					"local" markdown test
 
+					<!-- note: markdown needs to be the first content of and on first line of section tag content -->
 				</section>
 
 				<section
@@ -48,14 +42,9 @@ needs it's own top-level slide..
 
 			</div>
 		</div>
-
 		<script src="../../reveal-template/lib/js/head.min.js"></script>
 		<script src="../../reveal-template/js/reveal.js"></script>
-
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
 				dependencies: [
 					{ src: '../../reveal-template/plugin/markdown/marked.js' },
