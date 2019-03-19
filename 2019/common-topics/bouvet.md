@@ -1,9 +1,14 @@
 Bouvet's vision:
 
-We will be the most trustworthy consultancy
+most trustworthy consultancy
 
--with the most satisfied employees
+-with most satisfied employees
 
--and clients
+-and most satisfied clients
 
 (employees first not coincidental)
+
+note:
+https://en.bouvet.no/about-bouvet
+
+https://www.bouvet.no/bouvet-deler/i-dag-er-vi-15-ar 
