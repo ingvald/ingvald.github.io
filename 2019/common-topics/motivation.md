@@ -1,8 +1,8 @@
 # motivation
 
-* hard, complex problems
+* hard, complex problems; innovation
  * need creativity
-* improve internal motivation
+* improve motivation (intrinsic)
  * biggest effect on creativity
  * *when work itself is motivating*
 
@@ -32,9 +32,9 @@ intrinsic motivation => biggest lever
 
 ## improve intrinsic motivation
 
-abiding interest in certain activities,
+abiding *interest in certain activities*,
 
-deep love of particular challenges
+deep *love of particular challenges*
 
 most creative  when intrinsically motivated -
 
@@ -44,9 +44,9 @@ most creative  when intrinsically motivated -
 
 ## improve intrinsic motivation
 
-match right people with right assignments
+motivational match - people vs assignments
 
-give people freedom (how) within goals (what)
+give people **freedom** (how) within goals (what)
 
 allocate appropriate time, resources
 
