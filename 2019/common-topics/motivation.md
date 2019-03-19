@@ -44,11 +44,11 @@ most creative  when intrinsically motivated -
 
 ## improve intrinsic motivation
 
-motivational match - people vs assignments
+motivational **match** - people vs assignments
 
 give people **freedom** (how) within goals (what)
 
-allocate appropriate time, resources
+allocate appropriate **time**, resources
 
 (don't kill creativity with fake deadlines, burnout)
 
