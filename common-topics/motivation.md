@@ -1,10 +1,10 @@
 # motivation
 
 * hard, complex problems; innovation
- * need creativity
+  - need creativity
 * improve motivation (intrinsic)
- * biggest effect on creativity
- * *when work itself is motivating*
+  - biggest effect on creativity
+  - *when work itself is motivating*
 
 --
 
