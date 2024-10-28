@@ -6,7 +6,7 @@
 
 --
 
-![jkm](res/jkm.png)
+![jkm](../../common-topics/jkm.png)
 
 <textarea><div style="font-size: small">lesetips: Skaug et al, 2020, k.2.2.2, 					
         <a href="https://hdl.handle.net/11250/2731202">https://hdl.handle.net/11250/2731202</a>
@@ -20,7 +20,7 @@ note:
 
 --
 
-![sdt](res/sdt.png)
+![sdt](../../common-topics/sdt.png)
 
 <textarea><div style="font-size: small">lesetips: Skaug et al, 2020, k.2.2.3, 					
         <a href="https://hdl.handle.net/11250/2731202">https://hdl.handle.net/11250/2731202</a>
@@ -29,7 +29,7 @@ note:
 
 --
 
-![jkm](res/autonom.png)
+![jkm](../../common-topics/autonom.png)
 
 <textarea><div style="font-size: small">lesetips: Skaug et al, 2020, k.2.2.3, 					
         <a href="https://hdl.handle.net/11250/2731202">https://hdl.handle.net/11250/2731202</a>
