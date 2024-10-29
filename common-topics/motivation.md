@@ -54,6 +54,5 @@ allocate appropriate **time**, resources
 
 let them know: what they do matters
 
-<textarea><footer style="font-size: small">
-(Amabile, 1998, https://hbr.org/1998/09/how-to-kill-creativity)
+<textarea><footer style="font-size: small">(Amabile, 1998, https://hbr.org/1998/09/how-to-kill-creativity)
 </footer></textarea>
