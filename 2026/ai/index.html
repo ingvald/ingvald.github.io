@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>AI × HI</title>
+
+		<link rel="stylesheet" href="../../reveal/6.0.2/dist/reset.css">
+		<link rel="stylesheet" href="../../reveal/6.0.2/dist/reveal.css">
+		<link rel="stylesheet" href="../../reveal/6.0.2/dist/theme/beige.css">
+		<link rel="stylesheet" href="../../reveal/6.0.2/dist/plugin/highlight/zenburn.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+		<style>
+			:root {
+				--r-main-font: 'Open Sans', sans-serif;
+				--r-main-font-size: 40px;
+				--r-heading-font: 'Montserrat', Impact, sans-serif;
+				--r-heading-text-transform: none;
+				--r-heading-letter-spacing: 0;
+				--r-heading-font-weight: 700;
+				--r-heading1-size: 3.77em;
+				--r-heading2-size: 2.11em;
+				--r-heading3-size: 1.55em;
+				--r-heading4-size: 1em;
+				--r-heading1-text-shadow: none;
+			}
+
+			.reveal h1,
+			.reveal h2,
+			.reveal h3 {
+				font-weight: 700;
+			}
+
+			.reveal .eyebrow {
+				color: var(--r-link-color);
+				font-size: 0.48em;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+
+			.reveal .cover h1 {
+				margin: 0.12em 0;
+			}
+
+			.reveal .cover p {
+				font-size: 0.72em;
+			}
+
+			.reveal .pair {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 1.4em;
+				margin-top: 1.2em;
+				text-align: left;
+			}
+
+			.reveal .pair h3 {
+				margin-bottom: 0.25em;
+			}
+
+			.reveal .pair p {
+				font-size: 0.62em;
+			}
+
+			.reveal .closing {
+				font-size: 1.15em;
+			}
+
+			@media (max-width: 600px) {
+				.reveal .pair {
+					gap: 0.7em;
+				}
+
+				.reveal .pair p {
+					font-size: 0.52em;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="cover" data-markdown>
+					<div class="eyebrow">A working conversation</div>
+					# AI × HI
+					Artificial intelligence and human intelligence
+
+					note:
+					Set the frame: this is about how the two forms of intelligence meet, not a contest with a predetermined winner.
+				</section>
+
+				<section>
+					<h2>Where should the work live?</h2>
+
+					<div class="pair">
+						<div>
+							<h3>AI</h3>
+							<p>Generate<br>Summarize<br>Find patterns</p>
+						</div>
+						<div>
+							<h3>HI</h3>
+							<p>Notice context<br>Set direction<br>Take responsibility</p>
+						</div>
+					</div>
+
+					<aside class="notes">
+						These are prompts for discussion, not a hard boundary. Ask the room where the overlap belongs.
+					</aside>
+				</section>
+
+				<section data-markdown>
+					## Capability is not the whole question
+
+					<div class="closing">What should we delegate, what should we augment, and what should remain a human choice?</div>
+
+					note:
+					Use this as the transition into examples or the audience's own experience.
+				</section>
+			</div>
+		</div>
+
+		<script src="../../reveal/6.0.2/dist/reveal.js"></script>
+		<script src="../../reveal/6.0.2/dist/plugin/markdown.js"></script>
+		<script src="../../reveal/6.0.2/dist/plugin/highlight.js"></script>
+		<script src="../../reveal/6.0.2/dist/plugin/notes.js"></script>
+		<script src="../../reveal/6.0.2/dist/plugin/search.js"></script>
+		<script src="../../reveal/6.0.2/dist/plugin/zoom.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				controls: true,
+				progress: true,
+				slideNumber: 'c/t',
+				transition: 'fade',
+				pdfMaxPagesPerSlide: 1,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom ]
+			});
+		</script>
+	</body>
+</html>
