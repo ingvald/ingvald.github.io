@@ -41,7 +41,25 @@
 			}
 
 			.reveal .cover h1 {
-				margin: 0.12em 0;
+				position: absolute;
+				bottom: 0.8em;
+				left: 1em;
+				max-width: 12em;
+				margin: 0;
+				color: rgba(255, 255, 255, 0.78);
+				font-size: 0.78em;
+				font-weight: 400;
+				line-height: 1.12;
+				text-align: left;
+				text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+			}
+
+			.reveal .thought-cover h1 {
+				bottom: 7.5em;
+			}
+
+			.reveal .slides section.cover {
+				height: 100%;
 			}
 
 			.reveal .cover p {
@@ -69,6 +87,30 @@
 			}
 
 			@media (max-width: 600px) {
+				.reveal .slide-background.cover .slide-background-content {
+					background-position: 100% 55% !important;
+				}
+
+				.reveal .slide-background.fork-cover .slide-background-content {
+					background-size: cover !important;
+				}
+
+				.reveal .slide-background.thought-cover .slide-background-content {
+					background-size: contain !important;
+					background-position: center center !important;
+				}
+
+				.reveal .slides section.cover {
+					height: auto;
+				}
+
+				.reveal .cover h1 {
+					position: relative;
+					top: 8em;
+					bottom: auto;
+					left: 0.5em;
+				}
+
 				.reveal .pair {
 					gap: 0.7em;
 				}
@@ -82,12 +124,12 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section class="cover" data-markdown>
-					<div class="eyebrow">A working conversation</div>
-					# Er AI fordummande?
+				<section class="cover thought-cover" data-background-image="images/cambridge-human-thought-stage.jpg" data-background-size="auto 140%" data-background-position="center bottom" data-background-color="#111">
+					<h1>Er AI fordummande?</h1>
+				</section>
 
-					note:
-					Set the frame: this is about how the two forms of intelligence meet, not a contest with a predetermined winner.
+				<section class="cover fork-cover" data-background-image="images/cambridge-fork-stage.jpg" data-background-size="auto 120%" data-background-position="center bottom" data-background-color="#111">
+					<h1>Er AI fordummande? (alt.2)</h1>
 				</section>
 
 				<section>
@@ -116,6 +158,14 @@
 
 					note:
 					Use this as the transition into examples or the audience's own experience.
+				</section>
+
+				<section class="cover" data-background-image="images/cambridge-andrew-stage.jpg" data-background-size="cover" data-background-position="center 48%">
+					<h1>Er AI fordummande?</h1>
+
+					<aside class="notes">
+						Set the frame: this is about how the two forms of intelligence meet, not a contest with a predetermined winner.
+					</aside>
 				</section>
 			</div>
 		</div>
