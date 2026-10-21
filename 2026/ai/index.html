@@ -35,7 +35,7 @@
 
 			.reveal .eyebrow {
 				color: var(--r-link-color);
-				font-size: 0.48em;
+				font-size: 0.6em;
 				font-weight: 700;
 				text-transform: uppercase;
 			}
@@ -58,12 +58,672 @@
 				bottom: 7.5em;
 			}
 
+			.reveal .slides section.gravity-slide {
+				display: block !important;
+				height: 100%;
+				padding: 0;
+			}
+
+			.reveal .slides section.reflection-gallery-slide {
+				position: relative !important;
+				display: block !important;
+				height: 100%;
+				padding: 0;
+				background: none;
+			}
+
+			.reflection-gallery-slide h2 {
+				position: absolute;
+				top: 30px;
+				left: 46px;
+				margin: 0;
+				color: #191025;
+				font-size: 1.2em;
+			}
+
+			.reflection-cluster {
+				position: absolute;
+				margin: 0;
+				border: 0;
+				padding: 0;
+				color: #191025;
+				font: inherit;
+				text-align: left;
+				cursor: zoom-in;
+			}
+
+			.reflection-cluster:focus-visible {
+				outline: 3px solid #9b2748;
+				outline-offset: 4px;
+			}
+
+			.reflection-complexity {
+				top: 180px;
+				left: 46px;
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				height: 220px;
+				background: #ffffffa6;
+			}
+
+			.reflection-complexity img {
+				display: block;
+				width: auto;
+				height: 100%;
+				background: #ffffff4d;
+			}
+
+			.reflection-label {
+				writing-mode: vertical-rl;
+				transform: rotate(180deg);
+				white-space: nowrap;
+				font-size: 18px;
+				line-height: 1.2;
+				background: #ffffffcc;
+				box-shadow: 0 0 0 3px #ffffffcc;
+			}
+
+			.reflection-label-explore {
+				color: #590b18;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+
+			.reflection-estimates {
+				top: 180px;
+				right: 46px;
+				width: 450px;
+				height: 220px;
+				padding: 8px 14px;
+				background: #ffffffa6;
+			}
+
+			.reflection-estimates svg {
+				display: block;
+				width: 100%;
+				height: 175px;
+			}
+
+			.reflection-gallery-slide .fog-curve-axes { fill: none; stroke: #191025; stroke-width: 2; stroke-linecap: round; }
+			.reflection-gallery-slide .fog-curve-line { fill: none; stroke: #205d86; stroke-width: 3.5; stroke-linecap: round; }
+			.reflection-gallery-slide .fog-iron-triangle path { fill: none; stroke: #191025; stroke-width: 1.5; stroke-linejoin: round; }
+			.reflection-gallery-slide .fog-iron-triangle text { fill: #000; font-family: inherit; font-size: 11px; font-weight: 600; }
+			.reflection-gallery-slide .fog-iron-triangle .fog-quality { fill: #590b18; font-size: 9px; }
+
+			.reflection-caption {
+				display: block;
+				color: #000;
+				font-size: 18px;
+				font-weight: 700;
+				text-align: center;
+			}
+
+			.reflection-socio {
+				bottom: 8px;
+				left: 46px;
+				width: 340px;
+				padding: 8px 10px;
+				background: #ffffffa6;
+				text-align: center;
+			}
+
+			.reflection-socio svg {
+				display: block;
+				width: 100%;
+				height: 100px;
+			}
+
+			.reflection-feedback {
+				fill: none;
+				stroke: #205d86;
+				stroke-width: 3;
+				stroke-linecap: round;
+			}
+
+			.reflection-gallery-slide .reflection-feedback {
+				marker-end: url(#reflection-arrow-small);
+			}
+
+			.reflection-gallery-content .reflection-feedback {
+				marker-end: url(#reflection-arrow-large);
+			}
+
+			.reflection-feedback ~ text {
+				font-family: var(--r-main-font);
+				font-size: 28px;
+				font-weight: 600;
+				text-anchor: middle;
+			}
+
+			.reflection-people { fill: #590b18; }
+			.reflection-technology { fill: #191025; }
+
+			.reflection-gallery-slide marker path,
+			.reflection-gallery-viewer marker path {
+				fill: none;
+				stroke: #205d86;
+				stroke-width: 1.5;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+			}
+
+			.reflection-board {
+				right: 46px;
+				bottom: 8px;
+				width: 450px;
+				height: 205px;
+				padding: 10px 14px;
+				overflow: hidden;
+				background: #ffffffa6;
+			}
+
+			.reflection-board-images {
+				position: relative;
+				display: block;
+				height: 140px;
+			}
+
+			.reflection-board-images img {
+				position: absolute;
+				display: block;
+				height: auto;
+				object-fit: contain;
+			}
+
+			.reflection-board-images img:first-child {
+				top: 0;
+				left: 0;
+				width: 60%;
+			}
+
+			.reflection-board-images img:last-child {
+				right: 0;
+				bottom: 4px;
+				z-index: 1;
+				width: 30%;
+				padding: 3px;
+				background: #fff;
+				box-shadow: 0 2px 8px #0004;
+			}
+
+			.reflection-gallery-viewer {
+				box-sizing: border-box;
+				width: 100vw;
+				height: 100vh;
+				max-width: none;
+				max-height: none;
+				margin: 0;
+				padding: 3vh 3vw;
+				border: 0;
+				background: linear-gradient(#19102538, #19102538), url("images/smidig-vei.png") center / cover;
+				color: #191025;
+			}
+
+			.reflection-gallery-viewer[open] {
+				display: grid;
+				place-items: center;
+			}
+
+			.reflection-gallery-viewer::backdrop {
+				background: #0009;
+			}
+
+			.reflection-gallery-content {
+				display: grid;
+				place-items: center;
+				width: fit-content;
+				height: fit-content;
+				max-width: 88vw;
+				max-height: 72vh;
+				padding: 1em;
+				background: #fffffff0;
+				box-shadow: 0 8px 30px #0005;
+			}
+
+			.reflection-gallery-content > img {
+				display: block;
+				width: auto;
+				max-width: 76vw;
+				max-height: 64vh;
+				object-fit: contain;
+			}
+
+			.reflection-gallery-content > svg {
+				display: block;
+				width: min(76vw, 1050px);
+				height: auto;
+				max-height: 58vh;
+			}
+
+			.reflection-gallery-content .reflection-board-images {
+				display: grid;
+				grid-template-columns: 1.6fr 1fr;
+				align-items: center;
+				justify-items: center;
+				gap: 1em;
+				width: min(82vw, 1200px);
+				height: auto;
+			}
+
+			.reflection-gallery-content .reflection-board-images img:first-child {
+				position: static;
+				max-width: 100%;
+				max-height: 62vh;
+			}
+
+			.reflection-gallery-content .reflection-board-images img:last-child {
+				position: static;
+				max-width: 100%;
+				max-height: 62vh;
+			}
+
+			.dnb-skill-slide {
+				position: relative;
+				overflow: hidden;
+				background: #f8f5f6;
+				color: #302b25;
+				font-size: 0.48em;
+				text-align: left;
+			}
+
+			.dnb-skill-slide .dnb-slide-title {
+				position: absolute;
+				top: 3%;
+				right: 0;
+				left: 0;
+				margin: 0;
+				font-family: var(--r-main-font);
+				font-size: 1.91em;
+				line-height: 1.1;
+				text-align: center;
+			}
+
+			.dnb-article-group,
+			.skill-threat-group {
+				position: absolute;
+			}
+
+			.dnb-article-group {
+				top: 12%;
+				left: 4%;
+				width: 39%;
+			}
+
+			.skill-threat-group {
+				top: 21%;
+				right: 4%;
+				width: 41%;
+			}
+
+			.skill-threat-card .skill-kicker {
+				font-size: 0.82em;
+			}
+
+			.dnb-article,
+			.skill-threat-card {
+				box-sizing: border-box;
+				position: relative;
+				width: 100%;
+				padding: 0.8em 0.9em;
+				border: 1px solid #d9d0c8;
+				border-radius: 8px;
+				background: rgba(255, 255, 255, 0.92);
+				box-shadow: 0 8px 28px rgba(48, 43, 37, 0.08);
+			}
+
+			.dnb-article {
+				border-top: 6px solid #b16e70;
+			}
+
+			.dnb-article .dnb-kicker,
+			.skill-threat-card .skill-kicker {
+				margin: 0 0 0.45em;
+				color: #76695f;
+				font-size: 0.72em;
+				font-weight: 700;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+			}
+
+			.dnb-article .dnb-kicker {
+				font-size: 0.82em;
+			}
+
+			.dnb-skill-slide .dnb-article h2 {
+				margin: 0 0 0.35em;
+				font-family: var(--r-main-font);
+				font-size: 1.12em;
+				line-height: 1.15;
+			}
+
+			.dnb-article .dnb-ingress {
+				margin: 0 0 0.45em;
+				color: #62594f;
+				font-size: 1em;
+				line-height: 1.35;
+			}
+
+			.dnb-article .dnb-excerpt {
+				margin: 0;
+				font-size: 0.96em;
+				line-height: 1.35;
+			}
+
+			.dnb-skill-slide mark {
+				padding: 0 0.08em;
+				background: #f8edcf;
+				color: inherit;
+			}
+
+			.skill-threat-card {
+				padding: 0.85em 1em;
+				border-left: 6px solid #6e827d;
+			}
+
+			.skill-threat-card h2 {
+				margin: 0 0 0.18em;
+				font-family: var(--r-main-font);
+				font-size: 1.51em;
+				line-height: 1.1;
+			}
+
+			.skill-threat-card .skill-intro {
+				margin: 0 0 0.5em;
+				color: #62594f;
+				font-size: 0.96em;
+				white-space: nowrap;
+			}
+
+			.skill-threat-card ul {
+				display: grid;
+				gap: 0.38em;
+				margin: 0 0 0.5em;
+				padding: 0;
+				list-style: none;
+				font-size: 0.96em;
+				line-height: 1.3;
+			}
+
+			.skill-threat-card li strong {
+				display: block;
+			}
+
+			.skill-threat-card .skill-detail {
+				display: block;
+				font-size: 0.75em;
+				white-space: nowrap;
+			}
+
+			.skill-threat-card .skill-relation {
+				box-sizing: border-box;
+				width: 100%;
+				margin: 0;
+				padding: 0.18em 0.35em;
+				font-size: 0.88em;
+				font-style: normal;
+				line-height: 1.2;
+				white-space: nowrap;
+			}
+
+			.skill-threat-card .skill-relation-contest {
+				border-left: 2px solid #b4a79b;
+				background: #f4f0ea;
+			}
+
+			.skill-threat-card .skill-relation-learning {
+				margin-top: 0.4em;
+				background: #edf0ed;
+			}
+
+			.skill-threat-card .skill-relation a {
+				display: block;
+				color: inherit;
+				text-decoration: none;
+				white-space: nowrap;
+			}
+
+			.skill-threat-card .skill-relation a:hover,
+			.skill-threat-card .skill-relation a:focus {
+				text-decoration: underline;
+			}
+
+			.dnb-questions {
+				position: absolute;
+				top: 76%;
+				left: 8%;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				align-items: center;
+				width: 84%;
+				text-align: center;
+			}
+
+			.dnb-questions p {
+				margin: 0;
+				padding: 0.25em 0.5em;
+				color: #52473e;
+				font-size: 1.46em;
+				font-weight: 700;
+				line-height: 1.2;
+			}
+
+			.dnb-questions p + p {
+				border-left: 1px solid #b9ada1;
+			}
+
+			.dnb-questions p:last-child {
+				white-space: nowrap;
+			}
+
+			.dnb-slide-sources {
+				position: absolute;
+				margin: 0;
+				color: #76695f;
+				font-size: 0.58em;
+			}
+
+			.dnb-article-group .dnb-slide-sources,
+			.skill-threat-group .dnb-slide-sources {
+				position: static;
+				width: 100%;
+				margin-top: 0.35em;
+				text-align: left;
+			}
+
+			.dnb-slide-sources a {
+				color: inherit;
+			}
+
+			.gravity-slide .gravity-source {
+				position: absolute;
+				bottom: 0.45em;
+				left: 0.45em;
+				z-index: 1;
+				margin: 0;
+				padding: 0.12em 0.3em;
+				background: #0009;
+				color: #fff;
+				font-size: 0.45em;
+			}
+
+			.cognitive-slide .gravity-source {
+				top: 0.45em;
+				right: 0.45em;
+				bottom: auto;
+				left: auto;
+			}
+
+			.gravity-slide h2 {
+				font-size: 1.6em;
+			}
+
+			.reveal .cover.brain-cover h1 {
+				top: 0.45em;
+				right: 0.6em;
+				bottom: auto;
+				left: 0.6em;
+				max-width: none;
+				font-size: 1.2em;
+				white-space: nowrap;
+			}
+
 			.reveal .slides section.cover {
 				height: 100%;
 			}
 
 			.reveal .cover p {
 				font-size: 0.72em;
+			}
+
+			.concept-map {
+				position: relative;
+				width: min(94%, 1120px);
+				height: 500px;
+				margin: 0.1em auto 0;
+				font-size: 0.36em;
+			}
+
+			.concept-map svg {
+				position: absolute;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				overflow: visible;
+			}
+
+			.concept-map line,
+			.concept-map polyline,
+			.concept-map path {
+				stroke: #8d8172;
+				stroke-width: 1.45;
+				opacity: 0.62;
+				fill: none;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+			}
+
+			.concept-map .supporting {
+				stroke-dasharray: 5 5;
+				stroke-width: 1.35;
+				opacity: 0.78;
+			}
+
+			.concept-map .risk-link {
+				fill: none;
+				stroke: #8d8172;
+				stroke-width: 1.8;
+				stroke-dasharray: 3 5;
+				opacity: 0.68;
+			}
+
+			.concept-map span {
+				position: absolute;
+				display: grid;
+				place-items: center;
+				width: 19%;
+				min-height: 0;
+				padding: 0;
+				border: 0;
+				border-radius: 0;
+				background: transparent;
+				color: #302b25;
+				font-size: 0.82em;
+				font-weight: 700;
+				letter-spacing: 0.06em;
+				line-height: 1.2;
+				text-align: center;
+				text-transform: uppercase;
+			}
+
+			.concept-map .map-tacit { left: 2%; top: 6%; }
+			.concept-map .map-sensemaking { left: 41%; top: 6%; }
+			.concept-map .map-intuition { left: 2%; top: 35%; }
+			.concept-map .map-reflection { left: 41%; top: 35%; }
+			.concept-map .map-judgement { left: 80%; top: 35%; }
+			.concept-map:not(.ai-risk-map) .map-judgement { top: 6%; }
+			.concept-map .map-storytelling { left: 18%; top: 70%; }
+			.concept-map .map-creativity { left: 49%; top: 70%; }
+			.concept-map .map-innovation { left: 80%; top: 70%; }
+			.concept-map:not(.ai-risk-map) .map-tacit { left: 10%; }
+			.concept-map:not(.ai-risk-map) .map-intuition { left: 13%; }
+			.concept-map:not(.ai-risk-map) .map-sensemaking { top: 25%; }
+			.concept-map:not(.ai-risk-map) .map-reflection { top: 43%; }
+			.concept-map:not(.ai-risk-map) .map-judgement { left: 72%; top: 22%; }
+			.concept-map:not(.ai-risk-map) .map-storytelling { left: 6%; top: 58%; }
+			.concept-map:not(.ai-risk-map) .map-creativity { left: 40%; }
+			.concept-map:not(.ai-risk-map) .map-innovation { left: 70%; }
+			.concept-map:not(.ai-risk-map) span { width: 16%; }
+			.concept-map:not(.ai-risk-map) .map-tacit { left: 8%; top: 6%; }
+			.concept-map:not(.ai-risk-map) .map-intuition { left: 17%; top: 30%; }
+			.concept-map:not(.ai-risk-map) .map-sensemaking { left: 37%; top: 30%; }
+			.concept-map:not(.ai-risk-map) .map-reflection { left: 37%; top: 50%; }
+			.concept-map:not(.ai-risk-map) .map-judgement { left: 57%; top: 30%; }
+			.concept-map:not(.ai-risk-map) .map-storytelling { left: 6%; top: 63%; }
+			.concept-map:not(.ai-risk-map) .map-creativity { left: 37%; top: 74%; }
+			.concept-map:not(.ai-risk-map) .map-innovation { left: 57%; top: 74%; }
+
+			.ai-risk-panel {
+				position: absolute;
+				top: 1%;
+				right: 0;
+				z-index: 2;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 0.35em;
+				width: 31%;
+				text-align: center;
+			}
+
+			.ai-risk-title {
+				grid-column: 1 / -1;
+				margin: 0;
+				font-size: 0.92em;
+				font-weight: 700;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+			}
+
+			.ai-risk-card {
+				display: grid;
+				place-items: center;
+				min-height: 3.2em;
+				padding: 0.4em;
+				border: 2px solid;
+				border-radius: 3px;
+				background: #f8f4ed;
+				font-size: 0.9em;
+				font-weight: 700;
+				line-height: 1.15;
+			}
+
+			.ai-risk-yellow { color: #8c6b12; }
+			.ai-risk-orange { color: #a95320; }
+			.ai-risk-blue { color: #356d91; }
+			.ai-risk-purple { color: #725294; }
+
+			.ai-risk-card.ai-risk-yellow { border-color: #c9a638; }
+			.ai-risk-card.ai-risk-orange { border-color: #d47a43; }
+			.ai-risk-card.ai-risk-blue { border-color: #5d96bb; }
+			.ai-risk-card.ai-risk-purple { border-color: #9373b4; }
+
+			.ai-risk-panel .ai-risk-blue { grid-column: 1; }
+			.ai-risk-panel .ai-risk-purple { grid-column: 2; }
+
+			.ai-risk-map svg line,
+			.ai-risk-map svg polyline {
+				opacity: 0.18;
+			}
+
+			.ai-risk-map .map-judgement { top: 43%; }
+
+			@media (max-width: 700px) {
+				.ai-risk-panel {
+					width: 35%;
+				}
+				.ai-risk-card {
+					font-size: 0.65em;
+				}
 			}
 
 			.reveal .pair {
@@ -397,21 +1057,264 @@
 					<h1>Er AI fordummande?</h1>
 				</section>
 
-				<section class="hook-slide">
-					<p class="eyebrow">Menneskelege føresetnader</p>
-					<h2>Korleis møter me usikkerheit og kompleksitet?</h2>
-					<p class="hook-intro">Når svaret ikkje er opplagt, kva hjelper oss å finne retning?</p>
-					<div class="hook-pillars">
-						<article>
-							<h3>Dømmekraft</h3>
-							<p>Vurdere situasjonen og velje kva som betyr noko.</p>
-						</article>
-						<article>
-							<h3>Kreativitet</h3>
-							<p>Kople idear og finne vegar vi ikkje såg frå starten.</p>
-						</article>
-					</div>
-					<p class="hook-intro">Kva bør vi framleis øve på når AI kan gjere meir av arbeidet?</p>
+				<section>
+					<section>
+						<h2>Ukritisk AI?</h2>
+					</section>
+					<section class="gravity-slide" data-background-image="images/andrew-gravity-trap.jpg" data-background-size="100% 100%" data-background-position="center center" data-background-color="#111" aria-label="Andrew Hatcher si slide «The AI Gravity Trap»">
+						<p class="gravity-source">Kilde: Andrew</p>
+						<aside class="notes"><em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></aside>
+					</section>
+					<section class="gravity-slide cognitive-slide" data-background-image="images/andrew-cognitive-offloading.jpg" data-background-size="100% 100%" data-background-position="center center" data-background-color="#111" aria-label="Andrew Hatcher si slide «Cognitive Offloading vs. Cognitive Surrender», med markeringar på forklaringane">
+						<p class="gravity-source">Kilde: Andrew</p>
+						<aside class="notes"><em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></aside>
+					</section>
+					<section class="gravity-slide dnb-skill-slide" aria-label="DNB si AI-grunngiving for nedbemanning og Cat Hicks si forsking om AI Skill Threat">
+						<h2 class="dnb-slide-title">Bekymring?</h2>
+						<div class="dnb-article-group">
+							<article class="dnb-article">
+								<p class="dnb-kicker">DNB · 400 årsverk</p>
+								<h2>Reagerer på DNB-kutt:<br>– Ser ut til å gå fort i svingene</h2>
+								<p class="dnb-ingress">DNB skal kutte 400 stillinger før jul, på grunn av <mark>KI</mark>. Nito og Tekna ber selskapet om å ikke forhaste seg.</p>
+								<p class="dnb-excerpt">DNB viser til inntoget av blant annet <mark>KI-koding som en årsak</mark>.</p>
+							</article>
+							<p class="dnb-slide-sources"><a href="https://www.kode24.no/artikkel/reagerer-pa-dnb-kutt-ser-ut-til-a-ga-fort-i-svingene/274485">Kilde: kode24, 6. okt. 2026</a></p>
+						</div>
+						<div class="skill-threat-group">
+							<article class="skill-threat-card">
+								<p class="skill-kicker">Utviklaridentitet · Cat Hicks mfl.</p>
+								<h2>AI Skill Threat</h2>
+								<p class="skill-intro">AI opplevd som trussel mot fagidentiteten.</p>
+								<ul>
+									<li><strong>Konkurranse: alltid best</strong><span class="skill-detail">Må stadig bevise at du er best.</span></li>
+									<li><strong>Naturtalent: «født flink»</strong><span class="skill-detail">Må være født flink.</span></li>
+								</ul>
+								<p class="skill-relation skill-relation-contest"><a href="https://osf.io/preprints/psyarxiv/2gej5_v2">Contest → threat</a></p>
+								<p class="skill-relation skill-relation-learning"><a href="https://osf.io/preprints/psyarxiv/2gej5_v2">Learning → less</a></p>
+							</article>
+							<p class="dnb-slide-sources"><a href="https://osf.io/preprints/psyarxiv/2gej5_v2">Kilde: Hicks, Lee &amp; Foster-Marks, 2025 · observasjonsstudie (n=3 267)</a></p>
+						</div>
+						<div class="dnb-questions" aria-label="Spørsmål">
+							<p>Jobb(u)sikkerhet?</p>
+							<p>Korleis endrar AI utviklarrolla?</p>
+						</div>
+						<aside class="notes"><em>(Kilde: kode24, 6. oktober 2026)</em><br><a href="https://www.kode24.no/artikkel/reagerer-pa-dnb-kutt-ser-ut-til-a-ga-fort-i-svingene/274485">«Reagerer på DNB-kutt: – Ser ut til å gå fort i svingene»</a><br><em>Cat Hicks, Carol Lee og Kristen Foster-Marks, «AI Skill Threat: How the Structure of Developers’ Beliefs about Software Development Ability Impacts Their Psychological Resilience During Rapid Technology Shift», preprint, 2025. Observasjonsstudie; rapporterte samanhengar, ikkje årsaksbevis.</em></aside>
+					</section>
+				</section>
+
+				<section>
+					<section class="cover brain-cover" data-background-image="images/human-brain-dark.png" data-background-size="cover" data-background-position="center center" data-background-color="#000">
+						<h1>Korleis er me skrudd saman?</h1>
+						<aside class="notes">Bakgrunnsbiletet er eit utsnitt frå <a href="https://www.youtube.com/watch?v=dAIQeTeMJ-I&amp;t=12s">«Glass brain flythrough» frå Gazzaleylab / SCCN / Neuroscapelab</a>, lenkja frå krediteringa i kjelde-PDF-en.</aside>
+					</section>
+					<section>
+						<h2>Taus kunnskap</h2>
+						<aside class="notes"><span style="font-size: 50%; font-style: italic;">(e.g. tacit knowing)</span></aside>
+						<p>TEMP NOTAT:</p>
+						<ul>
+							<li>Situert, praktisk kunnskap; ofte meir enn vi kan formulere.</li>
+							<li>Kan gi råstoff for intuisjon og dømmekraft; ikkje berre «magekjensle».</li>
+							<li>AI kan formidle eksplisitt info; ikkje automatisk overføre erfaring eller kontekst.</li>
+						</ul>
+						<p>Ref: eige MKL-notat om taus kunnskap; Consensus: tacit / intuition / judgement (forskingsspor, sjekk originalkjelder).</p>
+					</section>
+					<section>
+						<h2>Intuisjon</h2>
+						<p>TEMP NOTAT:</p>
+						<ul>
+							<li>Rask mønstergjenkjenning frå erfaring; ofte bygd på taus kunnskap.</li>
+							<li>Treffsikkerhet avheng av relevant erfaring og feedback; svakare i nytt eller endra felt.</li>
+							<li>Ekspertise eller bias? Sjekk med refleksjon, dialog og kriterium.</li>
+						</ul>
+						<p>Ref: eige MKL110-notat, s. 4–7; Consensus: tacit / intuition / judgement (konseptspor).</p>
+					</section>
+					<section>
+						<h2>Sensemaking</h2>
+						<p>TEMP NOTAT:</p>
+						<ul>
+							<li>Førebels meining av det uklare – nok til å handle.</li>
+							<li>Sosialt: dele signal, tolkingar og usemje; refleksjon testar tolkinga.</li>
+							<li>Mogleg risiko: glatt AI-forklaring lukkar spørsmålet for tidleg.</li>
+						</ul>
+						<p>Ref: eige memo, s. 4–5; Uhl-Bien et al. (2017); HBR: Complicated or Complex?</p>
+					</section>
+					<section>
+						<h2>Dømmekraft</h2>
+						<p>TEMP NOTAT:</p>
+						<ul>
+							<li>Vekte kunnskap, kontekst, verdiar, risiko og konsekvensar under uvisse.</li>
+							<li>Frå tolking (sensemaking) til valg og ansvar.</li>
+							<li>AI til alternativ og motargument; ikkje fasit.</li>
+						</ul>
+						<p>Ref: Consensus: tacit / intuition / judgement (konseptspor); HBR: Undermining Leaders’ Judgment; Develop Good Judgment; Strengthen Human Reasoning.</p>
+					</section>
+					<section>
+						<h2>Refleksjon</h2>
+						<p>TEMP NOTAT:</p>
+						<ul>
+							<li>Schön: «refleksjon-i-handling» – legg merke til overrasking når resultat ≠ forventning.</li>
+							<li>Gjentekne erfaringar aukar viten-i-handling over tid.</li>
+							<li>Spør: Kva veit eg? Kva antar eg? Kva bør eg prøve?</li>
+						</ul>
+						<p>Ref: Schön, <em>The Reflective Practitioner</em> (1983, s. 54, 61), sitert/drøfta i eige MKL110-notat (s. 4–5); grupperefleksjon (s. 20–23).</p>
+					</section>
+					<section>
+						<h2>Storytelling</h2>
+						<p>TEMP NOTAT:</p>
+						<ul>
+							<li>Praksis for refleksjon og felles sensemaking.</li>
+							<li>Kan gjere taus kunnskap synleg (ikkje kodifisert).</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Kreativitet</h2>
+						<p>TEMP NOTAT:</p>
+						<ul>
+							<li>Nye + nyttige idear; generering, vurdering og vidareutvikling.</li>
+							<li>Taus kunnskap + sensemaking gir råstoff; dømmekraft vurderer ideane.</li>
+							<li>Fart og mengd ≠ kreativ kvalitet.</li>
+						</ul>
+						<p>Ref: Consensus: creativity / new knowledge (forskingsspor); HBR: Unlock More Creative Ideas; Why AI Boosts Creativity; Collapsing Creative Processes.</p>
+					</section>
+					<section>
+						<h2>Innovasjon</h2>
+						<p>TEMP NOTAT:</p>
+						<ul>
+							<li>Idé → utprøving → innføring og bruk i kontekst.</li>
+							<li>Kreativitet gir idear; innovasjon krev samarbeid, ressursar og læring.</li>
+							<li>AI-augmentering kan krevje redesign av arbeid; produktivitet ≠ innovasjon.</li>
+						</ul>
+						<p>Ref: Consensus: AI impact (forskingsspor); HBR: Redesigning Work; Augmentation over Automation; Løvaas et al. (2020, nonprofit).</p>
+					</section>
+					<section>
+						<h2>Korleis heng det saman?</h2>
+						<div class="concept-map" role="img" aria-label="Konseptkart over direkte bidrag og støttesamband mellom omgrepa.">
+							<svg viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
+								<line x1="160" y1="58" x2="205" y2="166"></line>
+								<line x1="290" y1="176" x2="398" y2="176"></line>
+								<line class="supporting" x1="450" y1="190" x2="450" y2="274"></line>
+								<line x1="500" y1="176" x2="600" y2="176"></line>
+								<path d="M290 164 C355 85 505 85 610 164"></path>
+								<path d="M80 50 C25 90 25 300 60 355"></path>
+								<path d="M300 190 C330 250 350 350 405 414"></path>
+								<path class="supporting" d="M600 184 C565 215 535 250 495 278"></path>
+								<path class="supporting" d="M630 190 C635 270 570 365 495 414"></path>
+								<path d="M370 180 C310 195 270 300 220 355"></path>
+								<path class="supporting" d="M320 186 C340 210 350 250 370 280"></path>
+								<line class="supporting" x1="450" y1="302" x2="450" y2="414"></line>
+								<line class="supporting" x1="650" y1="190" x2="650" y2="414"></line>
+								<line x1="495" y1="422" x2="600" y2="422"></line>
+							</svg>
+							<span class="map-tacit">Taus kunnskap</span>
+							<span class="map-intuition">Intuisjon</span>
+							<span class="map-sensemaking">Sensemaking</span>
+							<span class="map-reflection">Refleksjon</span>
+							<span class="map-judgement">Dømmekraft</span>
+							<span class="map-storytelling">Storytelling</span>
+							<span class="map-creativity">Kreativitet</span>
+							<span class="map-innovation">Innovasjon</span>
+						</div>
+						<aside class="notes">Heil linje = direkte bidrag. Stipla linje = støttesamband. Sambanda viser ikkje fast rekkjefølgje.</aside>
+					</section>
+					<section>
+						<h2>Korleis heng det saman?</h2>
+						<div class="concept-map ai-risk-map" role="img" aria-label="Konseptkart med stipla linjer som viser moglege AI-risikoar for menneskelege evner.">
+							<svg viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
+								<line x1="110" y1="90" x2="110" y2="195"></line>
+								<line class="supporting" x1="200" y1="65" x2="410" y2="65"></line>
+								<line x1="200" y1="195" x2="410" y2="90"></line>
+								<polyline class="supporting" points="200,225 240,270 760,270 800,225"></polyline>
+								<line class="supporting" x1="500" y1="90" x2="500" y2="195"></line>
+								<line x1="590" y1="65" x2="800" y2="225"></line>
+								<line class="supporting" x1="590" y1="225" x2="800" y2="225"></line>
+								<line x1="200" y1="90" x2="270" y2="390"></line>
+								<line class="supporting" x1="200" y1="245" x2="490" y2="390"></line>
+								<line class="supporting" x1="800" y1="300" x2="680" y2="390"></line>
+								<line class="supporting" x1="680" y1="420" x2="800" y2="420"></line>
+								<line x1="410" y1="90" x2="370" y2="350"></line>
+								<line class="supporting" x1="200" y1="235" x2="410" y2="235"></line>
+								<line class="supporting" x1="500" y1="255" x2="580" y2="350"></line>
+								<line class="supporting" x1="350" y1="350" x2="430" y2="225"></line>
+								<line class="supporting" x1="590" y1="90" x2="650" y2="350"></line>
+								<line class="supporting" x1="890" y1="320" x2="890" y2="350"></line>
+								<line class="supporting" x1="370" y1="420" x2="490" y2="420"></line>
+								<line class="risk-link" x1="105" y1="90" x2="105" y2="195"></line>
+								<line class="risk-link" x1="500" y1="90" x2="500" y2="195"></line>
+								<line class="risk-link" x1="410" y1="90" x2="370" y2="350"></line>
+								<line class="risk-link" x1="355" y1="350" x2="435" y2="225"></line>
+								<line class="risk-link" x1="500" y1="255" x2="580" y2="350"></line>
+								<line class="risk-link" x1="370" y1="420" x2="490" y2="420"></line>
+								<polyline class="risk-link" points="200,225 240,270 760,270 800,225"></polyline>
+								<line class="risk-link" x1="800" y1="300" x2="680" y2="390"></line>
+							</svg>
+							<span class="map-tacit">Taus kunnskap</span>
+							<span class="map-intuition">Intuisjon</span>
+							<span class="map-sensemaking">Sensemaking</span>
+							<span class="map-reflection">Refleksjon</span>
+							<span class="map-judgement">Dømmekraft</span>
+							<span class="map-storytelling">Storytelling</span>
+							<span class="map-creativity">Kreativitet</span>
+							<span class="map-innovation">Innovasjon</span>
+							<div class="ai-risk-panel" aria-hidden="true">
+								<p class="ai-risk-title">AI-risiko</p>
+								<div class="ai-risk-card ai-risk-yellow">Byggjer mindre?</div>
+								<div class="ai-risk-card ai-risk-orange">Tar ikkje tid?</div>
+								<div class="ai-risk-card ai-risk-blue">Meir avstand / isolasjon?</div>
+								<div class="ai-risk-card ai-risk-purple">Minste motstands veg?</div>
+							</div>
+						</div>
+						<aside class="notes">Heil linje = direkte bidrag. Stipla linje = støttesamband. Fargane høyrer til risikoboksane, ikkje linjene. Sambanda viser ikkje fast rekkjefølgje.</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Til ettertanke</h2>
+					</section>
+					<section class="reflection-gallery-slide" data-background-image="images/smidig-vei.png" data-background-size="cover" data-background-position="center center" aria-label="Ymse bilete over eit bakgrunnsbilete av tåkeveg">
+						<h2>TODO</h2>
+						<button class="reflection-cluster reflection-complexity" type="button" data-gallery-template="gallery-complexity">
+							<span class="reflection-label reflection-label-explore">Må utforskast</span>
+							<img src="images/smidig-komplekst-transparent.png" alt="Tavleskisse om smidig navigasjon i komplekse situasjonar">
+							<span class="reflection-label">Kan analyserast</span>
+						</button>
+						<button class="reflection-cluster reflection-estimates" type="button" data-gallery-template="gallery-estimates" title="Maksimer estimatkurva">
+							<svg viewBox="0 0 500 205" role="img" aria-label="Skjematisk estimatkurve med tidleg topp, lang hale og prosjektbindingar">
+								<path class="fog-curve-axes" d="M 38 18 Q 40 90 38 174 M 28 176 Q 220 172 470 174"/>
+								<path class="fog-curve-line" d="M 52 163 C 80 145 85 65 113 43 C 142 17 165 35 185 64 C 215 103 278 120 333 130 C 392 140 430 143 470 144"/>
+								<g class="fog-iron-triangle">
+									<path d="M 390 24 L 344 82 L 439 80 Z"/>
+									<text class="fog-quality" x="391" y="70" text-anchor="middle">KVALITET?</text>
+									<text x="390" y="16" text-anchor="middle">TID</text>
+									<text x="330" y="99" text-anchor="middle" transform="rotate(20 330 99)">KOSTNAD</text>
+									<text x="451" y="99" text-anchor="middle" transform="rotate(-20 451 99)">(OMFANG)</text>
+								</g>
+							</svg>
+							<span class="reflection-caption">Estimater bommer – skeivt</span>
+						</button>
+						<button class="reflection-cluster reflection-socio" type="button" data-gallery-template="gallery-sociotechnical" title="Maksimer sosioteknisk perspektiv">
+							<strong>Sosioteknisk perspektiv</strong>
+							<svg viewBox="0 0 500 160" role="img" aria-label="Gjensidig påverknad mellom folk og teknologi">
+								<defs><marker id="reflection-arrow-small" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9"/></marker></defs>
+								<path class="reflection-feedback" d="M 230 28 C 335 0 431 42 400 96 M 265 127 C 158 166 72 107 120 55"/>
+								<text class="reflection-people" x="174" y="41" transform="rotate(-5 174 41)">Folk</text>
+								<text class="reflection-technology" x="340" y="132" transform="rotate(3 340 132)">Teknologi</text>
+							</svg>
+							<span class="reflection-caption">Folk og teknologi endrar kvarandre<br>– ofte uventa</span>
+						</button>
+						<button class="reflection-cluster reflection-board" type="button" data-gallery-template="gallery-board" title="Maksimer illustrasjonane om synleg arbeid">
+							<strong class="fog-visualization-title">Gjer arbeid synleg</strong>
+							<span class="fog-visualization-description">Arbeid · flyt · hindringar · endringar · visuell styring</span>
+							<span class="fog-visualization-images reflection-board-images">
+								<img src="images/onepager-board-change-arrow.png" alt="Arbeidsflyttavle med pil som viser endringar frå venstre mot høgre">
+								<img src="images/onepager-roadmap-feature-slices.png" alt="Plan med aspekt i kolonnar og feature slices på tvers">
+							</span>
+						</button>
+						<aside class="notes"><p>Bakgrunnsbiletet er kreditert Adam Franco: <a href="https://www.flickr.com/photos/adamfranco/5948262113" target="_blank" rel="noopener">tåkeveg på Flickr</a>. Dei overlagde bileta og skissene er henta frå GML-sliden i denne presentasjonen.</p></aside>
+					</section>
+					<section class="gravity-slide" data-background-image="images/andrew-rise-of-hi.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#111" aria-label="Andrew Hatcher si slide «The Rise of HI: Where Humans Can Still Rise Above», med fem menneskelege kapabilitetar">
+						<aside class="notes"><em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></aside>
+					</section>
 				</section>
 
 				<section>
@@ -420,7 +1323,7 @@
 					</section>
 
 					<section class="fog-slide" data-background-image="images/smidig-vei.png" data-background-size="cover" data-background-position="center center">
-						<h2>GML – Troverdig i møte med usikkerheit</h2>
+						<h2>GML – Troverdig i møte med usikkerhet</h2>
 						<button class="fog-complexity" type="button" data-zoom-layout="complexity" title="Maksimer kompleksitetsdiagrammet" aria-label="Maksimer kompleksitetsdiagrammet" aria-haspopup="dialog" aria-controls="fog-viewer">
 							<span class="fog-expand-icon" aria-hidden="true">⛶</span>
 							<span class="fog-label fog-label-explore">Må utforskast</span>
@@ -533,6 +1436,39 @@
 			<div class="fog-viewer-content"></div>
 		</dialog>
 
+		<template id="gallery-complexity"><img src="images/smidig-komplekst-transparent.png" alt="Tavleskisse om smidig navigasjon i komplekse situasjonar"></template>
+		<template id="gallery-estimates">
+			<svg viewBox="0 0 500 205" role="img" aria-label="Skjematisk estimatkurve med tidleg topp, lang hale og prosjektbindingar">
+				<path class="fog-curve-axes" d="M 38 18 Q 40 90 38 174 M 28 176 Q 220 172 470 174"/>
+				<path class="fog-curve-line" d="M 52 163 C 80 145 85 65 113 43 C 142 17 165 35 185 64 C 215 103 278 120 333 130 C 392 140 430 143 470 144"/>
+				<g class="fog-iron-triangle">
+					<path d="M 390 24 L 344 82 L 439 80 Z"/>
+					<text class="fog-quality" x="391" y="70" text-anchor="middle">KVALITET?</text>
+					<text x="390" y="16" text-anchor="middle">TID</text>
+					<text x="330" y="99" text-anchor="middle" transform="rotate(20 330 99)">KOSTNAD</text>
+					<text x="451" y="99" text-anchor="middle" transform="rotate(-20 451 99)">(OMFANG)</text>
+				</g>
+			</svg>
+		</template>
+		<template id="gallery-sociotechnical">
+			<svg viewBox="0 0 500 160" role="img" aria-label="Gjensidig påverknad mellom folk og teknologi">
+				<defs><marker id="reflection-arrow-large" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9"/></marker></defs>
+				<path class="reflection-feedback" d="M 230 28 C 335 0 431 42 400 96 M 265 127 C 158 166 72 107 120 55"/>
+				<text class="reflection-people" x="174" y="41" transform="rotate(-5 174 41)">Folk</text>
+				<text class="reflection-technology" x="340" y="132" transform="rotate(3 340 132)">Teknologi</text>
+			</svg>
+		</template>
+		<template id="gallery-board">
+			<span class="reflection-board-images">
+				<img src="images/onepager-board-change-arrow.png" alt="Arbeidsflyttavle med pil som viser endringar frå venstre mot høgre">
+				<img src="images/onepager-roadmap-feature-slices.png" alt="Plan med aspekt i kolonnar og feature slices på tvers">
+			</span>
+		</template>
+
+		<dialog class="reflection-gallery-viewer" id="reflection-gallery-viewer" aria-label="Bilete i full storleik – klikk eller trykk Escape for å gå tilbake">
+			<div class="reflection-gallery-content"></div>
+		</dialog>
+
 		<script src="../../reveal/6.0.2/dist/reveal.js"></script>
 		<script src="../../reveal/6.0.2/dist/plugin/markdown.js"></script>
 		<script src="../../reveal/6.0.2/dist/plugin/highlight.js"></script>
@@ -570,6 +1506,26 @@
 			});
 			fogViewer.addEventListener('keydown', (event) => event.stopPropagation());
 			fogViewer.addEventListener('close', () => fogViewerTrigger?.focus());
+
+			const reflectionGallery = document.getElementById('reflection-gallery-viewer');
+			const reflectionGalleryContent = reflectionGallery.querySelector('.reflection-gallery-content');
+			let reflectionGalleryTrigger;
+
+			document.querySelectorAll('.reflection-gallery-slide [data-gallery-template]').forEach((cluster) => {
+				cluster.addEventListener('click', () => {
+					const template = document.getElementById(cluster.dataset.galleryTemplate);
+					if (!(template instanceof HTMLTemplateElement)) {
+						throw new Error(`Missing image gallery template: ${cluster.dataset.galleryTemplate}`);
+					}
+					reflectionGalleryTrigger = cluster;
+					reflectionGalleryContent.replaceChildren(template.content.cloneNode(true));
+					reflectionGallery.showModal();
+				});
+			});
+
+			reflectionGallery.addEventListener('click', () => reflectionGallery.close());
+			reflectionGallery.addEventListener('keydown', (event) => event.stopPropagation());
+			reflectionGallery.addEventListener('close', () => reflectionGalleryTrigger?.focus());
 		</script>
 	</body>
 </html>
