@@ -318,6 +318,98 @@
 				max-height: 62vh;
 			}
 
+			.reveal .slides section.workday-slide {
+				box-sizing: border-box;
+				display: flex !important;
+				flex-direction: column;
+				justify-content: center;
+				height: 100%;
+				padding: 24px 40px;
+				color: #292333;
+				text-align: left;
+			}
+
+			.workday-slide h2 {
+				margin: 0;
+				font-size: 1.24em;
+				line-height: 1.12;
+			}
+
+			.workday-slide h2 span {
+				color: #8b3151;
+			}
+
+			.workday-slide .workday-lead {
+				margin: 12px 0 22px;
+				font-size: 0.58em;
+				line-height: 1.35;
+			}
+
+			.workday-lenses {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 16px;
+			}
+
+			.workday-card {
+				padding: 18px 16px;
+				border-top: 4px solid #61786d;
+				border-radius: 5px;
+				background: #ffffffb8;
+			}
+
+			.workday-card h3 {
+				margin: 0 0 14px;
+				font-size: 0.62em;
+				line-height: 1.2;
+			}
+
+			.workday-card p {
+				margin: 0;
+				font-size: 0.54em;
+				line-height: 1.4;
+			}
+
+			.workday-card .workday-resource {
+				color: #245c50;
+			}
+
+			.workday-card .workday-friction {
+				margin-top: 12px;
+				color: #84334d;
+			}
+
+			.workday-experiment {
+				margin: 22px 0 14px;
+				padding-left: 16px;
+				border-left: 4px solid #8b3151;
+			}
+
+			.workday-experiment h3 {
+				margin: 0 0 8px;
+				font-size: 0.64em;
+				line-height: 1.3;
+			}
+
+			.workday-experiment p {
+				margin: 0;
+				font-size: 0.55em;
+				line-height: 1.4;
+			}
+
+			.workday-slide .workday-shared {
+				margin: 0;
+				font-size: 0.48em;
+				line-height: 1.4;
+			}
+
+			.workday-slide .workday-sources {
+				margin: 16px 0 0;
+				color: #5c5661;
+				font-size: 0.32em;
+				line-height: 1.4;
+			}
+
 			.dnb-skill-slide {
 				position: relative;
 				overflow: hidden;
@@ -617,6 +709,14 @@
 				opacity: 0.68;
 			}
 
+			.ai-risk-map .risk-node-box {
+				fill: none;
+				stroke: #c9a638;
+				stroke-width: 3;
+				stroke-dasharray: 8 7;
+				opacity: 0.9;
+			}
+
 			.concept-map span {
 				position: absolute;
 				display: grid;
@@ -662,39 +762,50 @@
 			.concept-map:not(.ai-risk-map) .map-storytelling { left: 6%; top: 63%; }
 			.concept-map:not(.ai-risk-map) .map-creativity { left: 37%; top: 74%; }
 			.concept-map:not(.ai-risk-map) .map-innovation { left: 57%; top: 74%; }
+			.ai-risk-map span { width: 16%; }
+			.ai-risk-map .map-tacit { left: 8%; top: 6%; }
+			.ai-risk-map .map-intuition { left: 17%; top: 30%; }
+			.ai-risk-map .map-sensemaking { left: 37%; top: 30%; }
+			.ai-risk-map .map-reflection { left: 37%; top: 50%; }
+			.ai-risk-map .map-judgement { left: 57%; top: 30%; }
+			.ai-risk-map .map-storytelling { left: 6%; top: 63%; }
+			.ai-risk-map .map-creativity { left: 37%; top: 74%; }
+			.ai-risk-map .map-innovation { left: 57%; top: 74%; }
 
 			.ai-risk-panel {
 				position: absolute;
-				top: 1%;
+				top: 0;
 				right: 0;
 				z-index: 2;
 				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 0.35em;
-				width: 31%;
-				text-align: center;
+				grid-template-columns: 1fr;
+				row-gap: 0.28em;
+				width: 23%;
+				text-align: right;
 			}
 
 			.ai-risk-title {
-				grid-column: 1 / -1;
 				margin: 0;
-				font-size: 0.92em;
+				margin-bottom: -0.42em;
+				font-size: 0.82em;
 				font-weight: 700;
 				letter-spacing: 0.08em;
+				font-style: italic;
 				text-transform: uppercase;
+				text-decoration: underline;
+				text-underline-offset: 0.15em;
 			}
 
 			.ai-risk-card {
-				display: grid;
-				place-items: center;
-				min-height: 3.2em;
-				padding: 0.4em;
-				border: 2px solid;
-				border-radius: 3px;
-				background: #f8f4ed;
-				font-size: 0.9em;
+				font-size: 0.78em;
 				font-weight: 700;
-				line-height: 1.15;
+				line-height: 1.2;
+				font-style: italic;
+				text-transform: uppercase;
+			}
+
+			.ai-risk-panel .ai-risk-title + .ai-risk-card {
+				margin-top: -0.7em;
 			}
 
 			.ai-risk-yellow { color: #8c6b12; }
@@ -702,27 +813,9 @@
 			.ai-risk-blue { color: #356d91; }
 			.ai-risk-purple { color: #725294; }
 
-			.ai-risk-card.ai-risk-yellow { border-color: #c9a638; }
-			.ai-risk-card.ai-risk-orange { border-color: #d47a43; }
-			.ai-risk-card.ai-risk-blue { border-color: #5d96bb; }
-			.ai-risk-card.ai-risk-purple { border-color: #9373b4; }
-
-			.ai-risk-panel .ai-risk-blue { grid-column: 1; }
-			.ai-risk-panel .ai-risk-purple { grid-column: 2; }
-
-			.ai-risk-map svg line,
-			.ai-risk-map svg polyline {
-				opacity: 0.18;
-			}
-
-			.ai-risk-map .map-judgement { top: 43%; }
-
 			@media (max-width: 700px) {
 				.ai-risk-panel {
-					width: 35%;
-				}
-				.ai-risk-card {
-					font-size: 0.65em;
+					width: 25%;
 				}
 			}
 
@@ -1218,34 +1311,23 @@
 					</section>
 					<section>
 						<h2>Korleis heng det saman?</h2>
-						<div class="concept-map ai-risk-map" role="img" aria-label="Konseptkart med stipla linjer som viser moglege AI-risikoar for menneskelege evner.">
+						<div class="concept-map ai-risk-map" role="img" aria-label="Konseptkart over direkte bidrag og støttesamband, med moglege AI-risikoar til høgre.">
 							<svg viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
-								<line x1="110" y1="90" x2="110" y2="195"></line>
-								<line class="supporting" x1="200" y1="65" x2="410" y2="65"></line>
-								<line x1="200" y1="195" x2="410" y2="90"></line>
-								<polyline class="supporting" points="200,225 240,270 760,270 800,225"></polyline>
-								<line class="supporting" x1="500" y1="90" x2="500" y2="195"></line>
-								<line x1="590" y1="65" x2="800" y2="225"></line>
-								<line class="supporting" x1="590" y1="225" x2="800" y2="225"></line>
-								<line x1="200" y1="90" x2="270" y2="390"></line>
-								<line class="supporting" x1="200" y1="245" x2="490" y2="390"></line>
-								<line class="supporting" x1="800" y1="300" x2="680" y2="390"></line>
-								<line class="supporting" x1="680" y1="420" x2="800" y2="420"></line>
-								<line x1="410" y1="90" x2="370" y2="350"></line>
-								<line class="supporting" x1="200" y1="235" x2="410" y2="235"></line>
-								<line class="supporting" x1="500" y1="255" x2="580" y2="350"></line>
-								<line class="supporting" x1="350" y1="350" x2="430" y2="225"></line>
-								<line class="supporting" x1="590" y1="90" x2="650" y2="350"></line>
-								<line class="supporting" x1="890" y1="320" x2="890" y2="350"></line>
-								<line class="supporting" x1="370" y1="420" x2="490" y2="420"></line>
-								<line class="risk-link" x1="105" y1="90" x2="105" y2="195"></line>
-								<line class="risk-link" x1="500" y1="90" x2="500" y2="195"></line>
-								<line class="risk-link" x1="410" y1="90" x2="370" y2="350"></line>
-								<line class="risk-link" x1="355" y1="350" x2="435" y2="225"></line>
-								<line class="risk-link" x1="500" y1="255" x2="580" y2="350"></line>
-								<line class="risk-link" x1="370" y1="420" x2="490" y2="420"></line>
-								<polyline class="risk-link" points="200,225 240,270 760,270 800,225"></polyline>
-								<line class="risk-link" x1="800" y1="300" x2="680" y2="390"></line>
+								<rect class="risk-node-box" x="80" y="28" width="170" height="44" rx="5"></rect>
+								<line x1="160" y1="58" x2="205" y2="166"></line>
+								<line x1="290" y1="176" x2="398" y2="176"></line>
+								<line class="supporting" x1="450" y1="190" x2="450" y2="274"></line>
+								<line x1="500" y1="176" x2="600" y2="176"></line>
+								<path d="M290 164 C355 85 505 85 610 164"></path>
+								<path d="M80 50 C25 90 25 300 60 355"></path>
+								<path d="M300 190 C330 250 350 350 405 414"></path>
+								<path class="supporting" d="M600 184 C565 215 535 250 495 278"></path>
+								<path class="supporting" d="M630 190 C635 270 570 365 495 414"></path>
+								<path d="M370 180 C310 195 270 300 220 355"></path>
+								<path class="supporting" d="M320 186 C340 210 350 250 370 280"></path>
+								<line class="supporting" x1="450" y1="302" x2="450" y2="414"></line>
+								<line class="supporting" x1="650" y1="190" x2="650" y2="414"></line>
+								<line x1="495" y1="422" x2="600" y2="422"></line>
 							</svg>
 							<span class="map-tacit">Taus kunnskap</span>
 							<span class="map-intuition">Intuisjon</span>
@@ -1257,13 +1339,13 @@
 							<span class="map-innovation">Innovasjon</span>
 							<div class="ai-risk-panel" aria-hidden="true">
 								<p class="ai-risk-title">AI-risiko</p>
-								<div class="ai-risk-card ai-risk-yellow">Byggjer mindre?</div>
+								<div class="ai-risk-card ai-risk-yellow">Bygger opp mindre?</div>
 								<div class="ai-risk-card ai-risk-orange">Tar ikkje tid?</div>
 								<div class="ai-risk-card ai-risk-blue">Meir avstand / isolasjon?</div>
 								<div class="ai-risk-card ai-risk-purple">Minste motstands veg?</div>
 							</div>
 						</div>
-						<aside class="notes">Heil linje = direkte bidrag. Stipla linje = støttesamband. Fargane høyrer til risikoboksane, ikkje linjene. Sambanda viser ikkje fast rekkjefølgje.</aside>
+						<aside class="notes">Heil linje = direkte bidrag. Stipla linje = støttesamband. Risikouttrykka til høgre er moglege AI-risikoar. Sambanda viser ikkje fast rekkjefølgje.</aside>
 					</section>
 				</section>
 
@@ -1311,6 +1393,58 @@
 							</span>
 						</button>
 						<aside class="notes"><p>Bakgrunnsbiletet er kreditert Adam Franco: <a href="https://www.flickr.com/photos/adamfranco/5948262113" target="_blank" rel="noopener">tåkeveg på Flickr</a>. Dei overlagde bileta og skissene er henta frå GML-sliden i denne presentasjonen.</p></aside>
+					</section>
+					<section class="workday-slide" id="arbeidsdag" data-background-color="#f3f0e9" aria-labelledby="workday-title">
+						<h2 id="workday-title">Meir levert.<br><span>Betre arbeidsdag?</span></h2>
+						<p class="workday-lead">AI kan gi jobbressursar – og nye jobbkrav.</p>
+						<div class="workday-lenses">
+							<article class="workday-card">
+								<h3>Autonomi</h3>
+								<p class="workday-resource">Eg vel retning og arbeidsmåte.</p>
+								<p class="workday-friction">… eller styrer verktøyet dagen?</p>
+							</article>
+							<article class="workday-card">
+								<h3>Flyt og mestring</h3>
+								<p class="workday-resource">Små steg.<br>Rask respons.</p>
+								<p class="workday-friction">… eller venting, avbrot og retting?</p>
+							</article>
+							<article class="workday-card">
+								<h3>Nærhet og mening</h3>
+								<p class="workday-resource">Tett på brukarar, verdi og kollegaer.</p>
+								<p class="workday-friction">… eller aukar avstanden?</p>
+							</article>
+						</div>
+						<div class="workday-experiment">
+							<h3>Prompt eller agent – kva passar oppgåva og deg?</h3>
+							<p>Prøv éi endring. Sjekk kvalitet, flyt og energi – ikkje berre fart.</p>
+						</div>
+						<p class="workday-shared">Ta det med til teamet: handlingsrom, læring og forventningar er eit felles ansvar.</p>
+						<p class="workday-sources">Kilder: Jobbdesign / SDT · <a href="https://doi.org/10.1016/j.ijinfomgt.2025.102887" target="_blank" rel="noopener">Chuang mfl. (2025)</a> · <a href="https://doi.org/10.1038/s41598-025-98385-2" target="_blank" rel="noopener">Wu mfl. (2025)</a> · <a href="https://doi.org/10.1080/10447318.2024.2405782" target="_blank" rel="noopener">Simkute mfl. (2024)</a></p>
+						<aside class="notes">
+							<h3>Førsteutkast: kva slags arbeidsdag byggjer me med AI?</h3>
+							<p>Overgang frå TODO-sliden: Folk og teknologi endrar kvarandre. Me kan ikkje berre spørja kva AI kan gjera, men kva arbeidsmåten gjer med oss. Vidare til Andrew: Dei menneskelege kapabilitetane treng også ein arbeidskvardag der dei får bli brukte og utvikla.</p>
+							<p>Hovudpoenget er ikkje at AI øydelegg arbeidsgleda, eller at det alltid er betre å gjera arbeidet sjølv. AI kan fjerna slitsam rutine, hjelpa oss over ein kneik og opna oppgåver me elles ikkje kunne løyst. Men fart og produksjon er ikkje det same som motivasjon, trivsel eller god kvalitet. Dei tre boksane er spørsmål til refleksjon, ikkje universelle verknader eller eit validert måleinstrument.</p>
+							<h3>Kva dei tre boksane samlar</h3>
+							<ul>
+								<li><strong>Autonomi:</strong> Kan eg påverka mål, metode, tempo og arbeidsdeling med AI? Meir autonomi for ein agent er ikkje automatisk meir opplevd autonomi for meg. Samstundes kan delegering gi både større handlingsrom og tilgang til nye oppgåver. Høve til å velja krev reelle rammer, ikkje berre ei oppmoding om å ta ansvar sjølv.</li>
+								<li><strong>Flyt og mestring:</strong> Får eg passe utfordringar, høve til å læra og små, synlege framsteg? Respons frå sjølve arbeidet – til dømes ein test som viser at noko verkar – er noko anna enn ros frå ein leiar eller eit velformulert AI-svar. AI kan gjera denne sløyfa kortare, men kan også leggja til venting, kontroll og omarbeid. Flyt her er psykologisk fordjuping, ikkje gjennomstrøyming av arbeidsoppgåver.</li>
+								<li><strong>Nærhet og mening:</strong> Ser eg at arbeidet blir brukt og gir verdi? Har eg kontakt med brukarar og kollegaer, og kjenner eg eigarskap til resultatet? AI kan frigjera tid til dette, men frigjord tid gir ikkje slik kontakt av seg sjølv. Boksen samlar oppgåvebetydning, tilbakemelding frå bruk og tilhørighet; dei er nærskylde, ikkje identiske omgrep.</li>
+							</ul>
+							<h3>Prompt versus agent: ei utprøving, ikkje ein fasit</h3>
+							<p>Ein kort prompt kan halda meg tett på ei avgrensa oppgåve med hyppig respons. Mange små rundar kan også fragmentera dagen. Ein agent kan gjera eit større arbeidsstykke medan eg får ei samanhengande arbeidsøkt eller pause, men kan også gi ufrivillig venting, kontekstbytte og ein stor kontrolljobb etterpå. Ingen av delane er uunngåelege. Ventetid kan vera ei god pause; det avgjerande er mellom anna om eg kan planleggja ho og koma tilbake utan mykje friksjon. Det er ikkje dokumentert her at éin modus generelt gir betre flyt.</p>
+							<p>Eit lite forsøk: Vel ein type oppgåve og endra éin ting – til dømes kortare AI-oppdrag, færre parallelle agentar, tydelegare stoppunkt, eller ei medvite blanding av eige arbeid og delegering. Noter kvalitet og samla tidsbruk, inkludert kontroll og retting, og korleis konsentrasjon, læring og energi kjennest. Bruk samanliknbare oppgåver over nokre arbeidsøkter; dette er lokal læring, ikkje eit kausalt eksperiment. Drøft kva teamet må endra: forventningar, verktøyval, arbeidsmengde, læringstid og kontakt med brukarar og kollegaer.</p>
+							<h3>Forsking og avgrensingar</h3>
+							<ul>
+								<li><strong>Jobbdesign og sjølvbestemming:</strong> Skaug, Heggheim og Myrberg (2020), <em>Motivasjon og avstand</em>, særleg kapittel 2.2.2–2.2.7, er brukt som veg inn til jobbkarakteristikkmodellen, SDT og teori om framsteg og tilbakemelding. Dette er teori og forsking frå før dagens generative AI, ikkje dokumentasjon på AI-effektar. Sentrale spor er Hackman og Oldham; Deci og Ryan; Amabile og Kramer (2011) og Amabile og Pratt (2016). Masteroppgåva undersøkte konsulentar distribuert hos kunde, ikkje AI-bruk.</li>
+								<li><strong>Yting er ikkje det same som motivasjon:</strong> Wu, Liu, Ruan, Chen og Xie (2025), <a href="https://doi.org/10.1038/s41598-025-98385-2">Human-generative AI collaboration enhances task performance but undermines human’s intrinsic motivation</a>, Scientific Reports. Lese gjennom forskarane si <a href="https://hbr.org/2025/05/research-gen-ai-makes-people-more-productiveand-less-motivated">HBR-formidling</a>, kryssjekka mot originalsamandraget og resultatdelen for studie 4 i <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12041296/">PubMed Central</a>. Fire studiar med 3 562 deltakarar på avgrensa skrive- og idéoppgåver. Viktig: nedgangen i motivasjon og auken i keisemd gjaldt overgangen til ei etterfølgjande oppgåve utan AI. Det dokumenterer ikkje at alle AI-oppgåver er mindre motiverande, eller langtidseffektar på utbrenning eller flyt hos utviklarar. Difor ingen effektprosent på sliden.</li>
+								<li><strong>Arbeidet rundt AI:</strong> Simkute mfl. (2024), <a href="https://doi.org/10.1080/10447318.2024.2405782">Ironies of Generative AI</a>. Originalsamandraget er kontrollert via OpenAlex. Artikkelen samlar human-factors-forsking og GenAI-brukarstudiar og peikar på skiftet frå produksjon til evaluering, uheldig omlegging av arbeidsflyt og avbrot. Han føreslår mellom anna kontinuerleg tilbakemelding og tydeleg oppgåvefordeling. Dette er ei fagleg syntese, ikkje eitt kontrollert forsøk som måler flyt, bestemte ventetider eller prompt versus agent.</li>
+								<li><strong>Agentar kan også opna handlingsrom:</strong> Yang mfl. (2026), <a href="https://arxiv.org/abs/2606.07489">How AI Agents Reshape Knowledge Work: Autonomy, Efficiency, and Scope</a>, lese saman med omtalen i HBR-fila <em>ai stretch people</em>. Perplexity-loggar viser ulike oppgåver og arbeidsdeling med samtaleassistent og agent. Ikkje randomisert; fleire mål er modellanslag eller klassifikasjonar av loggar. Ikkje ei måling av psykologisk flyt. «Autonomi» viser her primært til systemet si evne til å utføra arbeid, ikkje direkte til mennesket si behovstilfredsstilling.</li>
+								<li><strong>Reflektert bruk og organisatoriske rammer:</strong> HBR, <em>Why AI Boosts Creativity for Some Employees but Not Others</em>, skildrar eit feltforsøk med 250 tilsette, ulike kreative gevinstar og rolla til metakognisjon. Det støttar å reflektera over arbeidsmåten, men er ikkje ein garanti for trivsel. Cat Hicks mfl., <em>The New Developer: AI Skill Threat</em>, finn samanhengar mellom læringskultur/tilhørighet og mindre trussel i ein observasjonsstudie; ikkje dokumentert årsaksverknad. HBR-artiklane om arbeidsdesign og om AI i staden for kollegaer gir også grunn til å ta med teamet, ikkje leggja alt ansvaret på individet.</li>
+								<li><strong>Jobbressursar og jobbkrav som linse:</strong> Ressursar kan støtta mål, utvikling og handlingsrom; krav kan krevja innsats og restitusjon. Krav er ikkje alltid skadelege – ei meiningsfull utfordring kan også gi mestring. Chuang, Chiang og Lin (2025), <a href="https://doi.org/10.1016/j.ijinfomgt.2025.102887">Insights from the Job Demands–Resources Model: AI’s dual impact on employees’ work and life well-being</a>. Originalsamandraget er kontrollert via OpenAlex; fullteksten er ikkje lesen. Ein tre-bølgjers survey med 600 AI-brukande tilsette i ulike bransjar finn både ressurs- og belastningssamanhengar: mellom anna AI-meistringstru, engasjement og jobbtilfredshet, og AI-teknostress, utmatting og lågare jobbtilfredshet. Teknostress kan i modellen også gå saman med auka produktivitet. Dette er ikkje eit randomisert forsøk eller bevis på at AI har same effekt på alle. Sliden brukar difor ramma til spørsmål, ikkje til tal eller bastante årsakspåstandar.</li>
+							</ul>
+							<p>Arbeidsgrunnlag: tematisk screening av alle 74 PDF-ane i refs, med nærare lesing av dei relevante teori- og AI-avsnitta. Consensus-eksportane og det genererte visualiseringsnotatet er brukte til å finna spor, ikkje som sjølvstendige primærkilder. Gamle lean-/Kanban-referansar gir idear til små forsøk og korte tilbakemeldingssløyfer, ikkje direkte dokumentasjon på psykologisk flyt med AI.</p>
+							<p>Til neste utkast: Skal tyngda liggja på den enkelte sin arbeidsdag eller på teamet sitt arbeidsdesign? Skal prompt–agent-eksempelet få ei konkret, visuell sløyfe? Skal læring/kompetanse få ein eigen boks, eller skal desse tre spørsmåla halda sliden lett? Tittelen er medvite eit spørsmål, ikkje ein dom over AI.</p>
+						</aside>
 					</section>
 					<section class="gravity-slide" data-background-image="images/andrew-rise-of-hi.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#111" aria-label="Andrew Hatcher si slide «The Rise of HI: Where Humans Can Still Rise Above», med fem menneskelege kapabilitetar">
 						<aside class="notes"><em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></aside>
