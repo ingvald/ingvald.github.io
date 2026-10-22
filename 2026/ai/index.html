@@ -371,10 +371,27 @@
 				color: #8b3151;
 			}
 
+			.workday-slide .workday-question {
+				margin: 12px 0 0;
+				font-size: 0.58em;
+				font-weight: 700;
+				line-height: 1.35;
+			}
+
 			.workday-slide .workday-lead {
-				margin: 12px 0 22px;
+				margin: 4px 0 22px;
 				font-size: 0.58em;
 				line-height: 1.35;
+			}
+
+			.workday-slide .workday-positive {
+				color: #087f23;
+				font-weight: 700;
+			}
+
+			.workday-slide .workday-negative {
+				color: #c00000;
+				font-weight: 700;
 			}
 
 			.workday-lenses {
@@ -736,7 +753,7 @@
 				bottom: auto;
 				left: 0.6em;
 				max-width: none;
-				font-size: 1.2em;
+				font-size: 1.3em;
 				white-space: nowrap;
 			}
 
@@ -763,7 +780,11 @@
 			}
 
 			.reveal .slides section.skill-slide > p {
-				margin-top: 0.45em;
+				margin-top: 0.75em;
+				margin-left: 2.34375em;
+				margin-bottom: 0.4em;
+				padding-top: 0.4em;
+				border-top: 1px solid rgba(45, 43, 40, 0.35);
 				font-size: 0.4em;
 				line-height: 1.25;
 				text-align: left;
@@ -1318,6 +1339,36 @@
 						<h1>Korleis er me skrudd saman?</h1>
 						<aside class="notes">Bakgrunnsbiletet er eit utsnitt frå <a href="https://www.youtube.com/watch?v=dAIQeTeMJ-I&amp;t=12s">«Glass brain flythrough» frå Gazzaleylab / SCCN / Neuroscapelab</a>, lenkja frå krediteringa i kjelde-PDF-en.</aside>
 					</section>
+					<section class="concept-map-slide">
+						<h2>Korleis heng det saman?</h2>
+						<div class="concept-map" role="img" aria-label="Konseptkart over direkte bidrag og støttesamband mellom omgrepa.">
+							<svg viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
+								<line x1="160" y1="58" x2="205" y2="166"></line>
+								<line x1="290" y1="176" x2="398" y2="176"></line>
+								<line class="supporting" x1="450" y1="190" x2="450" y2="274"></line>
+								<line x1="500" y1="176" x2="600" y2="176"></line>
+								<path d="M290 164 C335 35 545 35 610 164"></path>
+								<path d="M80 50 C25 90 25 300 60 355"></path>
+								<path d="M300 190 C330 250 350 350 405 414"></path>
+								<path class="supporting" d="M600 184 C565 215 535 250 495 278"></path>
+								<path class="supporting" d="M630 190 C635 270 570 365 495 414"></path>
+								<path d="M370 180 C310 195 270 300 220 355"></path>
+								<path class="supporting" d="M320 186 C340 210 350 250 370 280"></path>
+								<line class="supporting" x1="450" y1="302" x2="450" y2="414"></line>
+								<line class="supporting" x1="650" y1="190" x2="650" y2="414"></line>
+								<line x1="495" y1="422" x2="600" y2="422"></line>
+							</svg>
+							<span class="map-tacit">Taus kunnskap</span>
+							<span class="map-intuition">Intuisjon</span>
+							<span class="map-sensemaking">Sensemaking</span>
+							<span class="map-reflection">Refleksjon</span>
+							<span class="map-judgement">Dømmekraft</span>
+							<span class="map-storytelling">Storytelling</span>
+							<span class="map-creativity">Kreativitet</span>
+							<span class="map-innovation">Innovasjon</span>
+						</div>
+						<aside class="notes">Heil linje = direkte bidrag. Stipla linje = støttesamband. Sambanda viser ikkje fast rekkjefølgje.</aside>
+					</section>
 					<section class="skill-slide">
 						<h2>Taus kunnskap</h2>
 						<aside class="notes"><span style="font-size: 50%; font-style: italic;">(e.g. tacit knowing)</span></aside>
@@ -1326,13 +1377,12 @@
 								<ul><li>Ofte meir enn vi kan formulere.</li></ul>
 							</li>
 							<li>Kan gi råstoff for intuisjon og dømmekraft
-								<ul><li>Ikkje berre «magekjensle».</li></ul>
 							</li>
 							<li>AI kan formidle eksplisitt info
 								<ul><li>Overfører ikkje automatisk erfaring eller kontekst.</li></ul>
 							</li>
 						</ul>
-						<p>Kilder: Polanyi (1966), <em>The Tacit Dimension</em>.</p>
+						<p>Kilder: Polanyi (1966); Benbya et al. (2024); Onoda &amp; Ito (2026).</p>
 					</section>
 					<section class="skill-slide">
 						<h2>Intuisjon</h2>
@@ -1340,8 +1390,12 @@
 							<li>Rask mønstergjenkjenning frå erfaring
 								<ul><li>Ofte bygd på taus kunnskap.</li></ul>
 							</li>
-							<li>Treffsikkerheit krev relevant erfaring og tilbakemelding
-								<ul><li>Svakare i nytt eller endra felt.</li></ul>
+							<li>Treffsikkerhet krever relevans
+								<ul>
+									<li>Erfaring.</li>
+									<li>Tilbakemelding.</li>
+									<li>Svakare i nytt eller endra felt.</li>
+								</ul>
 							</li>
 							<li>Ekspertise eller bias?
 								<ul><li>Sjekk med refleksjon, dialog og kriterium.</li></ul>
@@ -1352,18 +1406,28 @@
 					<section class="skill-slide">
 						<h2>Sensemaking</h2>
 						<ul>
-							<li>Førebels meining av det uklare – nok til å handle.</li>
-							<li>Sosialt: dele signal, tolkingar og usemje
+							<li>Fange opp svake signal og det som skurrar.</li>
+							<li>Førebels meining av det uklare
+								<ul><li>Nok til å handle.</li></ul>
+							</li>
+							<li>Sosialt: dele signal, tolkingar og uenighet
 								<ul><li>Refleksjon testar tolkinga.</li></ul>
 							</li>
-							<li>Mogleg risiko: glatt AI-forklaring lukkar spørsmålet for tidleg.</li>
+							<li>AI-risiko: for glatt AI-forklaring
+								<ul><li>Lukkar spørsmålet for tidleg.</li></ul>
+							</li>
 						</ul>
 						<p>Kilder: Brown, Colville &amp; Pye (2015); Maitlis &amp; Sonenshein (2010); Uhl-Bien &amp; Arena (2017).</p>
 					</section>
 					<section class="skill-slide">
 						<h2>Dømmekraft</h2>
 						<ul>
-							<li>Vekte kunnskap, kontekst, verdiar, risiko og konsekvensar under uvisse.</li>
+							<li>Vekting under usikkerhet
+								<ul>
+									<li>Kunnskap, kontekst.</li>
+									<li>Verdiar, risiko, konsekvensar.</li>
+								</ul>
+							</li>
 							<li>Frå tolking (sensemaking) til valg og ansvar.</li>
 							<li>Bruk AI til alternativ og motargument
 								<ul><li>Ikkje som fasit.</li></ul>
@@ -1374,11 +1438,16 @@
 					<section class="skill-slide">
 						<h2>Refleksjon</h2>
 						<ul>
-							<li>Schön: refleksjon-i-handling
-								<ul><li>Legg merke til overrasking når resultat ≠ forventning.</li></ul>
+							<li>Refleksjon i handling
+								<ul><li>Legg merke til når resultat ≠ forventning.</li></ul>
 							</li>
-							<li>Gjentekne erfaringar aukar viten-i-handling over tid.</li>
-							<li>Spør: Kva veit eg? Kva antar eg? Kva bør eg prøve?</li>
+							<li>Gjentatte erfaringer styrker viten-i-handling over tid.</li>
+							<li>Reflekter undervegs og etterpå
+								<ul>
+									<li>Undervegs: Kva skjer? Kva kan eg prøve?</li>
+									<li>Etterpå: Kva veit eg no? Kva vil eg gjere annleis?</li>
+								</ul>
+							</li>
 						</ul>
 						<p>Kilder: Schön (1983), <em>The Reflective Practitioner</em>, s. 54, 61.</p>
 					</section>
@@ -1401,16 +1470,16 @@
 							</li>
 							<li>Fart og mengd ≠ kreativ kvalitet.</li>
 						</ul>
-						<p>Kilder: Pinkow (2022); De Freitas, Nave &amp; Puntoni (2025).</p>
+						<p>Kilder: Amabile &amp; Pratt (2016); Pinkow (2022); De Freitas, Nave &amp; Puntoni (2025).</p>
 					</section>
 					<section class="skill-slide">
 						<h2>Innovasjon</h2>
 						<ul>
 							<li>Idé → utprøving → innføring og bruk i kontekst.</li>
 							<li>Kreativitet gir idear
-								<ul><li>Innovasjon krev samarbeid, ressursar og læring.</li></ul>
+								<ul><li>Innovasjon krever samarbeid, ressursar og læring.</li></ul>
 							</li>
-							<li>AI-augmentering kan krevje redesign av arbeid
+							<li>AI-augmentering kan kreve redesign av arbeid
 								<ul><li>Produktivitet ≠ innovasjon.</li></ul>
 							</li>
 						</ul>
@@ -1445,6 +1514,57 @@
 							<span class="map-innovation">Innovasjon</span>
 						</div>
 						<aside class="notes">Heil linje = direkte bidrag. Stipla linje = støttesamband. Sambanda viser ikkje fast rekkjefølgje.</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Til ettertanke</h2>
+					</section>
+					<section class="reflection-gallery-slide" data-background-image="images/smidig-vei.png" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Ymse bilete over eit bakgrunnsbilete av tåkeveg">
+						<h2>Virkeligheten kjem ikkje med fasit</h2>
+						<p class="reflection-subtitle">Usikkerhet og kompleksitet krever<br>sensemaking, intuisjon, dømmekraft og kreativitet.</p>
+						<button class="reflection-cluster reflection-complexity" type="button" data-gallery-template="gallery-complexity">
+							<span class="reflection-label reflection-label-explore">Må utforskast</span>
+							<img src="images/smidig-komplekst-transparent.png" alt="Tavleskisse om smidig navigasjon i komplekse situasjonar">
+							<span class="reflection-label">Kan analyserast</span>
+						</button>
+						<button class="reflection-cluster reflection-estimates" type="button" data-gallery-template="gallery-estimates" title="Maksimer estimatkurva">
+							<svg viewBox="0 0 500 205" role="img" aria-label="Skjematisk estimatkurve med tidleg topp, lang hale og prosjektbindingar">
+								<path class="fog-curve-axes" d="M 38 18 Q 40 90 38 174 M 28 176 Q 220 172 470 174"/>
+								<path class="fog-curve-line" d="M 52 163 C 80 145 85 65 113 43 C 142 17 165 35 185 64 C 215 103 278 120 333 130 C 392 140 430 143 470 144"/>
+								<g class="fog-iron-triangle">
+									<path d="M 390 24 L 344 82 L 439 80 Z"/>
+									<text class="fog-quality" x="391" y="70" text-anchor="middle">KVALITET?</text>
+									<text x="390" y="16" text-anchor="middle">TID</text>
+									<text x="330" y="99" text-anchor="middle" transform="rotate(20 330 99)">KOSTNAD</text>
+									<text x="451" y="99" text-anchor="middle" transform="rotate(-20 451 99)">(OMFANG)</text>
+								</g>
+							</svg>
+							<span class="reflection-caption">Estimater bommer – skeivt</span>
+						</button>
+						<button class="reflection-cluster reflection-socio" type="button" data-gallery-template="gallery-sociotechnical" title="Maksimer sosioteknisk perspektiv">
+							<strong>Sosioteknisk perspektiv</strong>
+							<svg viewBox="0 0 500 160" role="img" aria-label="Gjensidig påverknad mellom folk og teknologi">
+								<defs><marker id="reflection-arrow-small" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9"/></marker></defs>
+								<path class="reflection-feedback" d="M 230 28 C 335 0 431 42 400 96 M 265 127 C 158 166 72 107 120 55"/>
+								<text class="reflection-people" x="174" y="41" transform="rotate(-5 174 41)">Folk</text>
+								<text class="reflection-technology" x="340" y="132" transform="rotate(3 340 132)">Teknologi</text>
+							</svg>
+							<span class="reflection-caption">Folk og teknologi endrar kvarandre<br>– ofte uventa</span>
+						</button>
+						<button class="reflection-cluster reflection-board" type="button" data-gallery-template="gallery-board" title="Maksimer illustrasjonane om synleg arbeid">
+							<strong class="fog-visualization-title">Gjer arbeid synleg</strong>
+							<span class="fog-visualization-description">Arbeid · flyt · hindringar · endringar · visuell styring</span>
+							<span class="fog-visualization-images reflection-board-images">
+								<img src="images/onepager-board-change-arrow.png" alt="Arbeidsflyttavle med pil som viser endringar frå venstre mot høgre">
+								<img src="images/onepager-roadmap-feature-slices.png" alt="Plan med aspekt i kolonnar og feature slices på tvers">
+							</span>
+						</button>
+						<p class="reflection-question">Kva om me svekkar nettopp det me treng mest?</p>
+						<aside class="notes">
+							<p>Bilde: <a href="https://www.flickr.com/photos/adamfranco/5948262113" target="_blank" rel="noopener">Adam Franco</a></p>
+						</aside>
 					</section>
 					<section class="concept-map-slide">
 						<h2>Korleis heng det saman?</h2>
@@ -1494,64 +1614,14 @@
 						</div>
 						<aside class="notes">Heil linje = direkte bidrag. Stipla linje = støttesamband. Risikouttrykka til høgre er moglege AI-risikoar. Sambanda viser ikkje fast rekkjefølgje.</aside>
 					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Til ettertanke</h2>
-					</section>
-					<section class="reflection-gallery-slide" data-background-image="images/smidig-vei.png" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Ymse bilete over eit bakgrunnsbilete av tåkeveg">
-						<h2>Virkeligheten kjem ikkje med fasit</h2>
-						<p class="reflection-subtitle">Usikkerhet og kompleksitet krev<br>sensemaking, intuisjon, dømmekraft og kreativitet.</p>
-						<button class="reflection-cluster reflection-complexity" type="button" data-gallery-template="gallery-complexity">
-							<span class="reflection-label reflection-label-explore">Må utforskast</span>
-							<img src="images/smidig-komplekst-transparent.png" alt="Tavleskisse om smidig navigasjon i komplekse situasjonar">
-							<span class="reflection-label">Kan analyserast</span>
-						</button>
-						<button class="reflection-cluster reflection-estimates" type="button" data-gallery-template="gallery-estimates" title="Maksimer estimatkurva">
-							<svg viewBox="0 0 500 205" role="img" aria-label="Skjematisk estimatkurve med tidleg topp, lang hale og prosjektbindingar">
-								<path class="fog-curve-axes" d="M 38 18 Q 40 90 38 174 M 28 176 Q 220 172 470 174"/>
-								<path class="fog-curve-line" d="M 52 163 C 80 145 85 65 113 43 C 142 17 165 35 185 64 C 215 103 278 120 333 130 C 392 140 430 143 470 144"/>
-								<g class="fog-iron-triangle">
-									<path d="M 390 24 L 344 82 L 439 80 Z"/>
-									<text class="fog-quality" x="391" y="70" text-anchor="middle">KVALITET?</text>
-									<text x="390" y="16" text-anchor="middle">TID</text>
-									<text x="330" y="99" text-anchor="middle" transform="rotate(20 330 99)">KOSTNAD</text>
-									<text x="451" y="99" text-anchor="middle" transform="rotate(-20 451 99)">(OMFANG)</text>
-								</g>
-							</svg>
-							<span class="reflection-caption">Estimater bommer – skeivt</span>
-						</button>
-						<button class="reflection-cluster reflection-socio" type="button" data-gallery-template="gallery-sociotechnical" title="Maksimer sosioteknisk perspektiv">
-							<strong>Sosioteknisk perspektiv</strong>
-							<svg viewBox="0 0 500 160" role="img" aria-label="Gjensidig påverknad mellom folk og teknologi">
-								<defs><marker id="reflection-arrow-small" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9"/></marker></defs>
-								<path class="reflection-feedback" d="M 230 28 C 335 0 431 42 400 96 M 265 127 C 158 166 72 107 120 55"/>
-								<text class="reflection-people" x="174" y="41" transform="rotate(-5 174 41)">Folk</text>
-								<text class="reflection-technology" x="340" y="132" transform="rotate(3 340 132)">Teknologi</text>
-							</svg>
-							<span class="reflection-caption">Folk og teknologi endrar kvarandre<br>– ofte uventa</span>
-						</button>
-						<button class="reflection-cluster reflection-board" type="button" data-gallery-template="gallery-board" title="Maksimer illustrasjonane om synleg arbeid">
-							<strong class="fog-visualization-title">Gjer arbeid synleg</strong>
-							<span class="fog-visualization-description">Arbeid · flyt · hindringar · endringar · visuell styring</span>
-							<span class="fog-visualization-images reflection-board-images">
-								<img src="images/onepager-board-change-arrow.png" alt="Arbeidsflyttavle med pil som viser endringar frå venstre mot høgre">
-								<img src="images/onepager-roadmap-feature-slices.png" alt="Plan med aspekt i kolonnar og feature slices på tvers">
-							</span>
-						</button>
-						<p class="reflection-question">Kva om me svekkar nettopp det me treng mest?</p>
-						<aside class="notes">
-							<p>Bilde: <a href="https://www.flickr.com/photos/adamfranco/5948262113" target="_blank" rel="noopener">Adam Franco</a></p>
-						</aside>
-					</section>
 					<section class="workday-slide" id="arbeidsdag" data-background-color="#f3f0e9" aria-labelledby="workday-title">
-						<h2 id="workday-title">Meir levert.<br><span>Betre arbeidsdag?</span></h2>
-						<p class="workday-lead">AI kan gi jobbressursar – og nye jobbkrav.<br>Meir støtte og handlingsrom – eller meir stress og mindre handlingsrom?</p>
+						<h2 id="workday-title">Meir levert.<br><span>Betre?</span></h2>
+						<p class="workday-question">Betre arbeidsdag? Betre kvalitet over tid?</p>
+						<p class="workday-lead">AI kan gi <strong class="workday-positive">jobbressursar</strong> – og nye <strong class="workday-negative">jobbkrav</strong>.<br>Meir <strong class="workday-positive">støtte og handlingsrom</strong> – eller meir <strong class="workday-negative">stress og mindre handlingsrom</strong>?</p>
 						<div class="workday-lenses">
 							<article class="workday-card">
 								<h3>Autonomi</h3>
-								<p class="workday-resource">Eg vel retning og arbeidsmåte.</p>
+								<p class="workday-resource">Kan eg velga retning og arbeidsmåte?</p>
 								<p class="workday-friction">… eller styrer verktøyet dagen?</p>
 							</article>
 							<article class="workday-card">
@@ -1572,7 +1642,7 @@
 							<p>Hovudpoenget er ikkje at AI øydelegg arbeidsgleda, eller at det alltid er betre å gjera arbeidet sjølv. AI kan fjerna slitsam rutine, hjelpa oss over ein kneik og opna oppgåver me elles ikkje kunne løyst. Men fart og produksjon er ikkje det same som motivasjon, trivsel eller god kvalitet. Dei tre boksane er spørsmål til refleksjon, ikkje universelle verknader eller eit validert måleinstrument.</p>
 							<h3>Kva dei tre boksane samlar</h3>
 							<ul>
-								<li><strong>Autonomi:</strong> Kan eg påverka mål, metode, tempo og arbeidsdeling med AI? Meir autonomi for ein agent er ikkje automatisk meir opplevd autonomi for meg. Samstundes kan delegering gi både større handlingsrom og tilgang til nye oppgåver. Høve til å velja krev reelle rammer, ikkje berre ei oppmoding om å ta ansvar sjølv.</li>
+								<li><strong>Autonomi:</strong> Kan eg påverka mål, metode, tempo og arbeidsdeling med AI? Meir autonomi for ein agent er ikkje automatisk meir opplevd autonomi for meg. Samstundes kan delegering gi både større handlingsrom og tilgang til nye oppgåver. Høve til å velja krever reelle rammer, ikkje berre ei oppmoding om å ta ansvar sjølv.</li>
 								<li><strong>Flyt og mestring:</strong> Får eg passe utfordringar, høve til å læra og små, synlege framsteg? Respons frå sjølve arbeidet – til dømes ein test som viser at noko verkar – er noko anna enn ros frå ein leiar eller eit velformulert AI-svar. AI kan gjera denne sløyfa kortare, men kan også leggja til venting, kontroll og omarbeid. Flyt her er psykologisk fordjuping, ikkje gjennomstrøyming av arbeidsoppgåver.</li>
 								<li><strong>Nærhet og mening:</strong> Ser eg at arbeidet blir brukt og gir verdi? Har eg kontakt med brukarar og kollegaer, og kjenner eg eigarskap til resultatet? AI kan frigjera tid til dette, men frigjord tid gir ikkje slik kontakt av seg sjølv. Boksen samlar oppgåvebetydning, tilbakemelding frå bruk og tilhørighet; dei er nærskylde, ikkje identiske omgrep.</li>
 							</ul>
@@ -1585,7 +1655,7 @@
 								<li><strong>Arbeidet rundt AI:</strong> Simkute mfl. (2024), <a href="https://doi.org/10.1080/10447318.2024.2405782">Ironies of Generative AI</a>. Originalsamandraget er kontrollert via OpenAlex. Artikkelen samlar human-factors-forsking og GenAI-brukarstudiar og peikar på skiftet frå produksjon til evaluering, uheldig omlegging av arbeidsflyt og avbrot. Han føreslår mellom anna kontinuerleg tilbakemelding og tydeleg oppgåvefordeling. Dette er ei fagleg syntese, ikkje eitt kontrollert forsøk som måler flyt, bestemte ventetider eller prompt versus agent.</li>
 								<li><strong>Agentar kan også opna handlingsrom:</strong> Yang mfl. (2026), <a href="https://arxiv.org/abs/2606.07489">How AI Agents Reshape Knowledge Work: Autonomy, Efficiency, and Scope</a>, lese saman med omtalen i HBR-fila <em>ai stretch people</em>. Perplexity-loggar viser ulike oppgåver og arbeidsdeling med samtaleassistent og agent. Ikkje randomisert; fleire mål er modellanslag eller klassifikasjonar av loggar. Ikkje ei måling av psykologisk flyt. «Autonomi» viser her primært til systemet si evne til å utføra arbeid, ikkje direkte til mennesket si behovstilfredsstilling.</li>
 								<li><strong>Reflektert bruk og organisatoriske rammer:</strong> HBR, <em>Why AI Boosts Creativity for Some Employees but Not Others</em>, skildrar eit feltforsøk med 250 tilsette, ulike kreative gevinstar og rolla til metakognisjon. Det støttar å reflektera over arbeidsmåten, men er ikkje ein garanti for trivsel. Cat Hicks mfl., <em>The New Developer: AI Skill Threat</em>, finn samanhengar mellom læringskultur/tilhørighet og mindre trussel i ein observasjonsstudie; ikkje dokumentert årsaksverknad. HBR-artiklane om arbeidsdesign og om AI i staden for kollegaer gir også grunn til å ta med teamet, ikkje leggja alt ansvaret på individet.</li>
-								<li><strong>Jobbressursar og jobbkrav som linse:</strong> Ressursar kan støtta mål, utvikling og handlingsrom; krav kan krevja innsats og restitusjon. Krav er ikkje alltid skadelege – ei meiningsfull utfordring kan også gi mestring. Chuang, Chiang og Lin (2025), <a href="https://doi.org/10.1016/j.ijinfomgt.2025.102887">Insights from the Job Demands–Resources Model: AI’s dual impact on employees’ work and life well-being</a>. Originalsamandraget er kontrollert via OpenAlex; fullteksten er ikkje lesen. Ein tre-bølgjers survey med 600 AI-brukande tilsette i ulike bransjar finn både ressurs- og belastningssamanhengar: mellom anna AI-meistringstru, engasjement og jobbtilfredshet, og AI-teknostress, utmatting og lågare jobbtilfredshet. Teknostress kan i modellen også gå saman med auka produktivitet. Dette er ikkje eit randomisert forsøk eller bevis på at AI har same effekt på alle. Sliden brukar difor ramma til spørsmål, ikkje til tal eller bastante årsakspåstandar.</li>
+								<li><strong>Jobbressursar og jobbkrav som linse:</strong> Ressursar kan støtta mål, utvikling og handlingsrom; krav kan kreve innsats og restitusjon. Krav er ikkje alltid skadelege – ei meiningsfull utfordring kan også gi mestring. Chuang, Chiang og Lin (2025), <a href="https://doi.org/10.1016/j.ijinfomgt.2025.102887">Insights from the Job Demands–Resources Model: AI’s dual impact on employees’ work and life well-being</a>. Originalsamandraget er kontrollert via OpenAlex; fullteksten er ikkje lesen. Ein tre-bølgjers survey med 600 AI-brukande tilsette i ulike bransjar finn både ressurs- og belastningssamanhengar: mellom anna AI-meistringstru, engasjement og jobbtilfredshet, og AI-teknostress, utmatting og lågare jobbtilfredshet. Teknostress kan i modellen også gå saman med auka produktivitet. Dette er ikkje eit randomisert forsøk eller bevis på at AI har same effekt på alle. Sliden brukar difor ramma til spørsmål, ikkje til tal eller bastante årsakspåstandar.</li>
 							</ul>
 							<p>Arbeidsgrunnlag: tematisk screening av alle 74 PDF-ane i refs, med nærare lesing av dei relevante teori- og AI-avsnitta. Consensus-syntesane er lagde til grunn for forskingsoversikta, særleg <em>re_previous_question_about_motivation_and_distance</em>, del 3.2, og <em>re_esp_chapter_2_in_attached_paper_what_is_variou</em>. Gamle lean-/Kanban-referansar gir idear til små forsøk og korte tilbakemeldingssløyfer, ikkje direkte dokumentasjon på psykologisk flyt med AI.</p>
 							<p>Tittelen er medvite eit spørsmål, ikkje ein dom over AI. Dei konkrete døma er samla på neste slide, slik at denne sliden kan stå som ein tankevekkar utan ei eiga «prøv»-oppmoding.</p>
@@ -1603,10 +1673,10 @@
 								<li><strong>Team-prosess med AI?</strong><span>Meir fellesskap – eller meir isolasjon?</span></li>
 							</ul>
 							<ul class="workday-quality-list" aria-label="Eigenskapar ved koden">
-								<li>Lesbarhet</li>
-								<li>Lett å finna fram i</li>
-								<li>Forstått</li>
-								<li>Lett å endra<span>– og vedlikehalda over tid</span></li>
+								<li>Lesbarhet?</li>
+								<li>Lett å finna fram i?</li>
+								<li>Forstått?</li>
+								<li>Lett å endra?<span>– og vedlikehalda over tid?</span></li>
 							</ul>
 						</div>
 						<aside class="notes">
