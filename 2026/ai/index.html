@@ -386,12 +386,12 @@
 
 			.workday-slide .workday-positive {
 				color: #087f23;
-				font-weight: 700;
+				font-weight: 400;
 			}
 
 			.workday-slide .workday-negative {
 				color: #c00000;
-				font-weight: 700;
+				font-weight: 400;
 			}
 
 			.workday-lenses {
@@ -448,44 +448,54 @@
 
 			.workday-examples-columns {
 				display: grid;
-				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+				grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr) minmax(0, 1fr);
 			}
 
-			.workday-examples-columns h2:last-child {
-				margin-left: 44px;
+			.workday-examples-columns h2:not(:first-child) {
+				margin-left: 22px;
 			}
 
 			.workday-examples-columns ul {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				gap: 48px;
+				gap: 32px;
 				margin: 0;
 				list-style: none;
 			}
 
 			.workday-example-list {
-				padding-right: 32px;
+				padding-right: 20px;
 			}
 
 			.workday-examples-slide li {
-				font-size: 0.66em;
+				font-size: 0.58em;
 				line-height: 1.35;
 			}
 
 			.workday-example-list li {
-				padding-left: 22px;
+				padding-left: 14px;
 				border-left: 4px solid #8b3151;
 			}
 
-			.workday-examples-columns .workday-quality-list {
-				gap: 32px;
-				padding-left: 42px;
+			.workday-examples-columns .workday-quality-list,
+			.workday-examples-columns .workday-choice-list {
+				gap: 28px;
+				padding: 0 18px 0 20px;
 				border-left: 2px solid #9d929f;
 			}
 
 			.workday-quality-list li {
-				font-size: 0.76em;
+				font-size: 0.6em;
+			}
+
+			.workday-choice-list li {
+				font-size: 0.6em;
+			}
+
+			.workday-choice-list li:last-child {
+				padding-top: 20px;
+				border-top: 1px solid #9d929f;
 			}
 
 			.workday-examples-slide strong,
@@ -622,6 +632,14 @@
 				color: #62594f;
 				font-size: 0.96em;
 				white-space: nowrap;
+			}
+
+			.skill-threat-card .skill-evidence-label {
+				margin: 0.5em 0 0.2em;
+				color: #76695f;
+				font-size: 0.72em;
+				font-weight: 700;
+				letter-spacing: 0.03em;
 			}
 
 			.skill-threat-card ul {
@@ -1321,6 +1339,7 @@
 									<li><strong>Konkurranse: alltid best</strong><span class="skill-detail">Må stadig bevise at du er best.</span></li>
 									<li><strong>Naturtalent: «født flink»</strong><span class="skill-detail">Må være født flink.</span></li>
 								</ul>
+								<p class="skill-evidence-label">Samanhengar observerte i studien:</p>
 								<p class="skill-relation skill-relation-contest"><a href="https://osf.io/preprints/psyarxiv/2gej5_v2">Contest → threat</a></p>
 								<p class="skill-relation skill-relation-learning"><a href="https://osf.io/preprints/psyarxiv/2gej5_v2">Learning → less</a></p>
 							</article>
@@ -1341,23 +1360,7 @@
 					</section>
 					<section class="concept-map-slide">
 						<h2>Korleis heng det saman?</h2>
-						<div class="concept-map" role="img" aria-label="Konseptkart over direkte bidrag og støttesamband mellom omgrepa.">
-							<svg viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
-								<line x1="160" y1="58" x2="205" y2="166"></line>
-								<line x1="290" y1="176" x2="398" y2="176"></line>
-								<line class="supporting" x1="450" y1="190" x2="450" y2="274"></line>
-								<line x1="500" y1="176" x2="600" y2="176"></line>
-								<path d="M290 164 C335 35 545 35 610 164"></path>
-								<path d="M80 50 C25 90 25 300 60 355"></path>
-								<path d="M300 190 C330 250 350 350 405 414"></path>
-								<path class="supporting" d="M600 184 C565 215 535 250 495 278"></path>
-								<path class="supporting" d="M630 190 C635 270 570 365 495 414"></path>
-								<path d="M370 180 C310 195 270 300 220 355"></path>
-								<path class="supporting" d="M320 186 C340 210 350 250 370 280"></path>
-								<line class="supporting" x1="450" y1="302" x2="450" y2="414"></line>
-								<line class="supporting" x1="650" y1="190" x2="650" y2="414"></line>
-								<line x1="495" y1="422" x2="600" y2="422"></line>
-							</svg>
+						<div class="concept-map" role="img" aria-label="Omgrepa som inngår i konseptkartet.">
 							<span class="map-tacit">Taus kunnskap</span>
 							<span class="map-intuition">Intuisjon</span>
 							<span class="map-sensemaking">Sensemaking</span>
@@ -1406,10 +1409,10 @@
 					<section class="skill-slide">
 						<h2>Sensemaking</h2>
 						<ul>
-							<li>Fange opp svake signal og det som skurrar.</li>
-							<li>Førebels meining av det uklare
+							<li>Skape midlertidig meining av det uklare
 								<ul><li>Nok til å handle.</li></ul>
 							</li>
+							<li>Fange opp svake signal og det som skurrar.</li>
 							<li>Sosialt: dele signal, tolkingar og uenighet
 								<ul><li>Refleksjon testar tolkinga.</li></ul>
 							</li>
@@ -1422,7 +1425,7 @@
 					<section class="skill-slide">
 						<h2>Dømmekraft</h2>
 						<ul>
-							<li>Vekting under usikkerhet
+							<li>Kritisk vurdering under usikkerhet
 								<ul>
 									<li>Kunnskap, kontekst.</li>
 									<li>Verdiar, risiko, konsekvensar.</li>
@@ -1438,10 +1441,11 @@
 					<section class="skill-slide">
 						<h2>Refleksjon</h2>
 						<ul>
+							<li>Testa og justera tolking/sensemaking.</li>
 							<li>Refleksjon i handling
 								<ul><li>Legg merke til når resultat ≠ forventning.</li></ul>
 							</li>
-							<li>Gjentatte erfaringer styrker viten-i-handling over tid.</li>
+							<li>Gjentatte erfaringer styrker viten-i-handling.</li>
 							<li>Reflekter undervegs og etterpå
 								<ul>
 									<li>Undervegs: Kva skjer? Kva kan eg prøve?</li>
@@ -1454,8 +1458,18 @@
 					<section class="skill-slide">
 						<h2>Storytelling</h2>
 						<ul>
-							<li>Praksis for refleksjon og felles sensemaking.</li>
-							<li>Kan gjere taus kunnskap synleg (ikkje kodifisert).</li>
+							<li>Praksis for
+								<ul>
+									<li>Refleksjon.</li>
+									<li>Felles sensemaking.</li>
+								</ul>
+							</li>
+							<li>Kan gjere taus kunnskap
+								<ul>
+									<li>Synleg.</li>
+									<li>(Ikkje kodifisert.)</li>
+								</ul>
+							</li>
 						</ul>
 						<p>Kilder: Bietti, Tilston &amp; Bangerter (2018), «Storytelling as Adaptive Collective Sensemaking».</p>
 					</section>
@@ -1515,6 +1529,54 @@
 						</div>
 						<aside class="notes">Heil linje = direkte bidrag. Stipla linje = støttesamband. Sambanda viser ikkje fast rekkjefølgje.</aside>
 					</section>
+					<section class="concept-map-slide">
+						<h2>Korleis heng det saman?</h2>
+						<div class="concept-map ai-risk-map" role="img" aria-label="Konseptkart over direkte bidrag og støttesamband, med moglege AI-risikoar til høgre.">
+							<svg viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
+								<rect class="risk-node-box" x="80" y="28" width="170" height="44" rx="5"></rect>
+								<rect class="risk-node-box" x="165" y="146" width="170" height="44" rx="5"></rect>
+								<rect class="risk-story-box risk-story-box-orange" x="55" y="330" width="170" height="44" rx="5"></rect>
+								<rect class="risk-story-box risk-story-box-blue" x="55" y="330" width="170" height="44" rx="5"></rect>
+								<rect class="risk-node-color-box risk-node-purple" x="565" y="146" width="170" height="44" rx="5"></rect>
+								<rect class="risk-story-box risk-story-box-orange" x="365" y="146" width="170" height="44" rx="5"></rect>
+								<rect class="risk-story-box risk-story-box-purple" x="365" y="146" width="170" height="44" rx="5" style="stroke-dashoffset: 20"></rect>
+								<rect class="risk-node-color-box risk-node-orange" x="365" y="392" width="170" height="44" rx="5"></rect>
+								<rect class="risk-story-box risk-story-box-orange" x="365" y="258" width="170" height="44" rx="5"></rect>
+								<rect class="risk-story-box risk-story-box-blue" x="365" y="258" width="170" height="44" rx="5"></rect>
+								<rect class="risk-story-box risk-story-box-purple" x="365" y="258" width="170" height="44" rx="5" style="stroke-dashoffset: 40"></rect>
+								<line x1="160" y1="58" x2="205" y2="166"></line>
+								<line x1="290" y1="176" x2="398" y2="176"></line>
+								<line class="supporting" x1="450" y1="190" x2="450" y2="274"></line>
+								<line x1="500" y1="176" x2="600" y2="176"></line>
+								<path d="M290 164 C335 35 545 35 610 164"></path>
+								<path d="M80 50 C25 90 25 300 60 355"></path>
+								<path d="M300 190 C330 250 350 350 405 414"></path>
+								<path class="supporting" d="M600 184 C565 215 535 250 495 278"></path>
+								<path class="supporting" d="M630 190 C635 270 570 365 495 414"></path>
+								<path d="M370 180 C310 195 270 300 220 355"></path>
+								<path class="supporting" d="M320 186 C340 210 350 250 370 280"></path>
+								<line class="supporting" x1="450" y1="302" x2="450" y2="414"></line>
+								<line class="supporting" x1="650" y1="190" x2="650" y2="414"></line>
+								<line x1="495" y1="422" x2="600" y2="422"></line>
+							</svg>
+							<span class="map-tacit">Taus kunnskap</span>
+							<span class="map-intuition">Intuisjon</span>
+							<span class="map-sensemaking">Sensemaking</span>
+							<span class="map-reflection">Refleksjon</span>
+							<span class="map-judgement">Dømmekraft</span>
+							<span class="map-storytelling">Storytelling</span>
+							<span class="map-creativity">Kreativitet</span>
+							<span class="map-innovation">Innovasjon</span>
+							<div class="ai-risk-panel" aria-hidden="true">
+								<p class="ai-risk-title">AI-risiko</p>
+								<div class="ai-risk-card ai-risk-yellow">Bygger opp mindre?</div>
+								<div class="ai-risk-card ai-risk-orange">Tar ikkje tid?</div>
+								<div class="ai-risk-card ai-risk-blue">Meir avstand / isolasjon?</div>
+								<div class="ai-risk-card ai-risk-purple">Minste motstands veg?</div>
+							</div>
+						</div>
+						<aside class="notes">Heil linje = direkte bidrag. Stipla linje = støttesamband. Risikouttrykka til høgre er moglege AI-risikoar. Sambanda viser ikkje fast rekkjefølgje.</aside>
+					</section>
 				</section>
 
 				<section>
@@ -1566,54 +1628,6 @@
 							<p>Bilde: <a href="https://www.flickr.com/photos/adamfranco/5948262113" target="_blank" rel="noopener">Adam Franco</a></p>
 						</aside>
 					</section>
-					<section class="concept-map-slide">
-						<h2>Korleis heng det saman?</h2>
-						<div class="concept-map ai-risk-map" role="img" aria-label="Konseptkart over direkte bidrag og støttesamband, med moglege AI-risikoar til høgre.">
-							<svg viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
-								<rect class="risk-node-box" x="80" y="28" width="170" height="44" rx="5"></rect>
-								<rect class="risk-node-box" x="165" y="146" width="170" height="44" rx="5"></rect>
-								<rect class="risk-story-box risk-story-box-orange" x="55" y="330" width="170" height="44" rx="5"></rect>
-								<rect class="risk-story-box risk-story-box-blue" x="55" y="330" width="170" height="44" rx="5"></rect>
-								<rect class="risk-node-color-box risk-node-purple" x="565" y="146" width="170" height="44" rx="5"></rect>
-								<rect class="risk-story-box risk-story-box-orange" x="365" y="146" width="170" height="44" rx="5"></rect>
-								<rect class="risk-story-box risk-story-box-purple" x="365" y="146" width="170" height="44" rx="5" style="stroke-dashoffset: 20"></rect>
-								<rect class="risk-node-color-box risk-node-orange" x="365" y="392" width="170" height="44" rx="5"></rect>
-								<rect class="risk-story-box risk-story-box-orange" x="365" y="258" width="170" height="44" rx="5"></rect>
-								<rect class="risk-story-box risk-story-box-blue" x="365" y="258" width="170" height="44" rx="5"></rect>
-								<rect class="risk-story-box risk-story-box-purple" x="365" y="258" width="170" height="44" rx="5" style="stroke-dashoffset: 40"></rect>
-								<line x1="160" y1="58" x2="205" y2="166"></line>
-								<line x1="290" y1="176" x2="398" y2="176"></line>
-								<line class="supporting" x1="450" y1="190" x2="450" y2="274"></line>
-								<line x1="500" y1="176" x2="600" y2="176"></line>
-								<path d="M290 164 C335 35 545 35 610 164"></path>
-								<path d="M80 50 C25 90 25 300 60 355"></path>
-								<path d="M300 190 C330 250 350 350 405 414"></path>
-								<path class="supporting" d="M600 184 C565 215 535 250 495 278"></path>
-								<path class="supporting" d="M630 190 C635 270 570 365 495 414"></path>
-								<path d="M370 180 C310 195 270 300 220 355"></path>
-								<path class="supporting" d="M320 186 C340 210 350 250 370 280"></path>
-								<line class="supporting" x1="450" y1="302" x2="450" y2="414"></line>
-								<line class="supporting" x1="650" y1="190" x2="650" y2="414"></line>
-								<line x1="495" y1="422" x2="600" y2="422"></line>
-							</svg>
-							<span class="map-tacit">Taus kunnskap</span>
-							<span class="map-intuition">Intuisjon</span>
-							<span class="map-sensemaking">Sensemaking</span>
-							<span class="map-reflection">Refleksjon</span>
-							<span class="map-judgement">Dømmekraft</span>
-							<span class="map-storytelling">Storytelling</span>
-							<span class="map-creativity">Kreativitet</span>
-							<span class="map-innovation">Innovasjon</span>
-							<div class="ai-risk-panel" aria-hidden="true">
-								<p class="ai-risk-title">AI-risiko</p>
-								<div class="ai-risk-card ai-risk-yellow">Bygger opp mindre?</div>
-								<div class="ai-risk-card ai-risk-orange">Tar ikkje tid?</div>
-								<div class="ai-risk-card ai-risk-blue">Meir avstand / isolasjon?</div>
-								<div class="ai-risk-card ai-risk-purple">Minste motstands veg?</div>
-							</div>
-						</div>
-						<aside class="notes">Heil linje = direkte bidrag. Stipla linje = støttesamband. Risikouttrykka til høgre er moglege AI-risikoar. Sambanda viser ikkje fast rekkjefølgje.</aside>
-					</section>
 					<section class="workday-slide" id="arbeidsdag" data-background-color="#f3f0e9" aria-labelledby="workday-title">
 						<h2 id="workday-title">Meir levert.<br><span>Betre?</span></h2>
 						<p class="workday-question">Betre arbeidsdag? Betre kvalitet over tid?</p>
@@ -1621,7 +1635,7 @@
 						<div class="workday-lenses">
 							<article class="workday-card">
 								<h3>Autonomi</h3>
-								<p class="workday-resource">Kan eg velga retning og arbeidsmåte?</p>
+								<p class="workday-resource">Retning og arbeidsmåte.</p>
 								<p class="workday-friction">… eller styrer verktøyet dagen?</p>
 							</article>
 							<article class="workday-card">
@@ -1642,7 +1656,7 @@
 							<p>Hovudpoenget er ikkje at AI øydelegg arbeidsgleda, eller at det alltid er betre å gjera arbeidet sjølv. AI kan fjerna slitsam rutine, hjelpa oss over ein kneik og opna oppgåver me elles ikkje kunne løyst. Men fart og produksjon er ikkje det same som motivasjon, trivsel eller god kvalitet. Dei tre boksane er spørsmål til refleksjon, ikkje universelle verknader eller eit validert måleinstrument.</p>
 							<h3>Kva dei tre boksane samlar</h3>
 							<ul>
-								<li><strong>Autonomi:</strong> Kan eg påverka mål, metode, tempo og arbeidsdeling med AI? Meir autonomi for ein agent er ikkje automatisk meir opplevd autonomi for meg. Samstundes kan delegering gi både større handlingsrom og tilgang til nye oppgåver. Høve til å velja krever reelle rammer, ikkje berre ei oppmoding om å ta ansvar sjølv.</li>
+								<li><strong>Autonomi:</strong> Kan eg påverka mål, metode, tempo og arbeidsdeling med AI? Meir autonomi for ein agent er ikkje automatisk meir opplevd autonomi for meg. Samstundes kan delegering gi både større handlingsrom og tilgang til nye oppgåver. Høve til å velga krever reelle rammer, ikkje berre ei oppmoding om å ta ansvar sjølv.</li>
 								<li><strong>Flyt og mestring:</strong> Får eg passe utfordringar, høve til å læra og små, synlege framsteg? Respons frå sjølve arbeidet – til dømes ein test som viser at noko verkar – er noko anna enn ros frå ein leiar eller eit velformulert AI-svar. AI kan gjera denne sløyfa kortare, men kan også leggja til venting, kontroll og omarbeid. Flyt her er psykologisk fordjuping, ikkje gjennomstrøyming av arbeidsoppgåver.</li>
 								<li><strong>Nærhet og mening:</strong> Ser eg at arbeidet blir brukt og gir verdi? Har eg kontakt med brukarar og kollegaer, og kjenner eg eigarskap til resultatet? AI kan frigjera tid til dette, men frigjord tid gir ikkje slik kontakt av seg sjølv. Boksen samlar oppgåvebetydning, tilbakemelding frå bruk og tilhørighet; dei er nærskylde, ikkje identiske omgrep.</li>
 							</ul>
@@ -1678,6 +1692,10 @@
 								<li>Forstått?</li>
 								<li>Lett å endra?<span>– og vedlikehalda over tid?</span></li>
 							</ul>
+							<ul class="workday-choice-list" aria-label="Arbeidsdeling og rom for tenking">
+								<li>Delegera?<br>Forsterka?<br>Sjølvstyrt?</li>
+								<li>Kva gir me tid til?<span>Tenking, koplingar og innovasjon<br>– eller fleire oppgåver?</span></li>
+							</ul>
 						</div>
 						<aside class="notes">
 							<p>Tre eksempel på valg, ikkje tre fasitsvar. Kva som er ei god arbeidsdeling, kjem an på oppgåva, personen og teamet.</p>
@@ -1688,119 +1706,11 @@
 					</section>
 					<section class="gravity-slide" data-background-image="images/andrew-rise-of-hi.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Andrew Hatcher si slide «The Rise of HI: Where Humans Can Still Rise Above», med fem menneskelege kapabilitetar">
 						<p class="gravity-source">Kilde: Andrew</p>
-						<aside class="notes"><em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></aside>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>WIP parking</h2>
-					</section>
-
-					<section class="fog-slide" data-background-image="images/smidig-vei.png" data-background-size="contain" data-background-position="center center" data-background-color="#000">
-						<h2>GML – Troverdig i møte med usikkerhet</h2>
-						<button class="fog-complexity" type="button" data-zoom-layout="complexity" title="Maksimer kompleksitetsdiagrammet" aria-label="Maksimer kompleksitetsdiagrammet" aria-haspopup="dialog" aria-controls="fog-viewer">
-							<span class="fog-expand-icon" aria-hidden="true">⛶</span>
-							<span class="fog-label fog-label-explore">Må utforskast</span>
-							<img src="images/smidig-komplekst-transparent.png" alt="Tavleskisse om smidig navigasjon i komplekse situasjonar">
-							<span class="fog-label">Kan analyserast</span>
-						</button>
-						<button class="fog-estimates" type="button" data-zoom-layout="curve" title="Maksimer estimatkurva" aria-label="Maksimer estimatkurva" aria-haspopup="dialog" aria-controls="fog-viewer">
-							<span class="fog-expand-icon" aria-hidden="true">⛶</span>
-							<svg viewBox="0 0 500 205" role="img" aria-labelledby="fog-estimates-title fog-estimates-description">
-								<title id="fog-estimates-title">Estimater bommer – skeivt</title>
-								<desc id="fog-estimates-description">Skjematisk kurve med tidleg topp og lang hale. Prosjekttrekanten viser bindingane tid, kostnad og omfang med kvalitet i midten.</desc>
-								<path class="fog-curve-axes" d="M 38 18 Q 40 90 38 174 M 28 176 Q 220 172 470 174"/>
-								<path class="fog-curve-line" d="M 52 163 C 80 145 85 65 113 43 C 142 17 165 35 185 64 C 215 103 278 120 333 130 C 392 140 430 143 470 144"/>
-								<g class="fog-iron-triangle">
-									<path d="M 390 24 L 344 82 L 439 80 Z"/>
-									<text class="fog-quality" x="391" y="70" text-anchor="middle">KVALITET?</text>
-									<text x="390" y="16" text-anchor="middle">TID</text>
-									<text x="330" y="99" text-anchor="middle" transform="rotate(20 330 99)">KOSTNAD</text>
-									<text x="451" y="99" text-anchor="middle" transform="rotate(-20 451 99)">(OMFANG)</text>
-								</g>
-							</svg>
-							<span class="fog-caption">Estimater bommer – skeivt</span>
-						</button>
-						<button class="fog-sociotechnical" type="button" data-zoom-layout="sociotechnical" title="Maksimer sosioteknisk perspektiv" aria-label="Maksimer sosioteknisk perspektiv" aria-haspopup="dialog" aria-controls="fog-viewer">
-							<span class="fog-expand-icon" aria-hidden="true">⛶</span>
-							<strong>Sosioteknisk perspektiv</strong>
-							<svg viewBox="0 0 500 160" role="img" aria-label="Piler viser gjensidig påverknad mellom folk og teknologi">
-								<defs><marker id="fog-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9"/></marker></defs>
-								<path class="fog-feedback" d="M 230 28 C 335 0 431 42 400 96 M 265 127 C 158 166 72 107 120 55"/>
-								<text class="fog-people" x="174" y="41" transform="rotate(-5 174 41)">Folk</text>
-								<text class="fog-technology" x="340" y="132" transform="rotate(3 340 132)">Teknologi</text>
-							</svg>
-							<span class="fog-caption">Folk og teknologi endrar kvarandre<br>– ofte uventa</span>
-						</button>
-						<button class="fog-visualization" type="button" data-zoom-layout="visualization" title="Maksimer illustrasjonane om synleg arbeid" aria-label="Maksimer illustrasjonane om synleg arbeid" aria-haspopup="dialog" aria-controls="fog-viewer">
-							<span class="fog-expand-icon" aria-hidden="true">⛶</span>
-							<strong class="fog-visualization-title">Gjer arbeid synleg</strong>
-							<span class="fog-visualization-description">Arbeid · flyt · hindringar · endringar · visuell styring</span>
-							<span class="fog-visualization-images">
-								<img src="images/onepager-board-change-arrow.png" alt="Arbeidsflyttavle med pil som viser endringar frå venstre mot høgre">
-								<img src="images/onepager-roadmap-feature-slices.png" alt="Plan med aspekt i kolonnar og feature slices på tvers">
-							</span>
-						</button>
 						<aside class="notes">
-							<p>Bilde: <a href="https://www.flickr.com/photos/adamfranco/5948262113" target="_blank" rel="noopener">Adam Franco</a></p>
+							<p>kan AI svekka? ja</p>
+							<p>kan me beskytta? ja</p>
+							<em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em>
 						</aside>
-					</section>
-
-					<section class="cover fork-cover" data-background-image="images/cambridge-fork-stage.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000">
-						<h1>Er AI fordummande? (alt.2)</h1>
-					</section>
-
-					<section>
-						<h2>What are we risking?</h2>
-					</section>
-
-					<section>
-						<h2>What are we risking?</h2>
-
-						<div class="pair">
-							<div>
-								<h3>The gravity trap</h3>
-								<p>Less practice with hard, open problems?<br>Less room for intuition and tacit knowledge?<br>Efficiency at the cost of creative slack?</p>
-							</div>
-							<div>
-								<h3>What should we protect?</h3>
-								<p>Struggle with complexity<br>Human sensemaking<br>Time for connections and innovation</p>
-							</div>
-						</div>
-
-						<aside class="notes">
-							Frame these as risks to examine, not predictions. Connect the gravity-trap idea to what we may stop practising when AI makes the easy path effortless.
-						</aside>
-					</section>
-
-					<section>
-						<h2>Where should the work live?</h2>
-
-
-						<div class="pair">
-							<div>
-								<h3>AI</h3>
-								<p>Generate<br>Summarize<br>Find patterns</p>
-							</div>
-							<div>
-								<h3>HI</h3>
-								<p>Notice context<br>Set direction<br>Take responsibility</p>
-							</div>
-						</div>
-
-						<aside class="notes">
-							These are prompts for discussion, not a hard boundary. Ask the room where the overlap belongs.
-						</aside>
-					</section>
-
-					<section data-markdown>
-						## Capability is not the whole question
-
-						<div class="closing">What should we delegate, what should we augment, and what should remain a human choice?</div>
-
-						note:
-						Use this as the transition into examples or the audience's own experience.
 					</section>
 				</section>
 			</div>
