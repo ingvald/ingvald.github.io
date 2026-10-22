@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="nn">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,7 +55,7 @@
 			}
 
 			.reveal .thought-cover h1 {
-				bottom: 7.5em;
+				bottom: 5.5em;
 			}
 
 			.reveal .slides section.gravity-slide {
@@ -550,9 +550,59 @@
 			}
 
 			.skill-threat-group {
-				top: 21%;
+				top: 13%;
 				right: 4%;
-				width: 41%;
+				width: 47%;
+			}
+
+			.motivation-concern {
+				position: absolute;
+				top: 57%;
+				left: 4%;
+				box-sizing: border-box;
+				width: 43%;
+				padding: 0.65em 0.85em;
+				border: 1px solid #d9d0c8;
+				border-left: 5px solid #b16e70;
+				border-radius: 6px;
+				background: rgba(255, 255, 255, 0.92);
+				box-shadow: 0 5px 18px rgba(48, 43, 37, 0.07);
+			}
+
+			.motivation-concern p {
+				margin: 0;
+			}
+
+			.motivation-concern .motivation-kicker {
+				margin-bottom: 0.35em;
+				color: #76695f;
+				font-size: 0.78em;
+				font-weight: 700;
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
+			}
+
+			.motivation-concern .motivation-prompt {
+				font-size: 0.85em;
+				font-weight: 600;
+				line-height: 1.25;
+			}
+
+			.motivation-concern .crossed-out-question {
+				position: relative;
+			}
+
+			.motivation-concern .crossed-out-question::after {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 1.45em;
+				height: 1.15em;
+				background:
+					linear-gradient(35deg, transparent 46%, #302b25 47%, #302b25 53%, transparent 54%),
+					linear-gradient(-35deg, transparent 46%, #302b25 47%, #302b25 53%, transparent 54%);
+				content: "";
+				transform: translate(-50%, -50%);
 			}
 
 			.skill-threat-card .skill-kicker {
@@ -628,76 +678,73 @@
 			}
 
 			.skill-threat-card .skill-intro {
-				margin: 0 0 0.5em;
+				margin: 0 0 0.25em;
 				color: #62594f;
 				font-size: 0.96em;
 				white-space: nowrap;
 			}
 
-			.skill-threat-card .skill-evidence-label {
-				margin: 0.5em 0 0.2em;
+			.skill-evidence-label {
+				margin: 0 0 0.12em;
 				color: #76695f;
-				font-size: 0.72em;
+				font-size: 0.68em;
 				font-weight: 700;
-				letter-spacing: 0.03em;
 			}
 
-			.skill-threat-card ul {
+			.skill-findings {
 				display: grid;
-				gap: 0.38em;
-				margin: 0 0 0.5em;
-				padding: 0;
-				list-style: none;
-				font-size: 0.96em;
-				line-height: 1.3;
+				grid-template-columns: 1fr 1fr;
+				gap: 0.45em;
 			}
 
-			.skill-threat-card li strong {
-				display: block;
+			.skill-finding {
+				padding: 0.4em 0.5em;
+				border-radius: 4px;
 			}
 
-			.skill-threat-card .skill-detail {
-				display: block;
-				font-size: 0.75em;
-				white-space: nowrap;
-			}
-
-			.skill-threat-card .skill-relation {
-				box-sizing: border-box;
-				width: 100%;
-				margin: 0;
-				padding: 0.18em 0.35em;
-				font-size: 0.88em;
-				font-style: normal;
-				line-height: 1.2;
-				white-space: nowrap;
-			}
-
-			.skill-threat-card .skill-relation-contest {
+			.skill-finding-more {
 				border-left: 2px solid #b4a79b;
 				background: #f4f0ea;
 			}
 
-			.skill-threat-card .skill-relation-learning {
-				margin-top: 0.4em;
+			.skill-finding-less {
 				background: #edf0ed;
 			}
 
-			.skill-threat-card .skill-relation a {
-				display: block;
-				color: inherit;
-				text-decoration: none;
-				white-space: nowrap;
+			.skill-finding h3 {
+				margin: 0 0 0.25em;
+				font-family: var(--r-main-font);
+				font-size: 0.88em;
+				line-height: 1.15;
 			}
 
-			.skill-threat-card .skill-relation a:hover,
-			.skill-threat-card .skill-relation a:focus {
-				text-decoration: underline;
+			.skill-finding ul {
+				display: grid;
+				gap: 0.08em;
+				margin: 0;
+				padding-left: 1.1em;
+				font-size: 0.84em;
+				line-height: 1.2;
+			}
+
+			.skill-examples {
+				display: grid;
+				gap: 0.1em;
+				margin: 0.45em 0 0;
+				font-size: 0.72em;
+				line-height: 1.2;
+			}
+
+			.skill-pathways {
+				margin: 0.25em 0 0;
+				color: #76695f;
+				font-size: 0.48em;
+				line-height: 1.2;
 			}
 
 			.dnb-questions {
 				position: absolute;
-				top: 76%;
+				top: 87%;
 				left: 8%;
 				display: grid;
 				grid-template-columns: 1fr 1fr;
@@ -1305,19 +1352,59 @@
 			<div class="slides">
 				<section class="cover thought-cover" data-background-image="images/cambridge-human-thought-stage.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000">
 					<h1>Er AI fordummande?</h1>
+					<aside class="notes">
+						<ul>
+							<li>Rundt grauten</li>
+							<li>AI og ulike bitar av oss
+								<ul><li>… som menneske</li></ul>
+							</li>
+						</ul>
+						<span style="font-size: 66.67%;"><em>(Bilde frå Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></span>
+					</aside>
 				</section>
 
 				<section>
 					<section>
 						<h2>Ukritisk AI?</h2>
+						<aside class="notes">
+							<ul>
+								<li>Ulike måtar – avventande, forbeholden</li>
+								<li>Likevel litt ukritisk?</li>
+							</ul>
+						</aside>
 					</section>
 					<section class="gravity-slide" data-background-image="images/andrew-gravity-trap.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Andrew Hatcher si slide «The AI Gravity Trap»">
-						<p class="gravity-source">Kilde: Andrew</p>
-						<aside class="notes"><em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></aside>
+						<p class="gravity-source"><em>(Kilde: Andrew Hatcher)</em></p>
+						<aside class="notes">
+							<ul>
+								<li>Andrew meiner:
+									<ul>
+										<li>Tyngdekraft
+											<ul>
+												<li>Bli meir ukritisk og bevisstlaus</li>
+												<li>Om me ikkje aktivt jobbar mot</li>
+											</ul>
+										</li>
+										<li>Legg merke til
+											<ul><li>Stoppar å vri hjernen med harde utfordringar</li></ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<span style="font-size: 66.67%;"><em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></span>
+						</aside>
 					</section>
 					<section class="gravity-slide cognitive-slide" data-background-image="images/andrew-cognitive-offloading.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Andrew Hatcher si slide «Cognitive Offloading vs. Cognitive Surrender», med markeringar på forklaringane">
-						<p class="gravity-source">Kilde: Andrew</p>
-						<aside class="notes"><em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></aside>
+						<p class="gravity-source"><em>(Kilde: Andrew Hatcher)</em></p>
+						<aside class="notes">
+							<ul>
+								<li>Stoppar me å vri hjernen?</li>
+								<li>Som sagt – kanskje tyngdekraft …
+									<ul><li>Me må prøva å motvirka intensjonelt</li></ul>
+								</li>
+							</ul>
+							<span style="font-size: 66.67%;"><em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></span>
+						</aside>
 					</section>
 					<section class="gravity-slide dnb-skill-slide" aria-label="DNB si AI-grunngiving for nedbemanning og Cat Hicks si forsking om AI Skill Threat">
 						<h2 class="dnb-slide-title">Bekymring?</h2>
@@ -1335,28 +1422,64 @@
 								<p class="skill-kicker">Utviklaridentitet · Cat Hicks mfl.</p>
 								<h2>AI Skill Threat</h2>
 								<p class="skill-intro">AI opplevd som trussel mot fagidentiteten.</p>
-								<ul>
-									<li><strong>Konkurranse: alltid best</strong><span class="skill-detail">Må stadig bevise at du er best.</span></li>
-									<li><strong>Naturtalent: «født flink»</strong><span class="skill-detail">Må være født flink.</span></li>
-								</ul>
-								<p class="skill-evidence-label">Samanhengar observerte i studien:</p>
-								<p class="skill-relation skill-relation-contest"><a href="https://osf.io/preprints/psyarxiv/2gej5_v2">Contest → threat</a></p>
-								<p class="skill-relation skill-relation-learning"><a href="https://osf.io/preprints/psyarxiv/2gej5_v2">Learning → less</a></p>
+								<p class="skill-evidence-label">Samanhengar i studien</p>
+								<div class="skill-findings">
+									<div class="skill-finding skill-finding-more">
+										<h3>Meir opplevd trussel</h3>
+										<ul>
+											<li>Konkurransekultur</li>
+											<li>Bedragerfølelse (impostor)</li>
+											<li>Talenttru*</li>
+										</ul>
+									</div>
+									<div class="skill-finding skill-finding-less">
+										<h3>Mindre konkurransekultur</h3>
+										<ul>
+											<li>Læringskultur</li>
+											<li>Tilhørighet</li>
+										</ul>
+									</div>
+								</div>
+								<p class="skill-examples">
+									<span>Konkurransekultur: Må stadig bevise at man er best.</span>
+									<span>Talenttru: Tror man må være født flink.</span>
+								</p>
+								<p class="skill-pathways">* Talenttru: indirekte via konkurransekultur / bedragerfølelse. Læring + tilhørighet: mindre konkurransekultur.</p>
 							</article>
 							<p class="dnb-slide-sources"><a href="https://osf.io/preprints/psyarxiv/2gej5_v2">Kilde: Hicks, Lee &amp; Foster-Marks, 2025 · observasjonsstudie (n=3 267)</a></p>
 						</div>
+						<aside class="motivation-concern" aria-label="Spørsmål om motivasjon og trivsel">
+							<p class="motivation-kicker">Motivasjon og trivsel</p>
+							<p class="motivation-prompt">Stress? · avstand? · handlingsrom? · <span class="crossed-out-question">flow</span>?</p>
+						</aside>
 						<div class="dnb-questions" aria-label="Spørsmål">
 							<p>Jobb(u)sikkerhet?</p>
 							<p>Korleis endrar AI utviklarrolla?</p>
 						</div>
-						<aside class="notes"><em>(Kilde: kode24, 6. oktober 2026)</em><br><a href="https://www.kode24.no/artikkel/reagerer-pa-dnb-kutt-ser-ut-til-a-ga-fort-i-svingene/274485">«Reagerer på DNB-kutt: – Ser ut til å gå fort i svingene»</a><br><em>Cat Hicks, Carol Lee og Kristen Foster-Marks, «AI Skill Threat: How the Structure of Developers’ Beliefs about Software Development Ability Impacts Their Psychological Resilience During Rapid Technology Shift», preprint, 2025. Observasjonsstudie; rapporterte samanhengar, ikkje årsaksbevis.</em></aside>
+						<aside class="notes">
+							<ul>
+								<li>Så … har me grunn til bekymring?</li>
+								<li>DNB …</li>
+								<li>Så kan trivsel motverka?
+									<ul><li>Mykje press for tida …</li></ul>
+								</li>
+								<li>Kan me påverka litt sjølv?</li>
+							</ul>
+						</aside>
 					</section>
 				</section>
 
 				<section>
 					<section class="cover brain-cover" data-background-image="images/human-brain-dark.png" data-background-size="contain" data-background-position="center center" data-background-color="#000">
 						<h1>Korleis er me skrudd saman?</h1>
-						<aside class="notes">Bakgrunnsbiletet er eit utsnitt frå <a href="https://www.youtube.com/watch?v=dAIQeTeMJ-I&amp;t=12s">«Glass brain flythrough» frå Gazzaleylab / SCCN / Neuroscapelab</a>, lenkja frå krediteringa i kjelde-PDF-en.</aside>
+						<aside class="notes">
+							<ul>
+								<li>… den biten av grauten om …
+									<ul><li>korleis me er skrudd saman</li></ul>
+								</li>
+							</ul>
+							<span style="font-size: 66.67%;"><em>Kjelde: <a href="https://www.youtube.com/watch?v=dAIQeTeMJ-I&amp;t=12s">Gazzaleylab / SCCN / Neuroscapelab, «Glass brain flythrough»</a></em></span>
+						</aside>
 					</section>
 					<section class="concept-map-slide">
 						<h2>Korleis heng det saman?</h2>
@@ -1383,7 +1506,12 @@
 						<h2>Taus kunnskap</h2>
 						<aside class="notes">
 							<span style="font-size: 50%; font-style: italic;">(e.g. tacit knowing)</span>
-							<ul><li>Ofte meir enn me <em>kan</em> formulera.</li></ul>
+							<ul>
+								<li>Ofte meir enn me <em>kan</em> formulera.</li>
+								<li>Parentes: remote-risiko?
+									<ul><li>Bygga mindre taus kunnskap?</li></ul>
+								</li>
+							</ul>
 						</aside>
 						<ul>
 							<li>Praktisk kunnskap
@@ -1429,7 +1557,7 @@
 					<section class="skill-slide">
 						<h2>Sensemaking</h2>
 						<aside class="notes">
-							<ul><li>Å skapa meining, initiell forståing av «kaos»</li></ul>
+							<ul><li>Å skapa meining, initiell forståelse av «kaos»</li></ul>
 						</aside>
 						<ul>
 							<li>Skape midlertidig meining av det uklare
@@ -1468,8 +1596,8 @@
 						<h2>Refleksjon</h2>
 						<aside class="notes">
 							<ul>
-								<li>Testa og vurdera forståing</li>
-								<li>Få djupare forståing</li>
+								<li>Testa og vurdera forståelse</li>
+								<li>Få djupare forståelse</li>
 							</ul>
 						</aside>
 						<ul>
@@ -1490,19 +1618,15 @@
 					<section class="skill-slide">
 						<h2>Storytelling</h2>
 						<aside class="notes">
-							<ul><li>Kan formidla frå taus kunnskap til taus kunnskap</li></ul>
+							<ul><li>frå magefølelse til magefølelse</li></ul>
 						</aside>
 						<ul>
 							<li>Praksis for
-								<ul>
-									<li>Refleksjon.</li>
-									<li>Felles sensemaking.</li>
-								</ul>
+								<ul><li>Refleksjon og felles sensemaking.</li></ul>
 							</li>
-							<li>Kan gjere taus kunnskap
+							<li>Deler erfaringar og situasjonsforståelse
 								<ul>
-									<li>Synleg.</li>
-									<li>(Ikkje kodifisert.)</li>
+									<li>… som er vanskeleg å formulera.</li>
 								</ul>
 							</li>
 						</ul>
@@ -1532,7 +1656,7 @@
 						<aside class="notes">
 							<ul>
 								<li>Kanskje mest fokusert på i bransjen, etc.</li>
-								<li>Det som fører til det får mindre oppmerksomheit.</li>
+								<li>Men det som gir innovasjon får mindre oppmerksomhet</li>
 							</ul>
 						</aside>
 						<ul>
@@ -1689,7 +1813,7 @@
 						</button>
 						<p class="reflection-question">Kva om me svekkar nettopp det me treng mest?</p>
 						<aside class="notes">
-							<p>Bilde: <a href="https://www.flickr.com/photos/adamfranco/5948262113" target="_blank" rel="noopener">Adam Franco</a></p>
+							<span style="font-size: 66.67%;"><em>Bilde: <a href="https://www.flickr.com/photos/adamfranco/5948262113" target="_blank" rel="noopener">Adam Franco</a></em></span>
 						</aside>
 					</section>
 					<section class="workday-slide" id="arbeidsdag" data-background-color="#f3f0e9" aria-labelledby="workday-title">
@@ -1713,7 +1837,7 @@
 								<p class="workday-friction">… eller aukar avstanden?</p>
 							</article>
 						</div>
-						<p class="workday-sources">Kilder: Jobbdesign / SDT · <a href="https://doi.org/10.1016/j.ijinfomgt.2025.102887" target="_blank" rel="noopener">Chuang mfl. (2025)</a> · <a href="https://doi.org/10.1038/s41598-025-98385-2" target="_blank" rel="noopener">Wu mfl. (2025)</a> · <a href="https://doi.org/10.1080/10447318.2024.2405782" target="_blank" rel="noopener">Simkute mfl. (2024)</a></p>
+						<p class="workday-sources">Bakgrunn for refleksjon: Jobbdesign / SDT · <a href="https://doi.org/10.1016/j.ijinfomgt.2025.102887" target="_blank" rel="noopener">Chuang mfl. (2025)</a> · <a href="https://doi.org/10.1038/s41598-025-98385-2" target="_blank" rel="noopener">Wu mfl. (2025)</a> · <a href="https://doi.org/10.1080/10447318.2024.2405782" target="_blank" rel="noopener">Simkute mfl. (2024)</a></p>
 						<aside class="notes">
 							<h3>Førsteutkast: kva slags arbeidsdag byggjer me med AI?</h3>
 							<p>Overgang frå TODO-sliden: Folk og teknologi endrar kvarandre. Me kan ikkje berre spørja kva AI kan gjera, men kva arbeidsmåten gjer med oss. Neste slide konkretiserer dette med tre valg, før Andrew peikar på menneskelege kapabilitetar som treng ein arbeidskvardag der dei får bli brukte og utvikla.</p>
@@ -1746,8 +1870,8 @@
 						</div>
 						<div class="workday-examples-columns">
 							<ul class="workday-example-list">
-								<li><strong>Prompt eller agent?</strong><span>Korleis formar eg min eigen arbeidsflyt?</span></li>
-								<li><strong>Støttekode eller kjernekode?</strong><span>Kvar treng eg å bygga opp intuisjon sjølv?</span></li>
+								<li><strong>Eigen arbeidsflyt?</strong><span>Små steg ↔ samla oppdrag</span></li>
+								<li><strong>Støttekode eller kjernekode?</strong><span>Kor treng eg å bygga opp intuisjon sjølv?</span></li>
 								<li><strong>Team-prosess med AI?</strong><span>Meir fellesskap – eller meir isolasjon?</span></li>
 							</ul>
 							<ul class="workday-quality-list" aria-label="Eigenskapar ved koden">
@@ -1764,16 +1888,16 @@
 						<aside class="notes">
 							<p>Tre eksempel på valg, ikkje tre fasitsvar. Kva som er ei god arbeidsdeling, kjem an på oppgåva, personen og teamet.</p>
 							<p><strong>Prompt eller agent:</strong> Ein kort prompt kan halda meg tett på ei avgrensa oppgåve med hyppig respons. Mange små rundar kan også fragmentera dagen. Ein agent kan gi ei samanhengande arbeidsøkt eller pause medan noko blir utført, men kan også gi ufrivillig venting, kontekstbytte og ein stor kontrolljobb etterpå. Ventetid kan vera ei god pause dersom eg kan planleggja ho. Spørsmålet er kva arbeidsflyt som gir både kvalitet, konsentrasjon og energi, ikkje kva modus som alltid er best.</p>
-							<p><strong>Støttekode eller kjernekode:</strong> Kvar er det uproblematisk å delegera mykje, og kvar treng eg eiga erfaring med å prøva, feila og sjå konsekvensane? Poenget er ikkje eit absolutt skilje mellom to typar kode: støttekode kan vera kritisk, og ein ny utviklar kan læra mykje av det ein erfaren utviklar gjerne delegerer. Spørsmålet er kva eg og teamet treng å forstå og få mengdetrening i for å utvikla taus kunnskap, intuisjon og dømmekraft. Knyt dette til Consensus-syntesane om kognitiv avlasting, taus kunnskap og intuisjon.</p>
+							<p><strong>Støttekode eller kjernekode:</strong> Kor er det uproblematisk å delegera mykje, og kor treng eg eiga erfaring med å prøva, feila og sjå konsekvensane? Poenget er ikkje eit absolutt skilje mellom to typar kode: støttekode kan vera kritisk, og ein ny utviklar kan læra mykje av det ein erfaren utviklar gjerne delegerer. Spørsmålet er kva eg og teamet treng å forstå og få mengdetrening i for å utvikla taus kunnskap, intuisjon og dømmekraft. Knyt dette til Consensus-syntesane om kognitiv avlasting, taus kunnskap og intuisjon.</p>
 							<p><strong>Team-prosess med AI:</strong> Brukar me AI til felles utforsking, pararbeid og betre samtalar, eller erstattar kvar vår AI kontakt med kollegaer? Kven lærer, kven forstår resultatet, og kven får kontrollarbeidet? Consensus-syntesen om motivasjon og avstand knyter tilhørighet og støtte til trivsel, og omtalar einsemd og framandgjering som belastningsspor. HBR-artikkelen <em>Team Dynamics Weaken When Employees Turn to AI Instead of Colleagues</em> skil også mellom AI-bruk og det å erstatta kollegakontakt.</p>
 						</aside>
 					</section>
 					<section class="gravity-slide" data-background-image="images/andrew-rise-of-hi.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Andrew Hatcher si slide «The Rise of HI: Where Humans Can Still Rise Above», med fem menneskelege kapabilitetar">
-						<p class="gravity-source">Kilde: Andrew</p>
+						<p class="gravity-source"><em>(Kilde: Andrew Hatcher)</em></p>
 						<aside class="notes">
 							<p>kan AI svekka? ja</p>
 							<p>kan me beskytta? ja</p>
-							<em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em>
+							<span style="font-size: 66.67%;"><em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></span>
 						</aside>
 					</section>
 				</section>
