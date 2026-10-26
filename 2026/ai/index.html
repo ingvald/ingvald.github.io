@@ -58,9 +58,29 @@
 				bottom: 5.5em;
 			}
 
+			.reveal-guidance {
+				position: fixed;
+				right: 5.5rem;
+				bottom: 0.35rem;
+				z-index: 30;
+				max-width: calc(100vw - 6rem);
+				margin: 0;
+				color: rgba(255, 255, 255, 0.48);
+				font-size: clamp(9px, 0.24em, 10px);
+				line-height: 1.3;
+				text-align: right;
+				pointer-events: none;
+			}
+
+			@media print {
+				.reveal-guidance {
+					display: none;
+				}
+			}
+
 			.reveal .slides section.gravity-slide {
-				display: block !important;
 				height: 100%;
+				min-height: 100vh !important;
 				padding: 0;
 			}
 
@@ -789,7 +809,7 @@
 				color: inherit;
 			}
 
-			.gravity-slide .gravity-source {
+			.andrew-source {
 				position: absolute;
 				bottom: 0.45em;
 				left: 0.45em;
@@ -801,7 +821,7 @@
 				font-size: 0.4em;
 			}
 
-			.cognitive-slide .gravity-source {
+			.andrew-cognitive-source {
 				top: 0.45em;
 				right: 0.45em;
 				bottom: auto;
@@ -842,6 +862,14 @@
 
 			.reveal .slides section.cover {
 				height: 100%;
+			}
+
+			.reveal .slides section.andrew-cover {
+				min-height: 100vh !important;
+			}
+
+			.reveal .cover p.andrew-source {
+				font-size: 0.4em;
 			}
 
 			.reveal .cover p {
@@ -1368,8 +1396,9 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section class="cover thought-cover" data-background-image="images/cambridge-human-thought-stage.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000">
+				<section class="cover thought-cover andrew-cover" data-background-image="images/cambridge-human-thought-stage.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000">
 					<h1>Er AI fordummande?</h1>
+					<p class="andrew-source"><em>(Bilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></p>
 					<aside class="notes">
 						<ul>
 							<li>Rundt grauten</li>
@@ -1392,7 +1421,7 @@
 						</aside>
 					</section>
 					<section class="gravity-slide" data-background-image="images/andrew-gravity-trap.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Andrew Hatcher si slide «The AI Gravity Trap»">
-						<p class="gravity-source"><em>(Kilde: Andrew Hatcher)</em></p>
+						<p class="andrew-source"><em>(Kilde: Andrew Hatcher)</em></p>
 						<aside class="notes">
 							<ul>
 								<li>Andrew meiner:
@@ -1413,7 +1442,7 @@
 						</aside>
 					</section>
 					<section class="gravity-slide cognitive-slide" data-background-image="images/andrew-cognitive-offloading.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Andrew Hatcher si slide «Cognitive Offloading vs. Cognitive Surrender», med markeringar på forklaringane">
-						<p class="gravity-source"><em>(Kilde: Andrew Hatcher)</em></p>
+						<p class="andrew-source andrew-cognitive-source"><em>(Kilde: Andrew Hatcher)</em></p>
 						<aside class="notes">
 							<ul>
 								<li>Stoppar me å vri hjernen?</li>
@@ -1909,7 +1938,7 @@
 					</section>
 					<section class="gravity-slide" data-background-image="images/andrew-question-that-matters.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Andrew Hatcher på scena med sliden «The Question That Matters»">
 						<a class="closing-link" href="https://ingvald.github.io/2026/ai/">ingvald.github.io/2026/ai/</a>
-						<p class="gravity-source"><em>(Kilde: Andrew Hatcher)</em></p>
+						<p class="andrew-source"><em>(Kilde: Andrew Hatcher)</em></p>
 						<aside class="notes">
 							<ul>
 								<li>Er vel ikkje «bruka eller ikkje» – men «korleis» / tilnærming</li>
@@ -1925,376 +1954,7 @@
 					</section>
 				</section>
 			</div>
-		</div>
-
-		<dialog class="fog-viewer" id="fog-viewer" aria-label="Vising i full storleik">
-			<button class="fog-viewer-close" type="button">← Tilbake</button>
-			<div class="fog-viewer-content"></div>
-		</dialog>
-
-		<template id="gallery-complexity"><img src="images/smidig-komplekst-transparent.png" alt="Tavleskisse om smidig navigasjon i usikkerhet og kompleksitet"></template>
-		<template id="gallery-estimates">
-			<svg viewBox="0 0 500 205" role="img" aria-label="Skjematisk estimatkurve med tidleg topp, lang hale og prosjektbindingar">
-				<path class="fog-curve-axes" d="M 38 18 Q 40 90 38 174 M 28 176 Q 220 172 470 174"/>
-				<path class="fog-curve-line" d="M 52 163 C 80 145 85 65 113 43 C 142 17 165 35 185 64 C 215 103 278 120 333 130 C 392 140 430 143 470 144"/>
-				<g class="fog-iron-triangle">
-					<path d="M 390 24 L 344 82 L 439 80 Z"/>
-					<text class="fog-quality" x="391" y="70" text-anchor="middle">KVALITET?</text>
-					<text x="390" y="16" text-anchor="middle">TID</text>
-					<text x="330" y="99" text-anchor="middle" transform="rotate(20 330 99)">KOSTNAD</text>
-					<text x="451" y="99" text-anchor="middle" transform="rotate(-20 451 99)">(OMFANG)</text>
-				</g>
-			</svg>
-		</template>
-		<template id="gallery-sociotechnical">
-			<svg viewBox="0 0 500 160" role="img" aria-label="Gjensidig påverknad mellom folk og teknologi">
-				<defs><marker id="reflection-arrow-large" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9"/></marker></defs>
-				<path class="reflection-feedback" d="M 230 28 C 335 0 431 42 400 96 M 265 127 C 158 166 72 107 120 55"/>
-				<text class="reflection-people" x="174" y="41" transform="rotate(-5 174 41)">Folk</text>
-				<text class="reflection-technology" x="340" y="132" transform="rotate(3 340 132)">Teknologi</text>
-			</svg>
-		</template>
-		<template id="gallery-board">
-			<span class="reflection-board-images">
-				<img src="images/onepager-board-change-arrow.png" alt="Arbeidsflyttavle med pil som viser endringar frå venstre mot høgre">
-				<img src="images/onepager-roadmap-feature-slices.png" alt="Plan med aspekt i kolonnar og feature slices på tvers">
-			</span>
-		</template>
-
-		<dialog class="reflection-gallery-viewer" id="reflection-gallery-viewer" aria-label="Bilete i full storleik – klikk eller trykk Escape for å gå tilbake">
-			<div class="reflection-gallery-content"></div>
-		</dialog>
-
-		<script src="../../reveal/6.0.2/dist/reveal.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/markdown.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/highlight.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/notes.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/search.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/zoom.js"></script>
-		<script>
-			Reveal.initialize({
-				hash: true,
-				controls: true,
-				progress: true,
-				slideNumber: 'c/t',
-				transition: 'fade',
-				pdfMaxPagesPerSlide: 1,
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom ]
-			});
-			const fogViewer = document.getElementById('fog-viewer');
-			const fogViewerContent = fogViewer.querySelector('.fog-viewer-content');
-			let fogViewerTrigger;
-
-			document.querySelectorAll('.fog-slide [data-zoom-layout]').forEach((overlay) => {
-				overlay.addEventListener('click', () => {
-					fogViewerTrigger = overlay;
-					fogViewerContent.dataset.layout = overlay.dataset.zoomLayout;
-					fogViewerContent.replaceChildren(...Array.from(overlay.children)
-						.filter((child) => !child.classList.contains('fog-expand-icon'))
-						.map((child) => child.cloneNode(true)));
-					fogViewer.showModal();
-				});
-			});
-
-			fogViewer.querySelector('.fog-viewer-close').addEventListener('click', () => fogViewer.close());
-			fogViewer.addEventListener('click', (event) => {
-				if (event.target === fogViewer) fogViewer.close();
-			});
-			fogViewer.addEventListener('keydown', (event) => event.stopPropagation());
-			fogViewer.addEventListener('close', () => fogViewerTrigger?.focus());
-
-			const reflectionGallery = document.getElementById('reflection-gallery-viewer');
-			const reflectionGalleryContent = reflectionGallery.querySelector('.reflection-gallery-content');
-			let reflectionGalleryTrigger;
-
-			document.querySelectorAll('.reflection-gallery-slide [data-gallery-template]').forEach((cluster) => {
-				cluster.addEventListener('click', () => {
-					const template = document.getElementById(cluster.dataset.galleryTemplate);
-					if (!(template instanceof HTMLTemplateElement)) {
-						throw new Error(`Missing image gallery template: ${cluster.dataset.galleryTemplate}`);
-					}
-					reflectionGalleryTrigger = cluster;
-					reflectionGalleryContent.replaceChildren(template.content.cloneNode(true));
-					reflectionGallery.showModal();
-				});
-			});
-
-			reflectionGallery.addEventListener('click', () => reflectionGallery.close());
-			reflectionGallery.addEventListener('keydown', (event) => event.stopPropagation());
-			reflectionGallery.addEventListener('close', () => reflectionGalleryTrigger?.focus());
-		</script>
-	</body>
-</html></section>
-					<section class="workday-examples-slide" id="ai-valg" data-background-color="#f3f0e9" aria-label="Tre eksempel på bevisste valg i arbeid med AI">
-						<div class="workday-examples-columns">
-							<h2>Eksempel:</h2>
-							<h2>Når trengs dette?</h2>
-						</div>
-						<div class="workday-examples-columns">
-							<ul class="workday-example-list">
-								<li><strong>Eigen arbeidsflyt?</strong><span>Små steg ↔ samla oppdrag</span></li>
-								<li><strong>Støttekode eller kjernekode?</strong><span>Kor treng eg å bygga opp intuisjon sjølv?</span></li>
-								<li><strong>Team-prosess med AI?</strong><span>Meir fellesskap – eller meir isolasjon?</span></li>
-							</ul>
-							<ul class="workday-quality-list" aria-label="Eigenskapar ved koden">
-								<li>Lesbarhet?</li>
-								<li>Lett å finna fram i?</li>
-								<li>Forstått?</li>
-								<li>Lett å endra?<span>– og vedlikehalda over tid?</span></li>
-							</ul>
-							<ul class="workday-choice-list" aria-label="Arbeidsdeling og rom for tenking">
-								<li>Delegera?<br>Forsterka?<br>Sjølvstyrt?</li>
-								<li>Kva gir me tid til?<span>Tenking, koplingar og innovasjon<br>– eller fleire oppgåver?</span></li>
-							</ul>
-						</div>
-					</section>
-					<section class="gravity-slide" data-background-image="images/andrew-rise-of-hi.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Andrew Hatcher si slide «The Rise of HI: Where Humans Can Still Rise Above», med fem menneskelege kapabilitetar">
-						<p class="gravity-source"><em>(Kilde: Andrew Hatcher)</em></p>
-						<aside class="notes">
-							<span style="font-size: 66.67%;"><em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></span>
-						</aside>
-					</section>
-				</section>
-			</div>
-		</div>
-
-		<dialog class="fog-viewer" id="fog-viewer" aria-label="Vising i full storleik">
-			<button class="fog-viewer-close" type="button">← Tilbake</button>
-			<div class="fog-viewer-content"></div>
-		</dialog>
-
-		<template id="gallery-complexity"><img src="images/smidig-komplekst-transparent.png" alt="Tavleskisse om smidig navigasjon i usikkerhet og kompleksitet"></template>
-		<template id="gallery-estimates">
-			<svg viewBox="0 0 500 205" role="img" aria-label="Skjematisk estimatkurve med tidleg topp, lang hale og prosjektbindingar">
-				<path class="fog-curve-axes" d="M 38 18 Q 40 90 38 174 M 28 176 Q 220 172 470 174"/>
-				<path class="fog-curve-line" d="M 52 163 C 80 145 85 65 113 43 C 142 17 165 35 185 64 C 215 103 278 120 333 130 C 392 140 430 143 470 144"/>
-				<g class="fog-iron-triangle">
-					<path d="M 390 24 L 344 82 L 439 80 Z"/>
-					<text class="fog-quality" x="391" y="70" text-anchor="middle">KVALITET?</text>
-					<text x="390" y="16" text-anchor="middle">TID</text>
-					<text x="330" y="99" text-anchor="middle" transform="rotate(20 330 99)">KOSTNAD</text>
-					<text x="451" y="99" text-anchor="middle" transform="rotate(-20 451 99)">(OMFANG)</text>
-				</g>
-			</svg>
-		</template>
-		<template id="gallery-sociotechnical">
-			<svg viewBox="0 0 500 160" role="img" aria-label="Gjensidig påverknad mellom folk og teknologi">
-				<defs><marker id="reflection-arrow-large" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9"/></marker></defs>
-				<path class="reflection-feedback" d="M 230 28 C 335 0 431 42 400 96 M 265 127 C 158 166 72 107 120 55"/>
-				<text class="reflection-people" x="174" y="41" transform="rotate(-5 174 41)">Folk</text>
-				<text class="reflection-technology" x="340" y="132" transform="rotate(3 340 132)">Teknologi</text>
-			</svg>
-		</template>
-		<template id="gallery-board">
-			<span class="reflection-board-images">
-				<img src="images/onepager-board-change-arrow.png" alt="Arbeidsflyttavle med pil som viser endringar frå venstre mot høgre">
-				<img src="images/onepager-roadmap-feature-slices.png" alt="Plan med aspekt i kolonnar og feature slices på tvers">
-			</span>
-		</template>
-
-		<dialog class="reflection-gallery-viewer" id="reflection-gallery-viewer" aria-label="Bilete i full storleik – klikk eller trykk Escape for å gå tilbake">
-			<div class="reflection-gallery-content"></div>
-		</dialog>
-
-		<script src="../../reveal/6.0.2/dist/reveal.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/markdown.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/highlight.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/notes.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/search.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/zoom.js"></script>
-		<script>
-			Reveal.initialize({
-				hash: true,
-				controls: true,
-				progress: true,
-				slideNumber: 'c/t',
-				transition: 'fade',
-				pdfMaxPagesPerSlide: 1,
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom ]
-			});
-			const fogViewer = document.getElementById('fog-viewer');
-			const fogViewerContent = fogViewer.querySelector('.fog-viewer-content');
-			let fogViewerTrigger;
-
-			document.querySelectorAll('.fog-slide [data-zoom-layout]').forEach((overlay) => {
-				overlay.addEventListener('click', () => {
-					fogViewerTrigger = overlay;
-					fogViewerContent.dataset.layout = overlay.dataset.zoomLayout;
-					fogViewerContent.replaceChildren(...Array.from(overlay.children)
-						.filter((child) => !child.classList.contains('fog-expand-icon'))
-						.map((child) => child.cloneNode(true)));
-					fogViewer.showModal();
-				});
-			});
-
-			fogViewer.querySelector('.fog-viewer-close').addEventListener('click', () => fogViewer.close());
-			fogViewer.addEventListener('click', (event) => {
-				if (event.target === fogViewer) fogViewer.close();
-			});
-			fogViewer.addEventListener('keydown', (event) => event.stopPropagation());
-			fogViewer.addEventListener('close', () => fogViewerTrigger?.focus());
-
-			const reflectionGallery = document.getElementById('reflection-gallery-viewer');
-			const reflectionGalleryContent = reflectionGallery.querySelector('.reflection-gallery-content');
-			let reflectionGalleryTrigger;
-
-			document.querySelectorAll('.reflection-gallery-slide [data-gallery-template]').forEach((cluster) => {
-				cluster.addEventListener('click', () => {
-					const template = document.getElementById(cluster.dataset.galleryTemplate);
-					if (!(template instanceof HTMLTemplateElement)) {
-						throw new Error(`Missing image gallery template: ${cluster.dataset.galleryTemplate}`);
-					}
-					reflectionGalleryTrigger = cluster;
-					reflectionGalleryContent.replaceChildren(template.content.cloneNode(true));
-					reflectionGallery.showModal();
-				});
-			});
-
-			reflectionGallery.addEventListener('click', () => reflectionGallery.close());
-			reflectionGallery.addEventListener('keydown', (event) => event.stopPropagation());
-			reflectionGallery.addEventListener('close', () => reflectionGalleryTrigger?.focus());
-		</script>
-	</body>
-</html></section>
-					<section class="gravity-slide" data-background-image="images/andrew-rise-of-hi.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Andrew Hatcher si slide «The Rise of HI: Where Humans Can Still Rise Above», med fem menneskelege kapabilitetar">
-						<p class="gravity-source"><em>(Kilde: Andrew Hatcher)</em></p>
-						<aside class="notes">
-							<span style="font-size: 66.67%;"><em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></span>
-						</aside>
-					</section>
-				</section>
-			</div>
-		</div>
-
-		<dialog class="fog-viewer" id="fog-viewer" aria-label="Vising i full storleik">
-			<button class="fog-viewer-close" type="button">← Tilbake</button>
-			<div class="fog-viewer-content"></div>
-		</dialog>
-
-		<template id="gallery-complexity"><img src="images/smidig-komplekst-transparent.png" alt="Tavleskisse om smidig navigasjon i usikkerhet og kompleksitet"></template>
-		<template id="gallery-estimates">
-			<svg viewBox="0 0 500 205" role="img" aria-label="Skjematisk estimatkurve med tidleg topp, lang hale og prosjektbindingar">
-				<path class="fog-curve-axes" d="M 38 18 Q 40 90 38 174 M 28 176 Q 220 172 470 174"/>
-				<path class="fog-curve-line" d="M 52 163 C 80 145 85 65 113 43 C 142 17 165 35 185 64 C 215 103 278 120 333 130 C 392 140 430 143 470 144"/>
-				<g class="fog-iron-triangle">
-					<path d="M 390 24 L 344 82 L 439 80 Z"/>
-					<text class="fog-quality" x="391" y="70" text-anchor="middle">KVALITET?</text>
-					<text x="390" y="16" text-anchor="middle">TID</text>
-					<text x="330" y="99" text-anchor="middle" transform="rotate(20 330 99)">KOSTNAD</text>
-					<text x="451" y="99" text-anchor="middle" transform="rotate(-20 451 99)">(OMFANG)</text>
-				</g>
-			</svg>
-		</template>
-		<template id="gallery-sociotechnical">
-			<svg viewBox="0 0 500 160" role="img" aria-label="Gjensidig påverknad mellom folk og teknologi">
-				<defs><marker id="reflection-arrow-large" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9"/></marker></defs>
-				<path class="reflection-feedback" d="M 230 28 C 335 0 431 42 400 96 M 265 127 C 158 166 72 107 120 55"/>
-				<text class="reflection-people" x="174" y="41" transform="rotate(-5 174 41)">Folk</text>
-				<text class="reflection-technology" x="340" y="132" transform="rotate(3 340 132)">Teknologi</text>
-			</svg>
-		</template>
-		<template id="gallery-board">
-			<span class="reflection-board-images">
-				<img src="images/onepager-board-change-arrow.png" alt="Arbeidsflyttavle med pil som viser endringar frå venstre mot høgre">
-				<img src="images/onepager-roadmap-feature-slices.png" alt="Plan med aspekt i kolonnar og feature slices på tvers">
-			</span>
-		</template>
-
-		<dialog class="reflection-gallery-viewer" id="reflection-gallery-viewer" aria-label="Bilete i full storleik – klikk eller trykk Escape for å gå tilbake">
-			<div class="reflection-gallery-content"></div>
-		</dialog>
-
-		<script src="../../reveal/6.0.2/dist/reveal.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/markdown.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/highlight.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/notes.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/search.js"></script>
-		<script src="../../reveal/6.0.2/dist/plugin/zoom.js"></script>
-		<script>
-			Reveal.initialize({
-				hash: true,
-				controls: true,
-				progress: true,
-				slideNumber: 'c/t',
-				transition: 'fade',
-				pdfMaxPagesPerSlide: 1,
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom ]
-			});
-			const fogViewer = document.getElementById('fog-viewer');
-			const fogViewerContent = fogViewer.querySelector('.fog-viewer-content');
-			let fogViewerTrigger;
-
-			document.querySelectorAll('.fog-slide [data-zoom-layout]').forEach((overlay) => {
-				overlay.addEventListener('click', () => {
-					fogViewerTrigger = overlay;
-					fogViewerContent.dataset.layout = overlay.dataset.zoomLayout;
-					fogViewerContent.replaceChildren(...Array.from(overlay.children)
-						.filter((child) => !child.classList.contains('fog-expand-icon'))
-						.map((child) => child.cloneNode(true)));
-					fogViewer.showModal();
-				});
-			});
-
-			fogViewer.querySelector('.fog-viewer-close').addEventListener('click', () => fogViewer.close());
-			fogViewer.addEventListener('click', (event) => {
-				if (event.target === fogViewer) fogViewer.close();
-			});
-			fogViewer.addEventListener('keydown', (event) => event.stopPropagation());
-			fogViewer.addEventListener('close', () => fogViewerTrigger?.focus());
-
-			const reflectionGallery = document.getElementById('reflection-gallery-viewer');
-			const reflectionGalleryContent = reflectionGallery.querySelector('.reflection-gallery-content');
-			let reflectionGalleryTrigger;
-
-			document.querySelectorAll('.reflection-gallery-slide [data-gallery-template]').forEach((cluster) => {
-				cluster.addEventListener('click', () => {
-					const template = document.getElementById(cluster.dataset.galleryTemplate);
-					if (!(template instanceof HTMLTemplateElement)) {
-						throw new Error(`Missing image gallery template: ${cluster.dataset.galleryTemplate}`);
-					}
-					reflectionGalleryTrigger = cluster;
-					reflectionGalleryContent.replaceChildren(template.content.cloneNode(true));
-					reflectionGallery.showModal();
-				});
-			});
-
-			reflectionGallery.addEventListener('click', () => reflectionGallery.close());
-			reflectionGallery.addEventListener('keydown', (event) => event.stopPropagation());
-			reflectionGallery.addEventListener('close', () => reflectionGalleryTrigger?.focus());
-		</script>
-	</body>
-</html></section>
-					<section class="workday-examples-slide" id="ai-valg" data-background-color="#f3f0e9" aria-label="Tre eksempel på bevisste valg i arbeid med AI">
-						<div class="workday-examples-columns">
-							<h2>Eksempel:</h2>
-							<h2>Når trengs dette?</h2>
-						</div>
-						<div class="workday-examples-columns">
-							<ul class="workday-example-list">
-								<li><strong>Eigen arbeidsflyt?</strong><span>Små steg ↔ samla oppdrag</span></li>
-								<li><strong>Støttekode eller kjernekode?</strong><span>Kor treng eg å bygga opp intuisjon sjølv?</span></li>
-								<li><strong>Team-prosess med AI?</strong><span>Meir fellesskap – eller meir isolasjon?</span></li>
-							</ul>
-							<ul class="workday-quality-list" aria-label="Eigenskapar ved koden">
-								<li>Lesbarhet?</li>
-								<li>Lett å finna fram i?</li>
-								<li>Forstått?</li>
-								<li>Lett å endra?<span>– og vedlikehalda over tid?</span></li>
-							</ul>
-							<ul class="workday-choice-list" aria-label="Arbeidsdeling og rom for tenking">
-								<li>Delegera?<br>Forsterka?<br>Sjølvstyrt?</li>
-								<li>Kva gir me tid til?<span>Tenking, koplingar og innovasjon<br>– eller fleire oppgåver?</span></li>
-							</ul>
-						</div>
-					</section>
-					<section class="gravity-slide" data-background-image="images/andrew-rise-of-hi.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Andrew Hatcher si slide «The Rise of HI: Where Humans Can Still Rise Above», med fem menneskelege kapabilitetar">
-						<p class="gravity-source"><em>(Kilde: Andrew Hatcher)</em></p>
-						<aside class="notes">
-							<span style="font-size: 66.67%;"><em>(Kilde: Andrew Hatcher, Cambridge PACE ISP, 15. juli 2026)</em></span>
-						</aside>
-					</section>
-				</section>
-			</div>
+			<p class="reveal-guidance" aria-label="Navigasjon: piltastar navigerer, Escape opnar oversikta og Escape igjen går tilbake">← ↑ ↓ → naviger · Esc: oversikt · Esc igjen: tilbake</p>
 		</div>
 
 		<dialog class="fog-viewer" id="fog-viewer" aria-label="Vising i full storleik">
