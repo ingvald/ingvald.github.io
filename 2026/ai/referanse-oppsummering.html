@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="nn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Forsking og forskingsformidling i «Er AI fordummande?»">
+  <title>Forsking og forskingsformidling i «Er AI fordummande?»</title>
+<style>
+    :root {
+      color-scheme: light;
+      --ink: #20352f;
+      --muted: #56665f;
+      --paper: #fbfcfa;
+      --line: #d6dfd8;
+      --green: #245c4b;
+      --green-soft: #eaf2ed;
+      --amber: #a95722;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      font-family: var(--sans);
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; }
+    a { color: var(--green); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+    a:hover { color: var(--amber); }
+    .page { display: grid; grid-template-columns: minmax(13rem, 17rem) minmax(0, 54rem); gap: clamp(2rem, 5vw, 5rem); max-width: 82rem; margin: 0 auto; padding: 3rem clamp(1.25rem, 5vw, 4rem) 5rem; }
+    aside { align-self: start; position: sticky; top: 1.5rem; padding-top: 0.7rem; }
+    .outline-label { margin: 0 0 0.7rem; color: var(--amber); font-size: 0.72rem; font-weight: 750; letter-spacing: 0.08em; text-transform: uppercase; }
+    nav { max-height: calc(100vh - 5rem); overflow-y: auto; overscroll-behavior: contain; }
+    nav .toc-theme { position: relative; margin-bottom: 0.15rem; border-left: 1px solid var(--line); }
+    nav .toc-theme > details { padding-top: 2.4rem; border: 0; }
+    nav .toc-theme-link { position: absolute; z-index: 1; top: 0; right: 0; left: 2.9rem; display: block; min-height: 2.4rem; padding: 0.46rem 0.4rem 0.46rem 0.1rem; color: var(--muted); font-size: 0.88rem; line-height: 1.4; text-decoration: none; }
+    nav .toc-theme-link:hover, nav .toc-subgroup-link:hover { color: var(--green); background: var(--green-soft); }
+    nav .toc-theme > details, nav .toc-subgroup > details { border: 0; }
+    nav .toc-theme > details > summary, nav .toc-subgroup > details > summary { position: absolute; top: 0; left: 0; display: grid; width: 2.8rem; height: 2.4rem; place-items: center; padding: 0; list-style: none; cursor: pointer; }
+    nav .toc-theme > details > summary::-webkit-details-marker, nav .toc-subgroup > details > summary::-webkit-details-marker { display: none; }
+    nav .toc-theme > details > summary::before, nav .toc-subgroup > details > summary::before { content: "›"; color: var(--green); font-size: 2rem; font-weight: 700; line-height: 1; transition: transform 140ms ease; }
+    nav .toc-theme > details[open] > summary::before, nav .toc-subgroup > details[open] > summary::before { transform: rotate(90deg); }
+    nav summary:focus-visible { outline: 2px solid var(--amber); outline-offset: -2px; }
+    nav .toc-theme > details > ul, nav .toc-subgroup > details > ul { margin: 0; padding: 0.25rem 0 0.5rem 0.9rem; list-style: none; }
+    nav li { margin: 0; }
+    nav a { display: block; padding: 0.24rem 0.65rem; color: var(--muted); font-size: 0.8rem; line-height: 1.4; text-decoration: none; }
+    nav a:hover, nav a:focus-visible { color: var(--green); background: var(--green-soft); }
+    nav .toc-subgroup { position: relative; margin: 0.2rem 0 0.4rem 0.2rem; }
+    nav .toc-subgroup > details { padding-top: 2.2rem; }
+    nav .toc-subgroup-link { position: absolute; z-index: 1; top: 0; right: 0; left: 2.7rem; display: block; min-height: 2.2rem; padding: 0.4rem 0.4rem 0.4rem 0.1rem; color: var(--muted); font-size: 0.8rem; line-height: 1.4; text-decoration: none; }
+    nav .toc-subgroup > details > summary { height: 2.2rem; }
+    main { min-width: 0; }
+    header { padding: 0 0 2rem; border-bottom: 2px solid var(--green); }
+    h1 { max-width: 18ch; margin: 0; font: 700 clamp(2.1rem, 4vw, 3.2rem)/1.08 var(--serif); }
+    .intro { max-width: 70ch; margin: 1.2rem 0 0; color: var(--muted); font-size: 1.05rem; }
+    section { padding-top: 2rem; scroll-margin-top: 1.5rem; }
+    h2 { margin: 0 0 0.5rem; color: var(--green); font: 700 1.8rem/1.2 var(--serif); }
+    h4 { margin: 1.5rem 0 0.5rem; color: var(--green); font: 700 1.35rem/1.25 var(--serif); }
+    h5 { margin: 0 0 0.45rem; font-size: 1rem; line-height: 1.45; }
+    .related-research .source h4 { margin: 0 0 0.45rem; color: var(--ink); font-size: 1.02rem; line-height: 1.45; }
+    .related-research .source h4 cite { font-family: var(--serif); font-weight: 600; }
+    .related-research { margin-top: 1.3rem; padding: 0.2rem 0 0 1rem; border-left: 2px solid var(--line); scroll-margin-top: 1.5rem; }
+    .section-note { margin: 0 0 1.2rem; color: var(--muted); }
+    .source { padding: 1.1rem 0 1.2rem; border-top: 1px solid var(--line); scroll-margin-top: 1rem; }
+    h3 { margin: 0 0 0.45rem; font-size: 1.02rem; line-height: 1.45; }
+    h3 cite { font-family: var(--serif); font-weight: 600; }
+    .source-links { margin: 0 0 0.65rem; color: var(--muted); font-size: 0.9rem; }
+    .source p:last-child { margin-bottom: 0; }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
+    @media (max-width: 820px) {
+      .page { display: block; padding-top: 1.5rem; }
+      aside { position: static; margin: 1.5rem 0 0; padding: 1rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      nav { max-height: 45vh; }
+      nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
+    }
+    @media print {
+      :root { background: white; }
+      .page { display: block; max-width: none; padding: 0; }
+      aside { position: static; margin: 1rem 0; }
+      nav { max-height: none; overflow: visible; }
+      nav details > ul { display: block; }
+      nav a { padding-left: 0; }
+      a { color: inherit; }
+      .source { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside aria-label="Dokumentoversikt">
+      <p class="outline-label">Innhald</p>
+      <nav aria-label="Innhaldsoversikt">
+<div class="toc-theme">
+<a class="toc-theme-link" href="#topic-taus-kunnskap">Taus kunnskap</a>
+<details>
+<summary aria-label="Vis eller skjul kjelder for Taus kunnskap" title="Vis eller skjul kjelder"></summary>
+<ul>
+<li>
+<a href="#ref-michael-polanyi-1966-the-tacit-dimension">Michael Polanyi (1966): <em>The Tacit Dimension</em>
+</a>
+</li>
+<li>
+<a href="#ref-hind-benbya-franz-strich-og-toomas-tamm-2024-navigating-generative-artificial-intelligence-promises-and-perils-for-knowledge-and-creative-work">Hind Benbya, Franz Strich og Toomas Tamm (2024): <em>Navigating Generative Artificial Intelligence Promises and Perils for Knowledge and Creative Work</em>
+</a>
+</li>
+<li>
+<a href="#ref-takashi-onoda-og-yasunobu-ito-2026-what-aspects-of-tacit-knowledge-are-structurally-excluded-from-generative-ai-a-conceptual-framework-of-mediation-structure-and-representation">Takashi Onoda og Yasunobu Ito (2026): <em>What Aspects of Tacit Knowledge Are Structurally Excluded from Generative AI? A Conceptual Framework of Mediation, Structure, and Representation</em>
+</a>
+</li>
+</ul>
+</details>
+</div>
+<div class="toc-theme">
+<a class="toc-theme-link" href="#topic-intuisjon">Intuisjon</a>
+<details>
+<summary aria-label="Vis eller skjul kjelder for Intuisjon" title="Vis eller skjul kjelder"></summary>
+<ul>
+<li>
+<a href="#ref-erik-dane-og-michael-g-pratt-2007-exploring-intuition-and-its-role-in-managerial-decision-making">Erik Dane og Michael G. Pratt (2007): <em>Exploring Intuition and its Role in Managerial Decision Making</em>
+</a>
+</li>
+<li>
+<a href="#ref-gary-klein-2015-a-naturalistic-decision-making-perspective-on-studying-intuitive-decision-making">Gary Klein (2015): <em>A Naturalistic Decision Making Perspective on Studying Intuitive Decision Making</em>
+</a>
+</li>
+<li>
+<div class="toc-subgroup">
+<a class="toc-subgroup-link" href="#intuition-reading-title">Lesetips om treffsikker intuisjon</a>
+<details>
+<summary aria-label="Vis eller skjul lesetips om intuisjon" title="Vis eller skjul lesetips"></summary>
+<ul>
+<li><a href="#ref-daniel-kahneman-og-gary-klein-2009-conditions-for-intuitive-expertise-a-failure-to-disagree">Daniel Kahneman og Gary Klein (2009): <em>Conditions for Intuitive Expertise: A Failure to Disagree</em></a></li>
+<li><a href="#ref-cinla-akinci-og-eugene-sadler-smith-2019-collective-intuition-implications-for-improved-decision-making-and-organizational-learning">Cinla Akinci og Eugene Sadler-Smith (2019): <em>Collective Intuition: Implications for Improved Decision Making and Organizational Learning</em></a></li>
+</ul>
+</details>
+</div>
+</li>
+<li>
+<a href="#ref-duncan-wardle-tedxdurham-uk-2025-a-disney-imagineer-on-the-human-edge-in-an-ai-future">Duncan Wardle (TEDxDurham UK, 2025): <em>A Disney Imagineer on the Human Edge in an AI Future</em>
+</a>
+</li>
+<li>
+<div class="toc-subgroup">
+<a class="toc-subgroup-link" href="#duncan-research-title">Forskingsspor knytte til tema frå Wardles TEDx-foredrag</a>
+<details>
+<summary aria-label="Vis eller skjul forskingskjelder" title="Vis eller skjul forskingskjelder"></summary>
+<ul>
+<li>
+<a href="#ref-ut-na-sio-og-thomas-c-ormerod-2009-does-incubation-enhance-problem-solving-a-meta-analytic-review">Ut Na Sio og Thomas C. Ormerod (2009): <em>Does Incubation Enhance Problem Solving? A Meta-Analytic Review</em>
+</a>
+</li>
+<li>
+<a href="#ref-ben-shofty-mfl-2022-the-default-network-is-causally-linked-to-creative-thinking">Ben Shofty mfl. (2022): <em>The Default Network Is Causally Linked to Creative Thinking</em>
+</a>
+</li>
+</ul>
+</details>
+</div>
+</li>
+</ul>
+</details>
+</div>
+<div class="toc-theme">
+<a class="toc-theme-link" href="#topic-sensemaking">Sensemaking</a>
+<details>
+<summary aria-label="Vis eller skjul kjelder for Sensemaking" title="Vis eller skjul kjelder"></summary>
+<ul>
+<li>
+<a href="#ref-ian-colville-annie-pye-og-andrew-d-brown-2015-sensemaking-processes-and-weickarious-learning">Ian Colville, Annie Pye og Andrew D. Brown (2015): <em>Sensemaking Processes and Weickarious Learning</em>
+</a>
+</li>
+<li>
+<a href="#ref-sally-maitlis-og-scott-sonenshein-2010-sensemaking-in-crisis-and-change-inspiration-and-insights-from-weick-1988">Sally Maitlis og Scott Sonenshein (2010): <em>Sensemaking in Crisis and Change: Inspiration and Insights From Weick (1988)</em>
+</a>
+</li>
+<li>
+<a href="#ref-mary-uhl-bien-og-michael-arena-2017-complexity-leadership-enabling-people-and-organizations-for-adaptability">Mary Uhl-Bien og Michael Arena (2017): <em>Complexity Leadership: Enabling People and Organizations for Adaptability</em>
+</a>
+</li>
+</ul>
+</details>
+</div>
+<div class="toc-theme">
+<a class="toc-theme-link" href="#topic-dmmekraft">Dømmekraft</a>
+<details>
+<summary aria-label="Vis eller skjul kjelder for Dømmekraft" title="Vis eller skjul kjelder"></summary>
+<ul>
+<li>
+<a href="#ref-leonid-sudakov-og-nathan-furr-2026-ai-is-undermining-leaders-judgment-heres-what-to-do-about-it">Leonid Sudakov og Nathan Furr (2026): <em>AI Is Undermining Leaders’ Judgment. Here’s What to Do About It.</em>
+</a>
+</li>
+</ul>
+</details>
+</div>
+<div class="toc-theme">
+<a class="toc-theme-link" href="#topic-refleksjon">Refleksjon</a>
+<details>
+<summary aria-label="Vis eller skjul kjelder for Refleksjon" title="Vis eller skjul kjelder"></summary>
+<ul>
+<li>
+<a href="#ref-donald-a-schon-1983-the-reflective-practitioner-how-professionals-think-in-action">Donald A. Schön (1983): <em>The Reflective Practitioner: How Professionals Think in Action</em>
+</a>
+</li>
+</ul>
+</details>
+</div>
+<div class="toc-theme">
+<a class="toc-theme-link" href="#topic-storytelling">Storytelling</a>
+<details>
+<summary aria-label="Vis eller skjul kjelder for Storytelling" title="Vis eller skjul kjelder"></summary>
+<ul>
+<li>
+<a href="#ref-lucas-m-bietti-ottilie-tilston-og-adrian-bangerter-2018-storytelling-as-adaptive-collective-sensemaking">Lucas M. Bietti, Ottilie Tilston og Adrian Bangerter (2018): <em>Storytelling as Adaptive Collective Sensemaking</em>
+</a>
+</li>
+</ul>
+</details>
+</div>
+<div class="toc-theme">
+<a class="toc-theme-link" href="#topic-kreativitet">Kreativitet</a>
+<details>
+<summary aria-label="Vis eller skjul kjelder for Kreativitet" title="Vis eller skjul kjelder"></summary>
+<ul>
+<li>
+<a href="#ref-teresa-m-amabile-og-michael-g-pratt-2016-the-dynamic-componential-model-of-creativity-and-innovation-in-organizations-making-progress-making-meaning">Teresa M. Amabile og Michael G. Pratt (2016): <em>The Dynamic Componential Model of Creativity and Innovation in Organizations: Making Progress, Making Meaning</em>
+</a>
+</li>
+<li>
+<a href="#ref-felix-pinkow-2022-creative-cognition-a-multidisciplinary-and-integrative-framework-of-creative-thinking">Felix Pinkow (2022): <em>Creative Cognition: A Multidisciplinary and Integrative Framework of Creative Thinking</em>
+</a>
+</li>
+<li>
+<a href="#ref-julian-de-freitas-gideon-nave-og-stefano-puntoni-2025-ideation-with-generative-aiin-consumer-research-and-beyond">Julian De Freitas, Gideon Nave og Stefano Puntoni (2025): <em>Ideation with Generative AI—in Consumer Research and Beyond</em>
+</a>
+</li>
+</ul>
+</details>
+</div>
+<div class="toc-theme">
+<a class="toc-theme-link" href="#topic-innovasjon">Innovasjon</a>
+<details>
+<summary aria-label="Vis eller skjul kjelder for Innovasjon" title="Vis eller skjul kjelder"></summary>
+<ul>
+<li>
+<a href="#ref-faisal-hoque-thomas-h-davenport-og-paul-scade-2026-from-knowledge-to-value-rethinking-knowledge-management-principles-for-an-ai-powered-world">Faisal Hoque, Thomas H. Davenport og Paul Scade (2026): <em>From Knowledge to Value: Rethinking Knowledge Management Principles for an AI-Powered World</em>
+</a>
+</li>
+<li>
+<a href="#ref-beate-j-lvaas-tomas-jungert-anja-van-den-broeck-og-havard-haug-2020-does-managers-motivation-matter-exploring-the-associations-between-motivation-transformational-leadership-and-innovation-in-a-religious-organization">Beate J. Løvaas, Tomas Jungert, Anja Van den Broeck og Håvard Haug (2020): <em>Does Managers’ Motivation Matter? Exploring the Associations Between Motivation, Transformational Leadership, and Innovation in a Religious Organization</em>
+</a>
+</li>
+</ul>
+</details>
+</div>
+<div class="toc-theme">
+<a class="toc-theme-link" href="#topic-ai-arbeid-og-motivasjon">AI, arbeid og motivasjon</a>
+<details>
+<summary aria-label="Vis eller skjul kjelder for AI, arbeid og motivasjon" title="Vis eller skjul kjelder"></summary>
+<ul>
+<li>
+<a href="#ref-catherine-m-hicks-carol-lee-og-kristen-foster-marks-2025-the-new-developer-ai-skill-threat-identity-change-developer-thriving-in-the-transition-to-ai-assisted-software-development">Catherine M. Hicks, Carol Lee og Kristen Foster-Marks (2025): <em>The New Developer: AI Skill Threat, Identity Change &amp; Developer Thriving in the Transition to AI-Assisted Software Development</em>
+</a>
+</li>
+<li>
+<a href="#ref-ya-ting-chuang-hua-ling-chiang-og-an-pan-lin-2025-insights-from-the-job-demandsresources-model-ai-s-dual-impact-on-employees-work-and-life-well-being">Ya-Ting Chuang, Hua-Ling Chiang og An-Pan Lin (2025): <em>Insights from the Job Demands–Resources Model: AI&#x27;s Dual Impact on Employees’ Work and Life Well-Being</em>
+</a>
+</li>
+<li>
+<a href="#ref-suqing-wu-yukun-liu-mengqi-ruan-siyu-chen-og-xiao-yun-xie-2025-human-generative-ai-collaboration-enhances-task-performance-but-undermines-humans-intrinsic-motivation">Suqing Wu, Yukun Liu, Mengqi Ruan, Siyu Chen og Xiao-Yun Xie (2025): <em>Human-Generative AI Collaboration Enhances Task Performance but Undermines Human’s Intrinsic Motivation</em>
+</a>
+</li>
+<li>
+<a href="#ref-auste-simkute-mfl-2024-ironies-of-generative-ai-understanding-and-mitigating-productivity-loss-in-human-ai-interaction">Auste Simkute mfl. (2024): <em>Ironies of Generative AI: Understanding and Mitigating Productivity Loss in Human-AI Interaction</em>
+</a>
+</li>
+</ul>
+</details>
+</div>
+<a class="toc-standalone" href="#topic-lesetips-fra-forskning-no">Lesetips frå forskning.no</a>
+      </nav>
+    </aside>
+    <main>
+      <header>
+        <h1>Forsking og forskingsformidling i «Er AI fordummande?»</h1>
+          <p class="intro">Notatet samlar kilder frå <a href="./">Er AI fordummande?</a> og nokre ekstra lesetips. Det meste er forsking eller teori, med litt forskingsformidling.</p>
+      </header>
+      <section class="document-content">
+<section>
+<h2 id="topic-taus-kunnskap">Taus kunnskap</h2>
+<article class="source">
+<h3 id="ref-michael-polanyi-1966-the-tacit-dimension">Michael Polanyi (1966): <cite>The Tacit Dimension</cite>
+</h3>
+<p class="source-links">
+<a href="https://press.uchicago.edu/ucp/books/book/chicago/T/bo6035368.html">University of Chicago Press</a>
+</p>
+<p>Grunnbok om taus kunnskap og skillet mellom det vi kan, og det vi kan setje ord på. Polanyi viser korleis bakgrunnskunnskap og erfaring er med på å forme både praktisk handling og vitskapleg kunnskap.</p>
+</article>
+<article class="source">
+<h3 id="ref-hind-benbya-franz-strich-og-toomas-tamm-2024-navigating-generative-artificial-intelligence-promises-and-perils-for-knowledge-and-creative-work">Hind Benbya, Franz Strich og Toomas Tamm (2024): <cite>Navigating Generative Artificial Intelligence Promises and Perils for Knowledge and Creative Work</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.17705/1jais.00861">DOI / artikkel</a>
+</p>
+<p>Redaksjonell oversikt over kva generativ AI kan bidra med, og kva utfordringar teknologien gir for kunnskaps- og kreativt arbeid. Teksten peikar på støtte til produktivitet og innovasjon, men spør òg korleis AI endrar menneskeleg vurdering og kreativitet. Dette er ei forskingsbasert innramming, ikkje ein ny empirisk studie.</p>
+</article>
+<article class="source">
+<h3 id="ref-takashi-onoda-og-yasunobu-ito-2026-what-aspects-of-tacit-knowledge-are-structurally-excluded-from-generative-ai-a-conceptual-framework-of-mediation-structure-and-representation">Takashi Onoda og Yasunobu Ito (2026): <cite>What Aspects of Tacit Knowledge Are Structurally Excluded from Generative AI? A Conceptual Framework of Mediation, Structure, and Representation</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.54941/ahfe1007726">DOI / artikkel</a>
+</p>
+<p>Konseptuell artikkel som spør kva sider ved taus kunnskap dagens generative AI ikkje fangar opp. Forfatterne skiller mellom kunnskap som kan uttrykkjast som mønster eller handling, og vilkåra som byggjer henne opp: praksis, sosiale strukturar og refleksjon.</p>
+</article>
+</section>
+<section>
+<h2 id="topic-intuisjon">Intuisjon</h2>
+<article class="source">
+<h3 id="ref-erik-dane-og-michael-g-pratt-2007-exploring-intuition-and-its-role-in-managerial-decision-making">Erik Dane og Michael G. Pratt (2007): <cite>Exploring Intuition and its Role in Managerial Decision Making</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.5465/amr.2007.23463682">DOI / artikkel</a>
+</p>
+<p>Teoretisk artikkel om korleis intuisjon verkar i avgjerder på jobb. Forfatterne skiller mellom ulike typar intuisjon og drøftar når erfaring kan gi raske, nyttige vurderingar, og når intuisjon kan vere mindre pålitelig.</p>
+</article>
+<article class="source">
+<h3 id="ref-gary-klein-2015-a-naturalistic-decision-making-perspective-on-studying-intuitive-decision-making">Gary Klein (2015): <cite>A Naturalistic Decision Making Perspective on Studying Intuitive Decision Making</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.1016/j.jarmac.2015.07.001">DOI / artikkel</a>
+</p>
+<p>Metode- og perspektivartikkel som argumenterer for å studere intuisjon i dei verkelege situasjonane der folk tek avgjerder. Naturleg avgjerdstaking legg vekt på erfaring, tids­press, kontekst og kva dyktige utøvarar faktisk legg merke til.</p>
+</article>
+<section class="related-research" aria-labelledby="intuition-reading-title">
+<h3 id="intuition-reading-title">Lesetips om treffsikker intuisjon</h3>
+<article class="source">
+<h4 id="ref-daniel-kahneman-og-gary-klein-2009-conditions-for-intuitive-expertise-a-failure-to-disagree">Daniel Kahneman og Gary Klein (2009): <cite>Conditions for Intuitive Expertise: A Failure to Disagree</cite></h4>
+<p class="source-links"><a href="https://doi.org/10.1037/a0016755">DOI / artikkel</a></p>
+<p>Teoretisk samanlikning av forsking på heuristikkar og ekspertintuisjon. Forfattarane peikar på to vilkår for at ekspertintuisjon skal vere påliteleg: miljøet må ha mønster som går att, og personen må ha fått høve til å lære dei gjennom øving og rask, tydeleg tilbakemelding.</p>
+</article>
+<article class="source">
+<h4 id="ref-cinla-akinci-og-eugene-sadler-smith-2019-collective-intuition-implications-for-improved-decision-making-and-organizational-learning">Cinla Akinci og Eugene Sadler-Smith (2019): <cite>Collective Intuition: Implications for Improved Decision Making and Organizational Learning</cite></h4>
+<p class="source-links"><a href="https://doi.org/10.1111/1467-8551.12269">DOI / artikkel</a></p>
+<p>Studie av avgjerds- og læringsprosessar i leiarteam i politiet. Forfattarane skildrar korleis individuelle, erfaringsbaserte vurderingar blir delte og tolka i fellesskap. Studien peikar på eit samspel mellom individuell intuisjon og kollektiv tolking i avgjerdsprosessane.</p>
+</article>
+</section>
+<article class="source">
+<h3 id="ref-duncan-wardle-tedxdurham-uk-2025-a-disney-imagineer-on-the-human-edge-in-an-ai-future">Duncan Wardle (TEDxDurham UK, 2025): <cite>A Disney Imagineer on the Human Edge in an AI Future</cite>
+</h3>
+<p class="source-links">
+<a href="https://tedxdurham.co.uk/team/duncan-wardle/">TEDxDurham si omtale</a> · <a href="https://www.youtube.com/playlist?list=PLsRNoUx8w3rPxNGCQYBPobGxNj1BfDT7P">TEDx Editors&#x27; Picks-playlista</a>
+</p>
+<p>TEDxDurham presenterer Wardles tale som ei oppmoding om å bruke kreativitet, intuisjon, empati, nysgjerrighet og fantasi i møte med AI, formidla gjennom historier og praktiske eksempel.</p>
+<section class="related-research" aria-labelledby="duncan-research-title">
+<h4 id="duncan-research-title">Forskingsspor knytte til tema frå Wardles TEDx-foredrag</h4>
+<p class="section-note">Studiane gir forskingskontekst til to tema i Wardles foredrag: inkubasjon og problemløysing, og default-nettverk og kreativ tenking.</p>
+<article class="source">
+<h5 id="ref-ut-na-sio-og-thomas-c-ormerod-2009-does-incubation-enhance-problem-solving-a-meta-analytic-review">Ut Na Sio og Thomas C. Ormerod (2009): <cite>Does Incubation Enhance Problem Solving? A Meta-Analytic Review</cite></h5>
+<p class="source-links">
+<a href="https://doi.org/10.1037/a0014212">DOI / artikkel</a>
+</p>
+<p>Meta-analysen finn støtte for at pausar kan hjelpe problemløysing i enkelte oppgåver. Effekten varierer med oppgåva og kva som skjer i pausen.</p>
+</article>
+<article class="source">
+<h5 id="ref-ben-shofty-mfl-2022-the-default-network-is-causally-linked-to-creative-thinking">Ben Shofty mfl. (2022): <cite>The Default Network Is Causally Linked to Creative Thinking</cite></h5>
+<p class="source-links">
+<a href="https://doi.org/10.1038/s41380-021-01403-8">DOI / artikkel</a>
+</p>
+<p>I ein klinisk studie reduserte elektrisk stimulering av eit område i default-nettverket talet på alternative idear deltakarane laga, men ikkje kor originale ideane var. Dette gir støtte for at nettverket kan bidra til ein bestemt del av divergent tenking.</p>
+</article>
+</section>
+ </article>
+ </section>
+<section>
+<h2 id="topic-sensemaking">Sensemaking</h2>
+<article class="source">
+<h3 id="ref-ian-colville-annie-pye-og-andrew-d-brown-2015-sensemaking-processes-and-weickarious-learning">Ian Colville, Annie Pye og Andrew D. Brown (2015): <cite>Sensemaking Processes and Weickarious Learning</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.1177/1350507615616542">DOI / artikkel</a>
+</p>
+<p>Artikkelen utviklar ei prosessforståing av sensemaking og læring i situasjonar prega av endring og overraskingar. Forfattarane argumenterer for at læring er meir enn å tolke hendingar: ho heng òg saman med korleis folk handlar, erfarer og skaper meining.</p>
+</article>
+<article class="source">
+<h3 id="ref-sally-maitlis-og-scott-sonenshein-2010-sensemaking-in-crisis-and-change-inspiration-and-insights-from-weick-1988">Sally Maitlis og Scott Sonenshein (2010): <cite>Sensemaking in Crisis and Change: Inspiration and Insights From Weick (1988)</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.1111/j.1467-6486.2010.00908.x">DOI / artikkel</a>
+</p>
+<p>Gjennomgang av forsking på sensemaking i kriser og endring. Artikkelen løftar fram delte meiningar og kjensler som viktige delar av korleis folk tolkar urolege situasjonar og finn måtar å handle på.</p>
+</article>
+<article class="source">
+<h3 id="ref-mary-uhl-bien-og-michael-arena-2017-complexity-leadership-enabling-people-and-organizations-for-adaptability">Mary Uhl-Bien og Michael Arena (2017): <cite>Complexity Leadership: Enabling People and Organizations for Adaptability</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.1016/j.orgdyn.2016.12.001">DOI / artikkel</a>
+</p>
+<p>Teoretisk rammeverk for ledelse i komplekse organisasjonar. Forfatterne ser på korleis samspel mellom ledelse, organisering og framveksande initiativ kan gjere organisasjonar betre i stand til å tilpasse seg.</p>
+</article>
+</section>
+<section>
+<h2 id="topic-dmmekraft">Dømmekraft</h2>
+<article class="source">
+<h3 id="ref-leonid-sudakov-og-nathan-furr-2026-ai-is-undermining-leaders-judgment-heres-what-to-do-about-it">Leonid Sudakov og Nathan Furr (2026): <cite>AI Is Undermining Leaders’ Judgment. Here’s What to Do About It.</cite>
+</h3>
+<p class="source-links">
+<a href="https://hbr.org/2026/08/ai-is-undermining-leaders-judgment-heres-what-to-do-about-it">Harvard Business Review</a> · <a href="https://www.hbs.edu/ris/Publication%20Files/25-001_75068eb2-d475-4889-b341-aeabab6ef6d1.pdf">Rapporten frå Harvard Business School som artikkelen viser til (PDF)</a>
+</p>
+<p>Forskingsformidling om eit feltforsøk der 228 erfarne vurderarar vurderte 48 søknader til ein MIT-konkurranse for sosial innovasjon. HBR-artikkelen samanliknar menneskelege vurderingar med AI-støtte, med og utan forklaringar, og drøftar risikoen for at ei overtydande AI-forklaring påverkar dømmekrafta. Artikkelen er ikkje sjølv forskingsrapporten; han lenkjer til rapporten.</p>
+</article>
+</section>
+<section>
+<h2 id="topic-refleksjon">Refleksjon</h2>
+<article class="source">
+<h3 id="ref-donald-a-schon-1983-the-reflective-practitioner-how-professionals-think-in-action">Donald A. Schön (1983): <cite>The Reflective Practitioner: How Professionals Think in Action</cite>
+</h3>
+<p class="source-links">
+<a href="https://www.hachettebookgroup.com/titles/donald-a-schon/the-reflective-practitioner/9780465068784/">Hachette / Basic Books</a>
+</p>
+<p>Klassisk bok om korleis fagfolk tenkjer og lærer medan dei arbeider. Schön skildrar refleksjon-i-handling: å leggje merke til det uventa, prøve ei tolking og justere handlinga undervegs.</p>
+</article>
+</section>
+<section>
+<h2 id="topic-storytelling">Storytelling</h2>
+<article class="source">
+<h3 id="ref-lucas-m-bietti-ottilie-tilston-og-adrian-bangerter-2018-storytelling-as-adaptive-collective-sensemaking">Lucas M. Bietti, Ottilie Tilston og Adrian Bangerter (2018): <cite>Storytelling as Adaptive Collective Sensemaking</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.1111/tops.12358">DOI / artikkel</a>
+</p>
+<p>Artikkelen vurderer ulike forklaringar på kvifor menneske fortel historier, med grunnlag i eksperimentell og etnografisk forsking. Forfattarane argumenterer for at historier kan hjelpe grupper med å forstå nye eller uvanlege situasjonar, dele kunnskap og halde oppe sosialt samarbeid.</p>
+</article>
+</section>
+<section>
+<h2 id="topic-kreativitet">Kreativitet</h2>
+<article class="source">
+<h3 id="ref-teresa-m-amabile-og-michael-g-pratt-2016-the-dynamic-componential-model-of-creativity-and-innovation-in-organizations-making-progress-making-meaning">Teresa M. Amabile og Michael G. Pratt (2016): <cite>The Dynamic Componential Model of Creativity and Innovation in Organizations: Making Progress, Making Meaning</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.1016/j.riob.2016.10.001">DOI / artikkel</a>
+</p>
+<p>Teoretisk modell som samlar forsking på korleis kreativitet og innovasjon utviklar seg i organisasjonar. Modellen koplar mellom anna fagkunnskap, kreativ tenking, motivasjon, arbeidsmiljø og framdrift i arbeidet.</p>
+</article>
+<article class="source">
+<h3 id="ref-felix-pinkow-2022-creative-cognition-a-multidisciplinary-and-integrative-framework-of-creative-thinking">Felix Pinkow (2022): <cite>Creative Cognition: A Multidisciplinary and Integrative Framework of Creative Thinking</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.1111/caim.12541">DOI / artikkel</a>
+</p>
+<p>Oversiktsartikkel som samlar ulike faglege perspektiv på tankeprosessane bak kreativitet. Pinkow foreslår ei ramme som koplar dei kognitive prosessane til vilkår på arbeidsplassen og til kreative resultat.</p>
+</article>
+<article class="source">
+<h3 id="ref-julian-de-freitas-gideon-nave-og-stefano-puntoni-2025-ideation-with-generative-aiin-consumer-research-and-beyond">Julian De Freitas, Gideon Nave og Stefano Puntoni (2025): <cite>Ideation with Generative AI—in Consumer Research and Beyond</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.1093/jcr/ucaf012">DOI / artikkel</a>
+</p>
+<p>Teoretisk artikkel om korleis generativ AI kan støtte idéutvikling. Forfattarane skildrar AI som sterk på fart og breidde, særleg for vidareutvikling av eksisterande idear, og argumenterer for arbeidsmåtar som brukar AI til å setje i gang menneskeleg kreativitet framfor å erstatte henne.</p>
+</article>
+</section>
+<section>
+<h2 id="topic-innovasjon">Innovasjon</h2>
+<article class="source">
+<h3 id="ref-faisal-hoque-thomas-h-davenport-og-paul-scade-2026-from-knowledge-to-value-rethinking-knowledge-management-principles-for-an-ai-powered-world">Faisal Hoque, Thomas H. Davenport og Paul Scade (2026): <cite>From Knowledge to Value: Rethinking Knowledge Management Principles for an AI-Powered World</cite>
+</h3>
+<p class="source-links">
+<a href="https://hdsr.mitpress.mit.edu/pub/jude8rkl">Harvard Data Science Review</a> · <a href="https://doi.org/10.1162/99608f92.4672c2da">DOI</a>
+</p>
+<p>Forskingsformidling med organisasjonseksempel om korleis generativ AI kan støtte kunnskapsarbeid. Hovudpoenget er at organisasjonar bør starte med konkrete problem og gode kunnskapsflytar, ikkje med målet om å gjere mest mogleg informasjon tilgjengeleg.</p>
+</article>
+<article class="source">
+<h3 id="ref-beate-j-lvaas-tomas-jungert-anja-van-den-broeck-og-havard-haug-2020-does-managers-motivation-matter-exploring-the-associations-between-motivation-transformational-leadership-and-innovation-in-a-religious-organization">Beate J. Løvaas, Tomas Jungert, Anja Van den Broeck og Håvard Haug (2020): <cite>Does Managers’ Motivation Matter? Exploring the Associations Between Motivation, Transformational Leadership, and Innovation in a Religious Organization</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.1002/nml.21405">DOI / artikkel</a>
+</p>
+<p>Spørreundersøkelse blant 252 ledere i Den norske kyrkja. Studien fant samanheng mellom indre motivasjon og transformasjonsledelse, og mellom transformasjonsledelse og innovasjon. Han handlar ikkje om AI, men gir bakgrunn for delen om motivasjon og innovasjon.</p>
+</article>
+</section>
+<section>
+<h2 id="topic-ai-arbeid-og-motivasjon">AI, arbeid og motivasjon</h2>
+<article class="source">
+<h3 id="ref-catherine-m-hicks-carol-lee-og-kristen-foster-marks-2025-the-new-developer-ai-skill-threat-identity-change-developer-thriving-in-the-transition-to-ai-assisted-software-development">Catherine M. Hicks, Carol Lee og Kristen Foster-Marks (2025): <cite>The New Developer: AI Skill Threat, Identity Change &amp; Developer Thriving in the Transition to AI-Assisted Software Development</cite>
+</h3>
+<p class="source-links">
+<a href="https://osf.io/preprints/psyarxiv/2gej5_v2">OSF-preprint</a> · <a href="https://www.drcathicks.com/new-developer">Hicks si prosjektside</a>
+</p>
+<p>Observasjonsstudie med over 3 000 programvareutviklarar frå meir enn 12 bransjar. Studien introduserer «AI Skill Threat»: uro for at eigne ferdigheter skal bli utdaterte. Opplevd trussel heng saman med sterk konkurransekultur og tru på medfødd talent, medan læringskultur og tilhørighet heng saman med mindre trussel. Dette er samanhengar, ikkje bevis for årsak-verknad.</p>
+</article>
+<article class="source">
+<h3 id="ref-ya-ting-chuang-hua-ling-chiang-og-an-pan-lin-2025-insights-from-the-job-demandsresources-model-ai-s-dual-impact-on-employees-work-and-life-well-being">Ya-Ting Chuang, Hua-Ling Chiang og An-Pan Lin (2025): <cite>Insights from the Job Demands–Resources Model: AI&#x27;s Dual Impact on Employees’ Work and Life Well-Being</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.1016/j.ijinfomgt.2025.102887">DOI / artikkel</a>
+</p>
+<p>Studien samla inn spørreskjemadata frå 600 arbeidstakarar tre gonger. Samandraget oppgir ikkje tydeleg om dei same personane svarte kvar gong. Studien brukar jobbkrav–jobbressurs-modellen til å undersøke generativ AI. Funna peikar mot ei dobbel side: AI kan støtte produktivitet og jobbtilfredshet, men er òg knytt til meir teknostress, utmatting og konflikt mellom arbeid og familieliv.</p>
+</article>
+<article class="source">
+<h3 id="ref-suqing-wu-yukun-liu-mengqi-ruan-siyu-chen-og-xiao-yun-xie-2025-human-generative-ai-collaboration-enhances-task-performance-but-undermines-humans-intrinsic-motivation">Suqing Wu, Yukun Liu, Mengqi Ruan, Siyu Chen og Xiao-Yun Xie (2025): <cite>Human-Generative AI Collaboration Enhances Task Performance but Undermines Human’s Intrinsic Motivation</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.1038/s41598-025-98385-2">DOI / artikkel</a>
+</p>
+<p>Fire nettbaserte eksperiment med til saman 3 562 deltakarar undersøkte samarbeid mellom menneske og generativ AI. AI-samarbeid gav betre prestasjon på oppgåva der og då, men gevinsten heldt ikkje fram då deltakarane seinare arbeidde åleine; overgangen var òg knytt til lågare indre motivasjon og meir kjedsomhet.</p>
+</article>
+<article class="source">
+<h3 id="ref-auste-simkute-mfl-2024-ironies-of-generative-ai-understanding-and-mitigating-productivity-loss-in-human-ai-interaction">Auste Simkute mfl. (2024): <cite>Ironies of Generative AI: Understanding and Mitigating Productivity Loss in Human-AI Interaction</cite>
+</h3>
+<p class="source-links">
+<a href="https://doi.org/10.1080/10447318.2024.2405782">DOI / artikkel</a>
+</p>
+<p>Fagleg oversikt over kvifor generativ AI kan gi produktivitetstap trass i løfter om effektivisering. Artikkelen peikar mellom anna på at arbeid kan flyttast frå produksjon til vurdering, at arbeidsflyt kan bli broten opp, og at AI bør utformast med betre tilbakemelding og tydelegare oppgåvefordeling.</p>
+</article>
+</section>
+<section>
+<h2 id="topic-lesetips-fra-forskning-no">Lesetips frå forskning.no</h2>
+<p class="section-note">Desse artiklane går inn i fleire av spørsmåla presentasjonen reiser. Dei er gode inngangar til forskinga, men er forskingsformidling, ikkje primærkilder.</p>
+<ul>
+<li>
+<a href="https://www.forskning.no/blir-vi-mindre-selvstendige-av-ki-ny-studie-tyder-pa-det/2722878">Blir vi mindre selvstendige av KI? Ny studie tyder på det</a> omtalar eksperiment der deltakarane presterte dårlegare då KI-hjelpa vart teken bort. Artikkelen tek òg med metodiske innvendingar og at utslaga varierte med oppgåvene.</li>
+<li>
+<a href="https://www.forskning.no/informasjonsteknologi-kommunikasjon-kunstig-intelligens/kunstig-intelligens-er-lett-a-bruke-men-vanskelig-a-forsta/2278823">Kunstig intelligens er lett å bruke, men vanskelig å forstå</a> knyter forkunnskap til evna til å vurdere KI-svar kritisk, med utgangspunkt i ei norsk studentstudie.</li>
+<li>
+<a href="https://www.forskning.no/kunstig-intelligens-partner-pedagogikk/forskere-har-undersokt-hvordan-ki-brukes-i-norske-klasserom/2685092">Forskere har undersøkt hvordan KI brukes i norske klasserom</a> viser korleis lærarar kan bruke KI medvite utan å la verktøyet ta over elevane sitt faglege tankearbeid. Studien byggjer på observasjon av 75 undervisningstimar.</li>
+<li>
+<a href="https://www.forskning.no/kunstig-intelligens-samfunn-skriving/slik-gikk-det-da-folk-fikk-kreativ-hjelp-av-kunstig-intelligens/2390670">Slik gikk det da folk fikk kreativ hjelp av kunstig intelligens</a> omtalar ein studie der KI-hjelp løfta vurderinga av enkelttekstar, medan tekstane òg vart meir like kvarandre.</li>
+<li>
+<a href="https://www.forskning.no/kunstig-intelligens-media-partner/forsker-ki-svekker-var-dommekraft/2578955">Forsker: – KI svekker vår dømmekraft</a> tek opp kritisk tenking og dømmekraft. Dette er ei UiO-produsert og finansiert sak som formidlar ein forskar sitt perspektiv, ikkje ein enkeltstudie som provar alle påstandane.</li>
+</ul>
+</section>
+</section>
+    </main>
+  </div>
+</body>
+</html>
