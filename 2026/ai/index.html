@@ -80,7 +80,6 @@
 
 			.reveal .slides section.gravity-slide {
 				height: 100%;
-				min-height: 100vh !important;
 				padding: 0;
 			}
 
@@ -864,10 +863,6 @@
 				height: 100%;
 			}
 
-			.reveal .slides section.andrew-cover {
-				min-height: 100vh !important;
-			}
-
 			.reveal .cover p.andrew-source {
 				font-size: 0.4em;
 			}
@@ -1363,6 +1358,11 @@
 			.fog-viewer-content[data-layout="visualization"] .fog-visualization-images img:last-child { width: 38%; max-height: 85%; }
 
 			@media (max-width: 600px) {
+				.reveal .slides section.cover.andrew-cover {
+					height: 100%;
+					min-height: 0 !important;
+				}
+
 				.reveal .slide-background.fork-cover .slide-background-content {
 					background-size: contain !important;
 				}
@@ -1376,10 +1376,10 @@
 					height: auto;
 				}
 
-				.reveal .cover h1 {
-					position: relative;
-					top: 8em;
-					bottom: auto;
+				.reveal .thought-cover h1 {
+					position: absolute;
+					top: auto;
+					bottom: 5.5em;
 					left: 0.5em;
 				}
 
