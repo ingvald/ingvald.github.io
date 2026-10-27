@@ -72,6 +72,14 @@
 				pointer-events: none;
 			}
 
+			.reveal-guidance-dark {
+				color: #555;
+			}
+
+			.reveal-guidance-medium {
+				color: #999;
+			}
+
 			@media print {
 				.reveal-guidance {
 					display: none;
@@ -1420,7 +1428,7 @@
 							</ul>
 						</aside>
 					</section>
-					<section class="gravity-slide" data-background-image="images/andrew-gravity-trap.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Andrew Hatcher si slide «The AI Gravity Trap»">
+					<section class="gravity-slide light-image-slide" data-background-image="images/andrew-gravity-trap.jpg" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Andrew Hatcher si slide «The AI Gravity Trap»">
 						<p class="andrew-source"><em>(Kilde: Andrew Hatcher)</em></p>
 						<aside class="notes">
 							<ul>
@@ -2011,6 +2019,17 @@
 				pdfMaxPagesPerSlide: 1,
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom ]
 			});
+			const revealGuidance = document.querySelector('.reveal-guidance');
+			const updateGuidanceColor = () => {
+				const currentSlide = Reveal.getCurrentSlide();
+				const needsDarkGuidance = !currentSlide?.hasAttribute('data-background-image');
+				const needsBackedGuidance = currentSlide?.classList.contains('light-image-slide');
+				revealGuidance.classList.toggle('reveal-guidance-dark', needsDarkGuidance);
+				revealGuidance.classList.toggle('reveal-guidance-medium', needsBackedGuidance);
+			};
+			Reveal.on('ready', updateGuidanceColor);
+			Reveal.on('slidechanged', updateGuidanceColor);
+
 			const fogViewer = document.getElementById('fog-viewer');
 			const fogViewerContent = fogViewer.querySelector('.fog-viewer-content');
 			let fogViewerTrigger;
