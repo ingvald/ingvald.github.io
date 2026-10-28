@@ -335,50 +335,16 @@
 			.reflection-gallery-content {
 				display: grid;
 				place-items: center;
-				width: fit-content;
-				height: fit-content;
-				max-width: 88vw;
-				max-height: 72vh;
-				padding: 1em;
-				background: #fffffff0;
-				box-shadow: 0 8px 30px #0005;
+				width: 0;
+				height: 0;
 			}
 
-			.reflection-gallery-content > img {
-				display: block;
-				width: auto;
-				max-width: 76vw;
-				max-height: 64vh;
-				object-fit: contain;
-			}
-
-			.reflection-gallery-content > svg {
-				display: block;
-				width: min(76vw, 1050px);
-				height: auto;
-				max-height: 58vh;
-			}
-
-			.reflection-gallery-content .reflection-board-images {
-				display: grid;
-				grid-template-columns: 1.6fr 1fr;
-				align-items: center;
-				justify-items: center;
-				gap: 1em;
-				width: min(82vw, 1200px);
-				height: auto;
-			}
-
-			.reflection-gallery-content .reflection-board-images img:first-child {
-				position: static;
-				max-width: 100%;
-				max-height: 62vh;
-			}
-
-			.reflection-gallery-content .reflection-board-images img:last-child {
-				position: static;
-				max-width: 100%;
-				max-height: 62vh;
+			.reflection-gallery-content > .reflection-cluster {
+				position: relative;
+				inset: auto;
+				margin: 0;
+				transform-origin: center;
+				cursor: default;
 			}
 
 			.reveal .slides section.workday-slide {
@@ -1508,8 +1474,8 @@
 									</div>
 								</div>
 								<p class="skill-examples">
-									<span>Konkurransekultur: Må stadig bevise at man er best.</span>
-									<span>Talenttru: Tror man må være født flink.</span>
+									<span>Konkurransekultur: Må stadig visa at ein er best.</span>
+									<span>Talenttru: Trur ein må vera født flink.</span>
 								</p>
 								<p class="skill-pathways">* Talenttru: indirekte via konkurransekultur / bedragerfølelse. Læring + tilhørighet: mindre konkurransekultur.</p>
 							</article>
@@ -1849,12 +1815,12 @@
 					<section class="reflection-gallery-slide" data-background-image="images/smidig-vei.png" data-background-size="contain" data-background-position="center center" data-background-color="#000" aria-label="Ymse bilete over eit bakgrunnsbilete av tåkeveg">
 						<h2>Virkeligheten kjem ikkje med fasit</h2>
 						<p class="reflection-subtitle">Usikkerhet og kompleksitet krever<br>sensemaking, intuisjon, dømmekraft og kreativitet.</p>
-						<button class="reflection-cluster reflection-complexity" type="button" data-gallery-template="gallery-complexity" title="Usikkerhet og kompleksitet">
+						<button class="reflection-cluster reflection-complexity" type="button" title="Usikkerhet og kompleksitet">
 							<span class="reflection-label reflection-label-explore">Må utforskast</span>
 							<img src="images/smidig-komplekst-transparent.png" alt="Tavleskisse om smidig navigasjon i usikkerhet og kompleksitet">
 							<span class="reflection-label">Kan analyserast</span>
 						</button>
-						<button class="reflection-cluster reflection-estimates" type="button" data-gallery-template="gallery-estimates" title="Maksimer estimatkurva">
+						<button class="reflection-cluster reflection-estimates" type="button" title="Maksimer estimatkurva">
 							<svg viewBox="0 0 500 205" role="img" aria-label="Skjematisk estimatkurve med tidleg topp, lang hale og prosjektbindingar">
 								<path class="fog-curve-axes" d="M 38 18 Q 40 90 38 174 M 28 176 Q 220 172 470 174"/>
 								<path class="fog-curve-line" d="M 52 163 C 80 145 85 65 113 43 C 142 17 165 35 185 64 C 215 103 278 120 333 130 C 392 140 430 143 470 144"/>
@@ -1868,7 +1834,7 @@
 							</svg>
 							<span class="reflection-caption">Estimater bommer – skeivt</span>
 						</button>
-						<button class="reflection-cluster reflection-socio" type="button" data-gallery-template="gallery-sociotechnical" title="Maksimer sosioteknisk perspektiv">
+						<button class="reflection-cluster reflection-socio" type="button" title="Maksimer sosioteknisk perspektiv">
 							<strong>Sosioteknisk perspektiv</strong>
 							<svg viewBox="0 0 500 160" role="img" aria-label="Gjensidig påverknad mellom folk og teknologi">
 								<defs><marker id="reflection-arrow-small" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9"/></marker></defs>
@@ -1878,7 +1844,7 @@
 							</svg>
 							<span class="reflection-caption">Folk og teknologi endrar kvarandre<br>– ofte uventa</span>
 						</button>
-						<button class="reflection-cluster reflection-board" type="button" data-gallery-template="gallery-board" title="Maksimer illustrasjonane om synleg arbeid">
+						<button class="reflection-cluster reflection-board" type="button" title="Maksimer illustrasjonane om synleg arbeid">
 							<strong class="fog-visualization-title">Gjer arbeid synleg</strong>
 							<span class="fog-visualization-description">Arbeid · flyt · hindringar · endringar · visuell styring</span>
 							<span class="fog-visualization-images reflection-board-images">
@@ -1984,35 +1950,6 @@
 			<div class="fog-viewer-content"></div>
 		</dialog>
 
-		<template id="gallery-complexity"><img src="images/smidig-komplekst-transparent.png" alt="Tavleskisse om smidig navigasjon i usikkerhet og kompleksitet"></template>
-		<template id="gallery-estimates">
-			<svg viewBox="0 0 500 205" role="img" aria-label="Skjematisk estimatkurve med tidleg topp, lang hale og prosjektbindingar">
-				<path class="fog-curve-axes" d="M 38 18 Q 40 90 38 174 M 28 176 Q 220 172 470 174"/>
-				<path class="fog-curve-line" d="M 52 163 C 80 145 85 65 113 43 C 142 17 165 35 185 64 C 215 103 278 120 333 130 C 392 140 430 143 470 144"/>
-				<g class="fog-iron-triangle">
-					<path d="M 390 24 L 344 82 L 439 80 Z"/>
-					<text class="fog-quality" x="391" y="70" text-anchor="middle">KVALITET?</text>
-					<text x="390" y="16" text-anchor="middle">TID</text>
-					<text x="330" y="99" text-anchor="middle" transform="rotate(20 330 99)">KOSTNAD</text>
-					<text x="451" y="99" text-anchor="middle" transform="rotate(-20 451 99)">(OMFANG)</text>
-				</g>
-			</svg>
-		</template>
-		<template id="gallery-sociotechnical">
-			<svg viewBox="0 0 500 160" role="img" aria-label="Gjensidig påverknad mellom folk og teknologi">
-				<defs><marker id="reflection-arrow-large" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9"/></marker></defs>
-				<path class="reflection-feedback" d="M 230 28 C 335 0 431 42 400 96 M 265 127 C 158 166 72 107 120 55"/>
-				<text class="reflection-people" x="174" y="41" transform="rotate(-5 174 41)">Folk</text>
-				<text class="reflection-technology" x="340" y="132" transform="rotate(3 340 132)">Teknologi</text>
-			</svg>
-		</template>
-		<template id="gallery-board">
-			<span class="reflection-board-images">
-				<img src="images/onepager-board-change-arrow.png" alt="Arbeidsflyttavle med pil som viser endringar frå venstre mot høgre">
-				<img src="images/onepager-roadmap-feature-slices.png" alt="Plan med aspekt i kolonnar og feature slices på tvers">
-			</span>
-		</template>
-
 		<dialog class="reflection-gallery-viewer" id="reflection-gallery-viewer" aria-label="Bilete i full storleik – klikk eller trykk Escape for å gå tilbake">
 			<div class="reflection-gallery-content"></div>
 		</dialog>
@@ -2072,14 +2009,29 @@
 			const reflectionGalleryContent = reflectionGallery.querySelector('.reflection-gallery-content');
 			let reflectionGalleryTrigger;
 
-			document.querySelectorAll('.reflection-gallery-slide [data-gallery-template]').forEach((cluster) => {
+			document.querySelectorAll('.reflection-gallery-slide .reflection-cluster').forEach((cluster) => {
 				cluster.addEventListener('click', () => {
-					const template = document.getElementById(cluster.dataset.galleryTemplate);
-					if (!(template instanceof HTMLTemplateElement)) {
-						throw new Error(`Missing image gallery template: ${cluster.dataset.galleryTemplate}`);
-					}
 					reflectionGalleryTrigger = cluster;
-					reflectionGalleryContent.replaceChildren(template.content.cloneNode(true));
+					const enlargedCluster = cluster.cloneNode(true);
+					const layoutWidth = cluster.offsetWidth;
+					const layoutHeight = cluster.offsetHeight;
+					const scale = Math.min(window.innerWidth * 0.92 / layoutWidth, window.innerHeight * 0.88 / layoutHeight);
+					const sourceElements = [cluster, ...cluster.querySelectorAll('*')];
+					const enlargedElements = [enlargedCluster, ...enlargedCluster.querySelectorAll('*')];
+					sourceElements.forEach((source, index) => {
+						const target = enlargedElements[index];
+						const computedStyle = getComputedStyle(source);
+						Array.from(computedStyle).forEach((property) => {
+							target.style.setProperty(property, computedStyle.getPropertyValue(property));
+						});
+					});
+					enlargedCluster.style.position = 'relative';
+					enlargedCluster.style.inset = 'auto';
+					enlargedCluster.style.transform = `scale(${scale})`;
+					enlargedCluster.querySelector('#reflection-arrow-small')?.setAttribute('id', 'reflection-arrow-large');
+					reflectionGalleryContent.style.width = `${layoutWidth * scale}px`;
+					reflectionGalleryContent.style.height = `${layoutHeight * scale}px`;
+					reflectionGalleryContent.replaceChildren(enlargedCluster);
 					reflectionGallery.showModal();
 				});
 			});
